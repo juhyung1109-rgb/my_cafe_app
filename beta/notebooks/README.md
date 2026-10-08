@@ -20,25 +20,25 @@ pip install -r requirements.txt
 ```
 
 ### 2. 합성 데이터셋 확인 및 생성
-데이터는 프로젝트 루트의 `data/` 디렉터리에 사전 생성되어 있습니다.
+데이터는 `beta/data/` 디렉터리에 사전 생성되어 있습니다.
 새로 생성하거나 조건을 변경하려면 아래 명령을 실행합니다:
 ```bash
 # 프로젝트 루트 디렉터리에서 실행
-python simulator/generate_dataset.py
+python beta/simulator/generate_dataset.py
 ```
 
 생성되는 4대 코어 데이터셋:
-1. `data/user_sessions.ndjson` / `user_sessions.csv` (5,000건)
-2. `data/orders.ndjson` / `orders.csv` (4,500건)
-3. `data/users.ndjson` / `users.csv` (600명: 회원 400 + 비회원 200)
-4. `data/search_logs.ndjson` / `search_logs.csv` (~2,200건)
+1. `beta/data/user_sessions.ndjson` / `user_sessions.csv` (5,000건)
+2. `beta/data/orders.ndjson` / `orders.csv` (4,500건)
+3. `beta/data/users.ndjson` / `users.csv` (600명: 회원 400 + 비회원 200)
+4. `beta/data/search_logs.ndjson` / `search_logs.csv` (~2,200건)
 
 ### 3. 주피터 노트북 실행
 ```bash
 # 주피터 노트북 실행
-jupyter notebook notebooks/cafe_analytics_analysis.ipynb
+jupyter notebook beta/notebooks/cafe_analytics_analysis.ipynb
 
-# 또는 VS Code에서 cafe_analytics_analysis.ipynb를 열고 원하는 Python 커널 선택 후 [Run All]
+# 또는 VS Code에서 beta/notebooks/cafe_analytics_analysis.ipynb를 열고 원하는 Python 커널 선택 후 [Run All]
 ```
 
 ---

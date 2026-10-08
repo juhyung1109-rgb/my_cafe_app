@@ -28,11 +28,11 @@
 
 ```bash
 # 기본 실행 (seed=42 고정, 재현성 보장)
-python simulator/generate_dataset.py
+python beta/simulator/generate_dataset.py
 ```
 
-생성 결과 파일은 프로젝트 루트의 `data/` 폴더에 자동 저장됩니다:
-- `data/user_sessions.ndjson` & `.csv`
-- `data/orders.ndjson` & `.csv`
-- `data/users.ndjson` & `.csv`
-- `data/search_logs.ndjson` & `.csv`
+생성 결과 파일은 `beta/data/` 폴더에 자동 저장됩니다:
+- `beta/data/user_sessions.ndjson` & `.csv`
+- `beta/data/orders.ndjson` & `.csv`
+- `beta/data/users.ndjson` & `.csv`
+- `beta/data/search_logs.ndjson` & `.csv`
