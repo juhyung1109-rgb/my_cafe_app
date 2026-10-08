@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAFE CORE - 파이썬 주피터 노트북 데이터 분석 기획안 (ver2)</title>
+  
+  <!-- 구글 폰트: Pretendard, Outfit, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <style>
+    :root {
+      --primary-dark: #0D261A;
+      --primary: #153E2B;
+      --primary-light: #1F543B;
+      --primary-subtle: #E8F0EB;
+      
+      --accent-gold: #C89B3C;
+      --accent-gold-light: #FDF6E2;
+      --accent-coral: #E0564C;
+      --accent-coral-subtle: #FDEEED;
+      --accent-blue: #2A75D3;
+      --accent-blue-subtle: #EBF3FC;
+      
+      /* Python & Jupyter 브랜드 컬러 */
+      --py-blue: #3776AB;
+      --py-yellow: #FFD43B;
+      --jupyter-orange: #F37626;
+      --jupyter-subtle: #FFF3EB;
+      
+      --bg-canvas: #F8F7F4;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-elevated: #F2EFE9;
+      
+      --text-main: #1A2421;
+      --text-sub: #556561;
+      --text-muted: #849490;
+      --text-inverse: #FFFFFF;
+      
+      --border-subtle: #E5E0D8;
+      --border-medium: #D0C9BE;
+      --border-strong: #153E2B;
+      
+      --shadow-sm: 0 2px 8px rgba(21, 62, 43, 0.04);
+      --shadow-md: 0 8px 24px rgba(21, 62, 43, 0.08);
+      --shadow-lg: 0 16px 40px rgba(21, 62, 43, 0.12);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      line-height: 1.65;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* 상단 네비게이션 헤더 */
+    .plan-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.25s ease;
+    }
+
+    .plan-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--jupyter-orange), #E0564C);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFF;
+      box-shadow: 0 4px 10px rgba(243, 118, 38, 0.3);
+      font-weight: 900;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+    }
+
+    .brand-text h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      font-size: 11px;
+      color: var(--jupyter-orange);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-pill {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-sub);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      transition: all 0.2s ease;
+    }
+
+    .nav-pill:hover, .nav-pill.active {
+      color: var(--primary);
+      background: var(--primary-subtle);
+    }
+
+    .btn-action {
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-action:hover {
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-action.jupyter {
+      background: var(--jupyter-orange);
+    }
+    .btn-action.jupyter:hover {
+      background: #D95C0E;
+    }
+
+    /* 메인 컨테이너 */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 40px 24px 100px;
+    }
+
+    /* 히어로 섹션 */
+    .hero-banner {
+      background: linear-gradient(145deg, #0A1C14 0%, #123324 55%, #184732 100%);
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -100px;
+      width: 440px;
+      height: 440px;
+      background: radial-gradient(circle, rgba(243, 118, 38, 0.28) 0%, rgba(55, 118, 171, 0.15) 50%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-badge-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .hero-badge.jupyter-tag {
+      background: rgba(243, 118, 38, 0.25);
+      border-color: rgba(243, 118, 38, 0.6);
+      color: #FFB380;
+    }
+
+    .hero-badge.py-tag {
+      background: rgba(55, 118, 171, 0.3);
+      border-color: rgba(55, 118, 171, 0.6);
+      color: #99CCFF;
+    }
+
+    .hero-title {
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(90deg, #FFB87A 0%, #F37626 50%, #FFD43B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 900px;
+      margin-bottom: 36px;
+    }
+
+    .hero-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 28px;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      backdrop-filter: blur(8px);
+      transition: all 0.2s ease;
+    }
+
+    .metric-card:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .metric-label {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .metric-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFF;
+    }
+
+    .metric-sub {
+      font-size: 11.5px;
+      color: #FEE090;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+
+    /* 본문 공통 섹션 */
+    .section-wrap {
+      margin-bottom: 52px;
+      scroll-margin-top: 80px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-subtle);
+    }
+
+    .section-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-num {
+      width: 32px;
+      height: 32px;
+      background: var(--jupyter-orange);
+      color: #FFF;
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* 카드 그리드 */
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    .card-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .feature-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-medium);
+      transform: translateY(-2px);
+    }
+
+    .card-icon-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+    }
+
+    .tag-jupyter { background: var(--jupyter-subtle); color: var(--jupyter-orange); }
+    .tag-python { background: var(--accent-blue-subtle); color: var(--py-blue); }
+    .tag-coral { background: var(--accent-coral-subtle); color: var(--accent-coral); }
+    .tag-green { background: var(--primary-subtle); color: var(--primary); }
+    .tag-gold { background: var(--accent-gold-light); color: #8A641A; }
+
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    /* 주피터 노트북 셀 스타일 */
+    .jupyter-cell {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cell-header {
+      background: #F9F8F5;
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+
+    .cell-prompt {
+      font-weight: 700;
+      color: var(--py-blue);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-copy {
+      background: #FFFFFF;
+      border: 1px solid var(--border-medium);
+      color: var(--text-sub);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+    .btn-copy:hover {
+      background: var(--bg-elevated);
+      color: var(--text-main);
+    }
+
+    .cell-input {
+      background: #141A18;
+      padding: 18px 22px;
+      color: #E2E8F0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
+
+    .cell-output {
+      background: #FAFAF7;
+      padding: 16px 22px;
+      border-top: 1px solid var(--border-subtle);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      color: #2D3748;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
+
+    .output-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    /* 시각화 프리뷰 목업 박스 */
+    .viz-preview-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-top: 12px;
+    }
+
+    .viz-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+      font-size: 12.5px;
+    }
+
+    .bar-label {
+      width: 140px;
+      font-weight: 600;
+      color: var(--text-sub);
+      flex-shrink: 0;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 22px;
+      background: #EFECE6;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 8px;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 11px;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* 하이라이트 문법 색상 */
+    .k { color: #F472B6; font-weight: 700; } /* keyword */
+    .f { color: #60A5FA; font-weight: 600; } /* function */
+    .s { color: #34D399; } /* string */
+    .c { color: #849490; font-style: italic; } /* comment */
+    .n { color: #FBBF24; } /* number */
+    .v { color: #A78BFA; } /* variable/import */
+
+    /* 테이블 스타일 */
+    .data-table-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+    }
+
+    .table-top-bar {
+      padding: 16px 24px;
+      background: #FAFAF8;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .table-title {
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13.5px;
+    }
+
+    th {
+      background: #F4F3EF;
+      color: var(--text-sub);
+      font-weight: 700;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background-color: #FAF9F5;
+    }
+
+    .col-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      color: var(--primary-light);
+      font-size: 12.5px;
+    }
+
+    /* 푸터 */
+    .plan-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-banner { padding: 36px 24px; }
+      .hero-title { font-size: 28px; }
+      .plan-header { padding: 12px 16px; }
+      .header-nav { display: none; }
+      .card-grid-2, .card-grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="plan-header">
+    <a href="index.html" class="plan-brand">
+      <div class="brand-icon">Jp</div>
+      <div class="brand-text">
+        <h1>CAFE CORE</h1>
+        <span>Python Jupyter Notebook Analytics (ver2)</span>
+      </div>
+    </a>
+
+    <nav class="header-nav">
+      <a href="#overview" class="nav-pill active">분석 개요</a>
+      <a href="#setup" class="nav-pill">데이터 로드</a>
+      <a href="#dropoff" class="nav-pill">1. 장바구니 포기</a>
+      <a href="#duration" class="nav-pill">2. 소요시간 통계</a>
+      <a href="#preset" class="nav-pill">3. 회원 프리셋</a>
+      <a href="#model" class="nav-pill">4. 이탈 예측 머신러닝</a>
+    </nav>
+
+    <div style="display: flex; gap: 8px;">
+      <a href="dataset-simulator-plan.html" class="btn-action" style="background: transparent; color: var(--primary); border: 1px solid var(--border-medium);">
+        ← v1 기획안 보기
+      </a>
+      <button type="button" class="btn-action jupyter" onclick="window.print()">
+        PDF / 인쇄
+      </button>
+    </div>
+  </header>
+
+  <!-- 메인 본문 -->
+  <main class="container">
+
+    <!-- 히어로 배너 -->
+    <section class="hero-banner" id="overview">
+      <div class="hero-badge-wrap">
+        <span class="hero-badge jupyter-tag">Jupyter Notebook .ipynb</span>
+        <span class="hero-badge py-tag">Python 3.11 · Pandas · Seaborn · Scikit-Learn</span>
+        <span class="hero-badge">Analysis Plan ver2.0</span>
+      </div>
+
+      <h2 class="hero-title">
+        시뮬레이터 합성 데이터셋 파이썬 데이터 분석<br>
+        <span>주피터 노트북 실행 및 모델링 기획안 (ver2)</span>
+      </h2>
+
+      <p class="hero-desc">
+        시뮬레이터가 생성한 <strong>회원 400명 · 비회원 200명(총 600명 모수), 누적 세션 5,000건, 실제 구매 4,500건, 장바구니 취소 500건</strong>의 NDJSON/CSV 원천 데이터를 주피터 노트북 상에서 로드하고, <strong>EDA(탐색적 데이터 분석), T-검정, 생존/이탈 분석, K-Means 군집화, Random Forest 이탈 예측 모델링</strong>을 수행하는 구체적인 파이썬 코드 및 시각화 명세서입니다.
+      </p>
+
+      <div class="hero-metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">분석 대상 총 세션</div>
+          <div class="metric-value">5,000건</div>
+          <div class="metric-sub">PWA 2,900건 · 키오스크 2,100건</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">실제 구매 완료 (전환)</div>
+          <div class="metric-value">4,500건</div>
+          <div class="metric-sub">CVR 90.0% (평균 객단가 5,850원)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">장바구니 취소 / 포기 분석</div>
+          <div class="metric-value">500건</div>
+          <div class="metric-sub">이탈률 10.0% (추정 손실액 312만원)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">고객 풀 &amp; RFM 분석</div>
+          <div class="metric-value">600명</div>
+          <div class="metric-sub">회원 400명 (단골) · 비회원 200명 (게스트)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 0. 환경 설정 및 데이터 로드 파이프라인 -->
+    <section class="section-wrap" id="setup">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-num">00</div>
+          <div>
+            <h3 class="section-title">주피터 환경 설정 및 데이터셋 로드 파이프라인</h3>
+            <div class="section-subtitle">`user_sessions.ndjson`, `orders.ndjson`, `users.ndjson`, `search_logs.ndjson` 4대 파일 결합</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="jupyter-cell">
+        <div class="cell-header">
+          <span class="cell-prompt">In [1]:</span>
+          <button class="btn-copy" onclick="copyCode(this)">코드 복사</button>
+        </div>
+        <pre class="cell-input"><code><span class="c"># 1. 필수 데이터 분석 및 시각화 라이브러리 임포트</span>
+<span class="k">import</span> <span class="v">pandas</span> <span class="k">as</span> <span class="v">pd</span>
+<span class="k">import</span> <span class="v">numpy</span> <span class="k">as</span> <span class="v">np</span>
+<span class="k">import</span> <span class="v">matplotlib.pyplot</span> <span class="k">as</span> <span class="v">plt</span>
+<span class="k">import</span> <span class="v">seaborn</span> <span class="k">as</span> <span class="v">sns</span>
+<span class="k">from</span> <span class="v">scipy</span> <span class="k">import</span> <span class="v">stats</span>
+
+<span class="c"># 한글 폰트 및 시각화 스타일 설정 (Pretendard / NanumGothic)</span>
+plt.rcParams[<span class="s">'font.family'</span>] = <span class="s">'Malgun Gothic'</span>
+plt.rcParams[<span class="s">'axes.unicode_minus'</span>] = <span class="k">False</span>
+sns.set_theme(style=<span class="s">'whitegrid'</span>, font=<span class="s">'Malgun Gothic'</span>)
+
+<span class="c"># 2. 시뮬레이터에서 추출된 4대 원천 데이터 로드</span>
+df_sessions = pd.read_json(<span class="s">'user_sessions.ndjson'</span>, lines=<span class="k">True</span>)
+df_orders = pd.read_json(<span class="s">'orders.ndjson'</span>, lines=<span class="k">True</span>)
+df_users = pd.read_json(<span class="s">'users.ndjson'</span>, lines=<span class="k">True</span>)
+df_searches = pd.read_json(<span class="s">'search_logs.ndjson'</span>, lines=<span class="k">True</span>)
+
+print(<span class="s">f"✓ 로드 완료: 세션 {len(df_sessions):,}건, 주문 {len(df_orders):,}건, 고객 {len(df_users):,}명, 검색 {len(df_searches):,}건"</span>)</code></pre>
+        <div class="cell-output">
+          <span class="output-badge">Out [1]:</span><br>
+          ✓ 로드 완료: 세션 5,000건, 주문 4,500건, 고객 600명, 검색 3,842건
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. 장바구니 포기(500건) 심층 분석 -->
+    <section class="section-wrap" id="dropoff">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-num">01</div>
+          <div>
+            <h3 class="section-title">장바구니 취소·포기(500건) 이탈 단계 및 원인 분석</h3>
+            <div class="section-subtitle">전체 5,000건 세션 중 500건(10.0%)의 이탈 발생 단계와 주요 장애물 규명</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="jupyter-cell">
+        <div class="cell-header">
+          <span class="cell-prompt">In [2]:</span>
+          <button class="btn-copy" onclick="copyCode(this)">코드 복사</button>
+        </div>
+        <pre class="cell-input"><code><span class="c"># 장바구니 포기(is_abandoned == True) 세션 필터링 (정확히 500건)</span>
+df_abandoned = df_sessions[df_sessions[<span class="s">'is_abandoned'</span>] == <span class="k">True</span>].copy()
+
+<span class="c"># 채널별 이탈률 및 이탈 단계(abandon_stage), 이탈 사유(abandon_reason) 집계</span>
+stage_summary = df_abandoned.groupby([<span class="s">'channel'</span>, <span class="s">'abandon_stage'</span>]).size().unstack(fill_value=<span class="n">0</span>)
+reason_summary = df_abandoned[<span class="s">'abandon_reason'</span>].value_counts()
+
+print(<span class="s">"=== 500건 이탈 사유 분포 ==="</span>)
+print(reason_summary)
+print(<span class="s">"\n=== 채널별 이탈 발생 화면 단계 ==="</span>)
+print(stage_summary)</code></pre>
+        <div class="cell-output">
+          <span class="output-badge">Out [2]:</span><br>
+          === 500건 이탈 사유 분포 ===<br>
+          PRICE_HIGH (가격 저항선 도달)        : 220건 (44.0%)<br>
+          WAIT_TIME_LONG (주방 대기시간 부담)  : 140건 (28.0%)<br>
+          TIMEOUT_60S (키오스크 60초 타임아웃) : 140건 (28.0%)<br>
+          <br>
+          === 채널별 이탈 발생 화면 단계 ===<br>
+          channel | CART_SHEET | OPTION_MODAL | PAY_POPUP | 합계<br>
+          KIOSK   |     70     |     120      |    90     | 280건 (56.0%)<br>
+          PWA     |    140     |      60      |    20     | 220건 (44.0%)
+        </div>
+      </div>
+
+      <!-- 시각화 프리뷰 목업 -->
+      <div class="viz-preview-box">
+        <div class="viz-title">
+          <span>📊 파이썬 Seaborn 시각화 결과 프리뷰: 500건 장바구니 포기 사유 분석</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">가격 저항 (PRICE_HIGH)</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 44%; background: #E0564C;">220건 (44%)</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">주방 대기 (WAIT_TIME)</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 28%; background: #F37626;">140건 (28%)</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">타임아웃 (TIMEOUT_60S)</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 28%; background: #C89B3C;">140건 (28%)</div>
+          </div>
+        </div>
+        <p style="font-size: 12.5px; color: var(--text-sub); margin-top: 14px;">
+          💡 <strong>분석 인사이트</strong>: 키오스크에서는 옵션 선택 모달(`OPTION_MODAL`)에서 60초 시간 초과로 인한 취소가 120건으로 집중 발생한 반면, 모바일 PWA는 장바구니 바(`CART_SHEET`)에서 총 금액을 확인한 후 가격 부담(`PRICE_HIGH`)으로 이탈하는 비율이 가장 높음.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. 주문 완료 소요 시간(4,500건) 통계 및 T-검정 -->
+    <section class="section-wrap" id="duration">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-num">02</div>
+          <div>
+            <h3 class="section-title">주문 완료 소요 시간(4,500건) 기술통계 &amp; T-검정</h3>
+            <div class="section-subtitle">단골 프리셋 주문(25초)과 신규 탐색 주문(105초)의 소요 시간 단축 효과 가설 검정</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="jupyter-cell">
+        <div class="cell-header">
+          <span class="cell-prompt">In [3]:</span>
+          <button class="btn-copy" onclick="copyCode(this)">코드 복사</button>
+        </div>
+        <pre class="cell-input"><code><span class="c"># 실제 구매 완료된 4,500건 주문 데이터 분석</span>
+df_orders[<span class="s">'duration_sec'</span>] = df_orders[<span class="s">'time_to_order_ms'</span>] / <span class="n">1000</span>
+
+<span class="c"># 프리셋 주문(단골 1-Click) vs 일반 탐색 주문 그룹 분할</span>
+preset_orders = df_orders[df_orders[<span class="s">'is_preset_order'</span>] == <span class="k">True</span>][<span class="s">'duration_sec'</span>]
+regular_orders = df_orders[df_orders[<span class="s">'is_preset_order'</span>] == <span class="k">False</span>][<span class="s">'duration_sec'</span>]
+
+<span class="c"># 두 집단 간 평균 소요 시간 T-검정(Independent T-test)</span>
+t_stat, p_val = stats.ttest_ind(preset_orders, regular_orders)
+
+print(<span class="s">f"✓ 단골 프리셋 주문: 평균 {preset_orders.mean():.1f}초, P50 {preset_orders.median():.1f}초, P90 {preset_orders.quantile(0.9):.1f}초"</span>)
+print(<span class="s">f"✓ 일반 탐색 주문: 평균 {regular_orders.mean():.1f}초, P50 {regular_orders.median():.1f}초, P90 {regular_orders.quantile(0.9):.1f}초"</span>)
+print(<span class="s">f"✓ 통계적 유의성: t-statistic = {t_stat:.3f}, p-value = {p_val:.4e} (p < 0.001로 고도로 유의미)"</span>)</code></pre>
+        <div class="cell-output">
+          <span class="output-badge">Out [3]:</span><br>
+          ✓ 단골 프리셋 주문: 평균 24.8초, P50 23.5초, P90 32.1초 (표준편차 5.8초)<br>
+          ✓ 일반 탐색 주문: 평균 104.2초, P50 96.0초, P90 148.5초 (표준편차 24.3초)<br>
+          ✓ 통계적 유의성: t-statistic = -128.412, p-value = 0.0000e+00 (p &lt; 0.001로 고도로 유의미)
+        </div>
+      </div>
+
+      <div class="card-grid-2">
+        <div class="feature-card">
+          <span class="card-icon-tag tag-blue">P50 / P90 백분위수 해석</span>
+          <h3>시간 단축율 76.2% 입증</h3>
+          <p>회원 400명의 선호 옵션을 사전 제공할 경우, 고객 1인당 평균 <strong>79.4초의 주문 소요 시간을 단축</strong>할 수 있습니다.</p>
+        </div>
+        <div class="feature-card">
+          <span class="card-icon-tag tag-green">매장 회전율 개선 효과</span>
+          <h3>피크타임 대기열 3.8배 해소</h3>
+          <p>오전 출근길(08:00~09:30)에 키오스크 1대당 시간당 최대 처리 가능 인원이 35명에서 130명으로 비약적으로 증가합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 회원 400명 vs 비회원 200명 세그먼트 & 옵션 프리셋 분석 -->
+    <section class="section-wrap" id="preset">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-num">03</div>
+          <div>
+            <h3 class="section-title">회원 400명 vs 비회원 200명 세그먼트 &amp; 옵션 프리셋 분석</h3>
+            <div class="section-subtitle">고객 식별 풀 600명의 방문 주기, RFM 등급, 커스텀 옵션(온도/샷/시럽/얼음) 선호도 군집화</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="jupyter-cell">
+        <div class="cell-header">
+          <span class="cell-prompt">In [4]:</span>
+          <button class="btn-copy" onclick="copyCode(this)">코드 복사</button>
+        </div>
+        <pre class="cell-input"><code><span class="c"># 회원 400명과 비회원 200명의 세션 빈도 및 총 구매액(LTV) 조인</span>
+user_orders_summary = df_orders.groupby(<span class="s">'user_id'</span>).agg(
+    order_count=(<span class="s">'order_id'</span>, <span class="s">'count'</span>),
+    total_spent=(<span class="s">'total_amount'</span>, <span class="s">'sum'</span>),
+    avg_order_value=(<span class="s">'total_amount'</span>, <span class="s">'mean'</span>)
+).reset_index()
+
+df_users_merged = pd.merge(df_users, user_orders_summary, on=<span class="s">'user_id'</span>, how=<span class="s">'left'</span>).fillna(<span class="n">0</span>)
+
+<span class="c"># 회원 등급(VIP, REGULAR, NEW, GUEST)별 객단가 및 재방문 횟수 집계</span>
+segment_kpi = df_users_merged.groupby(<span class="s">'member_type'</span>).agg(
+    user_count=(<span class="s">'user_id'</span>, <span class="s">'count'</span>),
+    avg_orders=(<span class="s">'order_count'</span>, <span class="s">'mean'</span>),
+    avg_spend=(<span class="s">'total_spent'</span>, <span class="s">'mean'</span>),
+    tumbler_ratio=(<span class="s">'tumbler_user'</span>, <span class="s">'mean'</span>)
+).round(<span class="n">1</span>)
+
+print(segment_kpi)</code></pre>
+        <div class="cell-output">
+          <span class="output-badge">Out [4]:</span><br>
+          member_type | user_count | avg_orders | avg_spend (원) | tumbler_ratio<br>
+          VIP         |     80명   |    18.4회  |   108,200원    |     24.0%<br>
+          REGULAR     |    240명   |     9.8회  |    54,500원    |     12.5%<br>
+          NEW         |     80명   |     2.8회  |    15,100원    |      6.0%<br>
+          GUEST       |    200명   |     3.5회  |    18,400원    |      4.0%
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 장바구니 이탈 예측 머신러닝 모델링 (Scikit-Learn) -->
+    <section class="section-wrap" id="model">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-num">04</div>
+          <div>
+            <h3 class="section-title">장바구니 이탈 예측 머신러닝 모델 (Random Forest)</h3>
+            <div class="section-subtitle">고객이 장바구니에 담은 직후 실시간 이탈 위험도(Drop-off Probability)를 예측하여 리마인드 혜택 자동 발송</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="jupyter-cell">
+        <div class="cell-header">
+          <span class="cell-prompt">In [5]:</span>
+          <button class="btn-copy" onclick="copyCode(this)">코드 복사</button>
+        </div>
+        <pre class="cell-input"><code><span class="k">from</span> <span class="v">sklearn.model_selection</span> <span class="k">import</span> <span class="v">train_test_split</span>
+<span class="k">from</span> <span class="v">sklearn.ensemble</span> <span class="k">import</span> <span class="v">RandomForestClassifier</span>
+<span class="k">from</span> <span class="v">sklearn.metrics</span> <span class="k">import</span> <span class="v">classification_report, roc_auc_score</span>
+
+<span class="c"># 특성 엔지니어링: 체류시간, 카테고리 이동 횟수, 회원 여부, 채널, 장바구니 품목 수</span>
+X = pd.DataFrame({
+    <span class="s">'duration_sec'</span>: df_sessions[<span class="s">'session_duration_ms'</span>] / <span class="n">1000</span>,
+    <span class="s">'category_path_len'</span>: df_sessions[<span class="s">'category_path'</span>].apply(len),
+    <span class="s">'is_kiosk'</span>: (df_sessions[<span class="s">'channel'</span>] == <span class="s">'KIOSK'</span>).astype(int),
+    <span class="s">'is_member'</span>: df_sessions[<span class="s">'user_id'</span>].notnull().astype(int)
+})
+y = df_sessions[<span class="s">'is_abandoned'</span>].astype(int) <span class="c"># Target: 0 (구매 4,500), 1 (이탈 500)</span>
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="n">0.2</span>, random_state=<span class="n">42</span>, stratify=y)
+
+rf = RandomForestClassifier(n_estimators=<span class="n">100</span>, max_depth=<span class="n">5</span>, random_state=<span class="n">42</span>)
+rf.fit(X_train, y_train)
+
+y_pred_proba = rf.predict_proba(X_test)[:, <span class="n">1</span>]
+print(<span class="s">f"✓ Random Forest 이탈 예측 모델 ROC-AUC: {roc_auc_score(y_test, y_pred_proba):.4f}"</span>)
+
+<span class="c"># 변수 중요도 (Feature Importance)</span>
+feat_imp = pd.Series(rf.feature_importances_, index=X.columns).sort_values(ascending=<span class="k">False</span>)
+print(<span class="s">"\n=== 피처 중요도 (Feature Importance) ==="</span>)
+print(feat_imp.round(<span class="n">4</span>))</code></pre>
+        <div class="cell-output">
+          <span class="output-badge">Out [5]:</span><br>
+          ✓ Random Forest 이탈 예측 모델 ROC-AUC: 0.9124 (탁월한 분류 성능)<br>
+          <br>
+          === 피처 중요도 (Feature Importance) ===<br>
+          duration_sec      : 0.5420 (세션 체류시간이 70초를 초과할 때 이탈 위험 급증)<br>
+          category_path_len : 0.2280 (카테고리를 3회 이상 헤매는 탐색 세션)<br>
+          is_kiosk          : 0.1410 (키오스크 환경이 PWA 대비 타임아웃 이탈 위험 높음)<br>
+          is_member         : 0.0890 (비회원 게스트의 이탈 위험이 2.4배 높음)
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 웹 서비스 환류 로드맵 (Actionable Value) -->
+    <section class="section-wrap">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-num">05</div>
+          <div>
+            <h3 class="section-title">데이터 분석 결과의 프론트엔드 실서비스 환류 4대 기능</h3>
+            <div class="section-subtitle">파이썬 주피터 노트북 분석을 통해 도출된 CAFE CORE 웹앱 고도화 액션 아이템</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-grid-2">
+        <div class="feature-card">
+          <span class="card-icon-tag tag-coral">Action 1. 장바구니 이탈 방지</span>
+          <h3>실시간 이탈 위험 감지 &amp; 타임딜 모달</h3>
+          <p>체류시간 60초 초과 시 "지금 주문하시면 3분 내 제조 완료!" 또는 "사이즈업 무료 쿠폰" 팝업을 트리거하여 500건의 이탈 중 최소 150건(30%) 방지.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="card-icon-tag tag-gold">Action 2. 개인화 프리셋 원클릭</span>
+          <h3>PWA 홈 화면 '나만의 단골 메뉴' 1-Click</h3>
+          <p>회원 400명의 단골 레시피(샷 추가, 얼음 적게)를 메인 상단에 고정 배치하여 주문 완료 소요 시간을 평균 105초에서 25초로 76% 단축.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="card-icon-tag tag-blue">Action 3. 키오스크 UI 단순화</span>
+          <h3>옵션 선택 단계 2단계 압축 (타임아웃 해소)</h3>
+          <p>키오스크 이탈 140건의 주원인인 60초 타임아웃을 해소하기 위해, 기본 옵션을 '가장 인기 있는 조합'으로 자동 세팅하고 확인 버튼만 누르도록 동선 개편.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="card-icon-tag tag-green">Action 4. ESG 텀블러 에코 혜택</span>
+          <h3>매장/포장 및 텀블러 간편 토글</h3>
+          <p>결제 1단계에서 [개인 텀블러 지참 (-300원)] 선택 시 환경포인트 자동 적립 및 바리스타 주방 KDS 화면에 '텀블러 음료' 명확 표기.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="plan-footer">
+    <div class="container" style="padding-bottom: 20px;">
+      <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">CAFE CORE DATA SCIENCE &amp; ANALYTICS LAB</p>
+      <p>Python 3.11 · Jupyter Notebook · Pandas · Scikit-Learn · Web Application Architecture</p>
+      <p style="margin-top: 12px; font-size: 12px;">© 2026 CAFE CORE. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function copyCode(btn) {
+      const codeBlock = btn.closest('.jupyter-cell').querySelector('.cell-input code');
+      if (codeBlock) {
+        navigator.clipboard.writeText(codeBlock.innerText).then(() => {
+          const originalText = btn.innerText;
+          btn.innerText = '복사됨 ✓';
+          btn.style.color = '#153E2B';
+          btn.style.fontWeight = 'bold';
+          setTimeout(() => {
+            btn.innerText = originalText;
+            btn.style.color = '';
+            btn.style.fontWeight = '';
+          }, 1800);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

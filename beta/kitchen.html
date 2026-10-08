@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAFE CORE - 주방 주문 디스플레이 (KDS)</title>
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/kitchen.css">
+</head>
+<body>
+
+  <!-- 상단 공통 글로벌 내비게이션 바 -->
+  <header class="global-header" aria-label="메인 화면 내비게이션">
+    <a href="./index.html" class="brand-area">
+      <img src="./assets/images/logo_icon.png" alt="CAFE CORE" class="brand-logo-img">
+      <div class="brand-title-wrap">
+        <span class="brand-title">CAFE CORE</span>
+        <span class="brand-subtitle">카페 코어</span>
+      </div>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li class="nav-link-item"><a href="./pwa-order.html" target="_blank">주문하기 ↗</a></li>
+        <li class="nav-link-item active nav-admin-only"><a href="./kitchen.html">주방</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./pickup-board.html" target="_blank">주문 현황판 ↗</a></li>
+        <li class="nav-link-item nav-link-store-manage nav-admin-only"><a href="./store-manage.html" target="_blank">매장 관리 ↗</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./sales-dashboard.html" target="_blank">매출 ↗</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./kiosk.html" target="_blank">키오스크 ↗</a></li>
+      </ul>
+    </nav>
+    <div class="header-right-meta">
+      <span class="store-badge"><span class="dot"></span>송파점</span>
+      <span class="role-badge">매장 직원</span>
+      <a href="./index.html" class="btn-header-action">홈 포털</a>
+    </div>
+  </header>
+
+  <!-- 주방 KDS 메인 래퍼 -->
+  <main class="kds-container">
+    <section class="kds-header">
+      <div>
+        <div class="kds-subtitle">KITCHEN</div>
+        <h1 class="kds-title">좋은 한 잔을 만드는 공간</h1>
+        <div class="kds-summary-text">
+          <span class="kds-summary-count" id="kdsActiveCount">진행 중 6건</span>
+          <span>· 먼저 접수한 주문부터 표시합니다.</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <button type="button" class="btn-sample-data" id="btnSyncCloud" onclick="window.cafeStore.syncOrdersFromCloud().then(() => renderKdsOrders());" style="background: #1B4D3E; color: #ffffff; border: none; font-weight: 700; cursor: pointer;">🔄 클라우드 동기화</button>
+        <button type="button" class="btn-sample-data" id="btnResetSample">예시 데이터 초기화</button>
+      </div>
+    </section>
+
+    <!-- 3열 카드 그리드 -->
+    <section class="kds-order-grid" id="kdsOrderGrid">
+      <!-- js/kitchen.js 동적 렌더링 -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    CAFE CORE · 좋은 하루의 한 잔
+  </footer>
+
+  <!-- Firebase SDK v10 (Compat) CDN -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="./js/firebase-config.js?v=20261008_v1"></script>
+  <script src="./js/store.js?v=20261008_v1"></script>
+  <script src="./js/firebase-auth.js?v=20261008_v1"></script>
+  <script src="./js/auth-ui.js?v=20261008_v1"></script>
+  <script src="./js/kitchen.js?v=20261008_v1"></script>
+</body>
+</html>

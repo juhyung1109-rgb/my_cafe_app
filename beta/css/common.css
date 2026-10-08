@@ -1,0 +1,414 @@
+/* ==========================================================================
+   CAFE CORE Design System - common.css
+   모든 페이지에 적용되는 공통 변수, 리셋, 글로벌 내비게이션 및 공통 UI 컴포넌트
+   ========================================================================== */
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+:root {
+  /* Brand Color Palette */
+  --color-primary: #1E3F30;       /* 포레스트 딥 그린 (메인 브랜드) */
+  --color-primary-dark: #152E23;  /* 딥 그린 호버/액티브 */
+  --color-primary-light: #2A5642; /* 소프트 그린 */
+  --color-primary-subtle: #E8EFEA;/* 초록 배경 틴트 */
+  
+  --color-bg-body: #F7F6F0;       /* 웜 크림/오트밀 전체 배경 */
+  --color-bg-card: #FFFFFF;       /* 카드 흰색 배경 */
+  --color-bg-sub: #EFECE6;        /* 보조 서피스 베이지 */
+  --color-bg-tint: #F3F1EB;
+  
+  --color-text-main: #191F1C;     /* 짙은 본문 텍스트 */
+  --color-text-sub: #5F6864;      /* 보조 설명 회색 */
+  --color-text-muted: #8F9793;    /* 비활성 회색 */
+  
+  --color-border: #E5E3DC;        /* 연한 테두리 */
+  --color-border-card: #ECEAE3;   /* 카드 테두리 */
+  
+  --color-badge-ice-bg: #E6F4FE;
+  --color-badge-ice-text: #0284C7;
+  
+  --color-badge-hot-bg: #FEE4E2;
+  --color-badge-hot-text: #D92D20;
+  
+  --color-status-yellow-bg: #FEF3C7;
+  --color-status-yellow-text: #B45309;
+  
+  --color-status-green-bg: #DCFCE7;
+  --color-status-green-text: #15803D;
+
+  --color-gold: #EAA937;          /* 신규 완료 하이라이트 골드 */
+  
+  /* Radii & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 1px 3px rgba(25, 31, 28, 0.05);
+  --shadow-md: 0 4px 14px rgba(25, 31, 28, 0.07);
+  --shadow-lg: 0 12px 28px rgba(25, 31, 28, 0.1);
+  --shadow-glow: 0 0 20px rgba(234, 169, 55, 0.4);
+
+  /* Fonts */
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-body);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ==========================================================================
+   글로벌 공통 내비게이션 바 (Global Header)
+   레퍼런스 이미지의 상단 바 완벽 재현
+   ========================================================================== */
+.global-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(247, 246, 240, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.brand-logo-img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: var(--color-primary);
+  padding: 6px;
+}
+
+.brand-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+  color: var(--color-primary);
+}
+
+.brand-subtitle {
+  font-size: 11px;
+  color: var(--color-text-sub);
+  letter-spacing: 0.5px;
+}
+
+/* 네비게이션 링크 탭 */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-link-item a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-sub);
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  transition: all 0.2s ease;
+}
+
+.nav-link-item a:hover {
+  background-color: var(--color-bg-sub);
+  color: var(--color-text-main);
+}
+
+.nav-link-item.active a {
+  background-color: #E2ECE5;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* 우측 상태 및 매장 뱃지 영역 */
+.header-right-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.store-badge .dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10B981;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.role-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  background-color: var(--color-bg-sub);
+  color: var(--color-text-sub);
+  border-radius: var(--radius-sm);
+}
+
+.btn-header-action {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-sub);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-header-action:hover {
+  background-color: var(--color-bg-sub);
+  color: var(--color-text-main);
+}
+
+/* ==========================================================================
+   토스트 알림 시스템 (Toast Notification)
+   ========================================================================== */
+.toast-container {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-lg);
+  font-size: 14px;
+  font-weight: 600;
+  animation: slideUp 0.3s ease;
+}
+
+.toast.toast-ready {
+  background-color: #165B33;
+  border-left: 5px solid var(--color-gold);
+}
+
+.toast.toast-call {
+  background-color: #B45309;
+}
+
+/* ==========================================================================
+   공통 모달 (Modal System)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(25, 31, 28, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  width: 90%;
+  max-width: 480px;
+  box-shadow: var(--shadow-lg);
+  padding: 28px;
+  transform: translateY(20px);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.modal-overlay.open .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--color-text-sub);
+}
+
+/* 애니메이션 */
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceEffect {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* ==========================================================================
+   푸터 브랜딩 문구
+   ========================================================================== */
+.site-footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+  margin-top: 40px;
+}
+
+/* ==========================================================================
+   인증 & 로그인 모달 컴포넌트 스타일 (Auth Components)
+   ========================================================================== */
+.auth-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.auth-input:focus {
+  border-color: var(--color-primary);
+}
+
+.btn-auth-submit {
+  width: 100%;
+  padding: 13px;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-auth-submit:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-fast-fill {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-fast-fill:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* 관리자 전용 메뉴 탭 (기본은 숨김, 오직 admin 로그인 시에만 보임) */
+.nav-link-store-manage,
+.nav-admin-only {
+  display: none !important;
+}
+
+body.is-admin .nav-link-store-manage,
+body.is-admin .nav-admin-only {
+  display: inline-block !important;
+}
+
+/* 모바일 화면 글로벌 헤더 오버플로우 방지 */
+@media (max-width: 768px) {
+  .global-header {
+    padding: 10px 14px;
+    gap: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+  .global-header::-webkit-scrollbar {
+    display: none;
+  }
+  .brand-title {
+    font-size: 16px;
+  }
+  .nav-links {
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .nav-link-item a {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  .header-right-meta {
+    flex-shrink: 0;
+    gap: 8px;
+  }
+}
+
+

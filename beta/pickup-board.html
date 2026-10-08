@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAFE CORE - 음료 주문 상황판 (DID)</title>
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/pickup.css">
+</head>
+<body>
+
+  <!-- 상단 공통 글로벌 내비게이션 바 -->
+  <header class="global-header" aria-label="메인 화면 내비게이션">
+    <a href="./index.html" class="brand-area">
+      <img src="./assets/images/logo_icon.png" alt="CAFE CORE" class="brand-logo-img">
+      <div class="brand-title-wrap">
+        <span class="brand-title">CAFE CORE</span>
+        <span class="brand-subtitle">카페 코어</span>
+      </div>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li class="nav-link-item"><a href="./pwa-order.html" target="_blank">주문하기 ↗</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./kitchen.html" target="_blank">주방 ↗</a></li>
+        <li class="nav-link-item active nav-admin-only"><a href="./pickup-board.html">주문 현황판</a></li>
+        <li class="nav-link-item nav-link-store-manage nav-admin-only"><a href="./store-manage.html" target="_blank">매장 관리 ↗</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./sales-dashboard.html" target="_blank">매출 ↗</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./kiosk.html" target="_blank">키오스크 ↗</a></li>
+      </ul>
+    </nav>
+    <div class="header-right-meta">
+      <span class="store-badge"><span class="dot"></span>송파점</span>
+      <span class="role-badge">매장 디스플레이 (DID)</span>
+      <button type="button" class="btn-sound-toggle" id="btnSoundToggle">🔔 알림음 켜짐</button>
+      <button type="button" class="btn-header-action" id="btnFullscreenToggle">전체화면</button>
+    </div>
+  </header>
+
+  <!-- DID 주문 상황판 메인 컨테이너 -->
+  <main class="did-screen-wrapper">
+
+    <!-- 상단 브랜드 및 실시간 시계 -->
+    <header class="did-header">
+      <div class="did-brand">
+        <img src="./assets/images/logo_icon.png" alt="CAFE CORE 로고" class="did-brand-logo">
+        <div>
+          <div class="did-brand-name">CAFE CORE</div>
+          <div class="did-brand-sub">카페 코어 송파점</div>
+        </div>
+      </div>
+      <div class="did-clock">
+        <span class="did-clock-divider"></span>
+        <span id="didClockDisplay">14:32</span>
+      </div>
+    </header>
+
+    <!-- 중앙 메인 안내 타이틀 -->
+    <div class="did-title-center">
+      <h1 class="did-main-heading">당신의 한 잔을 준비하고 있어요</h1>
+      <p class="did-sub-heading">픽업 가능한 주문번호를 확인해 주세요.</p>
+    </div>
+
+    <!-- 좌우 2분할 듀얼 뷰 -->
+    <section class="did-split-container">
+
+      <!-- 좌측: [제조 중] 영역 -->
+      <div class="panel-cooking">
+        <div class="panel-header-cooking">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          제조 중
+        </div>
+
+        <div class="grid-cooking-numbers" id="didCookingGrid">
+          <!-- js/pickup.js 동적 렌더링 -->
+        </div>
+      </div>
+
+      <!-- 우측: [픽업 가능] 영역 (포레스트 딥그린) -->
+      <div class="panel-ready">
+        <div class="panel-header-ready">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          픽업 가능
+        </div>
+
+        <div class="grid-ready-numbers" id="didReadyGrid">
+          <!-- js/pickup.js 동적 렌더링 -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 하단 픽업 안내 가이드 -->
+    <footer class="did-bottom-guide">
+      <div class="did-guide-left">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="8.5" cy="7" r="4"></circle>
+          <line x1="18" y1="8" x2="23" y2="13"></line>
+          <line x1="23" y1="8" x2="18" y2="13"></line>
+        </svg>
+        픽업대에서 주문번호를 알려주세요
+      </div>
+      <div class="did-guide-right">
+        실시간 자동 업데이트 중
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Firebase SDK v10 (Compat) CDN -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="./js/firebase-config.js?v=20261008_v1"></script>
+  <script src="./js/store.js?v=20261008_v1"></script>
+  <script src="./js/firebase-auth.js?v=20261008_v1"></script>
+  <script src="./js/auth-ui.js?v=20261008_v1"></script>
+  <script src="./js/pickup.js?v=20261008_v1"></script>
+</body>
+</html>

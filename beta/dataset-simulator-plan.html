@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAFE CORE - 사용자 행동 & 개인화 데이터셋 시뮬레이터 기획안</title>
+  
+  <!-- 구글 폰트: Pretendard, Outfit, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <style>
+    :root {
+      --primary-dark: #0D261A;
+      --primary: #153E2B;
+      --primary-light: #1F543B;
+      --primary-subtle: #E8F0EB;
+      --accent-gold: #C89B3C;
+      --accent-gold-light: #FDF6E2;
+      --accent-gold-hover: #DFB14E;
+      --accent-coral: #E0564C;
+      --accent-coral-subtle: #FDEEED;
+      --accent-blue: #2A75D3;
+      --accent-blue-subtle: #EBF3FC;
+      
+      --bg-canvas: #F8F7F4;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-elevated: #F2EFE9;
+      
+      --text-main: #1A2421;
+      --text-sub: #556561;
+      --text-muted: #849490;
+      --text-inverse: #FFFFFF;
+      
+      --border-subtle: #E5E0D8;
+      --border-medium: #D0C9BE;
+      --border-strong: #153E2B;
+      
+      --shadow-sm: 0 2px 8px rgba(21, 62, 43, 0.04);
+      --shadow-md: 0 8px 24px rgba(21, 62, 43, 0.08);
+      --shadow-lg: 0 16px 40px rgba(21, 62, 43, 0.12);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      line-height: 1.65;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* 상단 네비게이션 헤더 */
+    .plan-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.25s ease;
+    }
+
+    .plan-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFF;
+      box-shadow: 0 4px 10px rgba(21, 62, 43, 0.2);
+    }
+
+    .brand-text h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-pill {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-sub);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      transition: all 0.2s ease;
+    }
+
+    .nav-pill:hover, .nav-pill.active {
+      color: var(--primary);
+      background: var(--primary-subtle);
+    }
+
+    .btn-action {
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-action:hover {
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    /* 메인 컨테이너 */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 40px 24px 100px;
+    }
+
+    /* 히어로 섹션 */
+    .hero-banner {
+      background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 60%, #1E5C40 100%);
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -100px;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(200, 155, 60, 0.25) 0%, rgba(200, 155, 60, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-badge-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .hero-badge.gold {
+      background: rgba(200, 155, 60, 0.25);
+      border-color: rgba(200, 155, 60, 0.5);
+      color: #FEE7A6;
+    }
+
+    .hero-title {
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(90deg, #FDE68A 0%, #F59E0B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 890px;
+      margin-bottom: 36px;
+    }
+
+    .hero-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 28px;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      backdrop-filter: blur(8px);
+      transition: all 0.2s ease;
+    }
+
+    .metric-card:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .metric-label {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .metric-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFF;
+    }
+
+    .metric-sub {
+      font-size: 11.5px;
+      color: #FDE68A;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+
+    /* 본문 공통 섹션 */
+    .section-wrap {
+      margin-bottom: 48px;
+      scroll-margin-top: 80px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-subtle);
+    }
+
+    .section-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-num {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      color: #FFF;
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* 카드 그리드 */
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    .card-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .feature-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-medium);
+      transform: translateY(-2px);
+    }
+
+    .card-icon-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+    }
+
+    .tag-gold { background: var(--accent-gold-light); color: #8A641A; }
+    .tag-blue { background: var(--accent-blue-subtle); color: var(--accent-blue); }
+    .tag-coral { background: var(--accent-coral-subtle); color: var(--accent-coral); }
+    .tag-green { background: var(--primary-subtle); color: var(--primary); }
+
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-top: 1px dashed var(--border-subtle);
+      padding-top: 14px;
+    }
+
+    .feature-list li {
+      font-size: 13px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--text-main);
+    }
+
+    .feature-list li svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+      color: var(--primary);
+    }
+
+    /* 플로우 다이어그램 시각화 */
+    .flow-diagram-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 28px;
+    }
+
+    .flow-steps {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 12px;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
+    .flow-step-box {
+      flex: 1;
+      min-width: 170px;
+      background: var(--bg-canvas);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px 16px;
+      text-align: center;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .flow-step-box:hover {
+      border-color: var(--primary);
+      background: #FFF;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .flow-step-box.danger {
+      border-color: rgba(224, 86, 76, 0.4);
+      background: #FFF9F9;
+    }
+
+    .flow-step-box.success {
+      border-color: rgba(21, 62, 43, 0.4);
+      background: #F4FAF6;
+    }
+
+    .step-badge {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--text-muted);
+      background: rgba(0,0,0,0.05);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      margin-bottom: 8px;
+    }
+
+    .step-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .step-data-tag {
+      font-size: 12px;
+      color: var(--text-sub);
+      line-height: 1.45;
+    }
+
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* 테이블 스타일 */
+    .data-table-wrap {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+    }
+
+    .table-top-bar {
+      padding: 16px 24px;
+      background: #FAFAF8;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .table-title {
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .table-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      background: var(--primary-subtle);
+      color: var(--primary);
+    }
+
+    .table-badge.new {
+      background: var(--accent-gold-light);
+      color: #92400E;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13.5px;
+    }
+
+    th {
+      background: #F4F3EF;
+      color: var(--text-sub);
+      font-weight: 700;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background-color: #FAF9F5;
+    }
+
+    .col-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      color: var(--primary-light);
+      font-size: 12.5px;
+    }
+
+    .type-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #EFECE6;
+      color: #555;
+    }
+
+    /* 코드 블록 */
+    .code-container {
+      background: #141A18;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin: 16px 0;
+      border: 1px solid #23312C;
+    }
+
+    .code-header {
+      background: #1B2421;
+      padding: 10px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #283832;
+    }
+
+    .code-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #9EAEA8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .code-content {
+      padding: 18px;
+      color: #E2E8F0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
+
+    .code-content .keyword { color: #F472B6; font-weight: 600; }
+    .code-content .function { color: #60A5FA; }
+    .code-content .string { color: #34D399; }
+    .code-content .comment { color: #6B7280; font-style: italic; }
+    .code-content .number { color: #FBBF24; }
+
+    /* 로드맵 타임라인 */
+    .roadmap-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+    }
+
+    .roadmap-list::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      bottom: 24px;
+      left: 20px;
+      width: 2px;
+      background: var(--border-medium);
+      z-index: 1;
+    }
+
+    .roadmap-item {
+      display: flex;
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .roadmap-node {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 3px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      color: var(--primary);
+      flex-shrink: 0;
+      box-shadow: 0 0 0 4px var(--bg-canvas);
+    }
+
+    .roadmap-item.completed .roadmap-node {
+      background: var(--primary);
+      color: #FFF;
+    }
+
+    .roadmap-content {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 22px 26px;
+      flex: 1;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .roadmap-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      background: var(--primary-subtle);
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .roadmap-content h4 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .roadmap-content p {
+      font-size: 13.5px;
+      color: var(--text-sub);
+    }
+
+    /* 푸터 */
+    .plan-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-banner { padding: 36px 24px; }
+      .hero-title { font-size: 28px; }
+      .plan-header { padding: 12px 16px; }
+      .header-nav { display: none; }
+      .card-grid-2, .card-grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="plan-header">
+    <a href="index.html" class="plan-brand">
+      <div class="brand-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+          <line x1="6" y1="1" x2="6" y2="4"></line>
+          <line x1="10" y1="1" x2="10" y2="4"></line>
+          <line x1="14" y1="1" x2="14" y2="4"></line>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>CAFE CORE</h1>
+        <span>Data Lab & Analytics Proposal</span>
+      </div>
+    </a>
+
+    <nav class="header-nav">
+      <a href="#overview" class="nav-pill active">기획 개요</a>
+      <a href="#journey" class="nav-pill">고객 여정 모델</a>
+      <a href="#schema" class="nav-pill">신규 스키마 정의</a>
+      <a href="#rules" class="nav-pill">행동 모델링 규칙</a>
+      <a href="#bigquery" class="nav-pill">BigQuery 확장 쿼리</a>
+      <a href="#roadmap" class="nav-pill">추진 일정</a>
+    </nav>
+
+    <div style="display: flex; gap: 8px;">
+      <a href="pwa-order.html" target="_blank" class="btn-action" style="background: transparent; color: var(--primary); border: 1px solid var(--border-medium);">
+        모바일 주문 ↗
+      </a>
+      <button type="button" class="btn-action" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        PDF / 인쇄
+      </button>
+    </div>
+  </header>
+
+  <!-- 메인 본문 -->
+  <main class="container">
+
+    <!-- 히어로 배너 -->
+    <section class="hero-banner" id="overview">
+      <div class="hero-badge-wrap">
+        <span class="hero-badge gold">Architecture &amp; Data Spec v2.0</span>
+        <span class="hero-badge">5,000 Sessions Benchmark</span>
+      </div>
+
+      <h2 class="hero-title">
+        웹 서비스 사용자 행동 &amp; 개인화<br>
+        <span>데이터셋 시뮬레이터 확장 기획안</span>
+      </h2>
+
+      <p class="hero-desc">
+        <strong>회원 400명 · 비회원 200명(총 600명 모수)</strong> 기반으로 <strong>총 5,000건의 세션</strong>을 시뮬레이션하며, 이 중 <strong>4,500건의 실구매 전환(90%)</strong>과 <strong>500건의 장바구니 취소·포기(10%)</strong> 데이터를 정밀 생성합니다. 장바구니 이탈·주문 소요 시간·탐색 경로·검색 로그·회원 옵션 프리셋·취식 형태(매장/포장)를 포괄하는 정밀 합성 고객 데이터셋 생성 엔진을 설계합니다.
+      </p>
+
+      <div class="hero-metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">총 가상 생성 세션</div>
+          <div class="metric-value">5,000건</div>
+          <div class="metric-sub">PWA 58% (2,900건) · 키오스크 42% (2,100건)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">실제 구매 완료 (전환)</div>
+          <div class="metric-value">4,500건</div>
+          <div class="metric-sub">전환율(CVR) 90.0% 달성</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">장바구니 취소 / 포기</div>
+          <div class="metric-value">500건</div>
+          <div class="metric-sub">이탈률 10.0% (정밀 원인 추적)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">고객 식별 풀 (User Pool)</div>
+          <div class="metric-value">600명</div>
+          <div class="metric-sub">회원 400명 (67%) · 비회원 200명 (33%)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. 핵심 개선 영역 6대 축 -->
+    <section class="section-wrap">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-num">01</div>
+          <div>
+            <h3 class="section-title">데이터셋 확장 6대 핵심 영역</h3>
+            <div class="section-subtitle">기존 주문 데이터의 한계를 극복하고 웹 프론트엔드 UX 개선을 가능케 하는 핵심 지표</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-grid-3">
+        <!-- 1. 장바구니 포기 (500건) -->
+        <div class="feature-card">
+          <span class="card-icon-tag tag-coral">Drop-off Analytics (500건)</span>
+          <h3>1. 장바구니 포기 (Abandonment 500건)</h3>
+          <p>메뉴를 담았으나 결제 직전 이탈한 500건의 세션 데이터를 추적하여 가격 저항선 및 UI 병목을 분석합니다.</p>
+          <ul class="feature-list">
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              포기 단계별 세분화 (옵션 모달 180건 / 장바구니 시트 210건 / 결제 모달 110건)
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              포기 사유 모델링 (대기열 과다 140건, 가격 부담 220건, 60초 타임아웃 140건)
+            </li>
+          </ul>
+        </div>
+
+        <!-- 2. 주문 완료 소요 시간 (4,500건) -->
+        <div class="feature-card">
+          <span class="card-icon-tag tag-blue">Speed to Conversion (4,500건)</span>
+          <h3>2. 주문 완료 소요 시간 (Duration 4,500건)</h3>
+          <p>첫 화면 진입부터 결제 승인까지의 체류 시간을 실측하여 고객의 주문 피로도와 병목 구간을 진단합니다.</p>
+          <ul class="feature-list">
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              단골 프리셋 주문(평균 25초) vs 신규 탐색 주문(평균 110초) 비교
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              키오스크 뒷사람 대기 압박에 따른 터치 속도 단축 모델링
+            </li>
+          </ul>
+        </div>
+
+        <!-- 3. 카테고리 탐색 & 검색 로그 -->
+        <div class="feature-card">
+          <span class="card-icon-tag tag-gold">Clickstream & Search</span>
+          <h3>3. 카테고리 탐색 &amp; 검색 로그</h3>
+          <p>카테고리 탭 클릭 순서와 검색창 입력 쿼리를 기록하여 메뉴 배치와 검색 사전 최적화를 지원합니다.</p>
+          <ul class="feature-list">
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              검색 키워드 풀 (줄임말 '아아', 속성 '디카페인', '바닐라라떼', 오타)
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              검색 결과 노출 수 및 실제 메뉴 클릭 전환율 매핑
+            </li>
+          </ul>
+        </div>
+
+        <!-- 4. 회원 식별자 매핑 (600명) -->
+        <div class="feature-card">
+          <span class="card-icon-tag tag-green">Customer Identity (600명)</span>
+          <h3>4. 회원 식별자 &amp; RFM 등급 매핑</h3>
+          <p>회원 400명의 UID와 비회원 200명의 게스트 식별자를 연결하여 행동 차이와 생애가치(LTV)를 식별합니다.</p>
+          <ul class="feature-list">
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              모바일 PWA 회원 로그인율 70% vs 키오스크 비회원 75%
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              회원 400명 (평균 10.5회 방문) vs 비회원 200명 (평균 4.0회 방문)
+            </li>
+          </ul>
+        </div>
+
+        <!-- 5. 고객별 선호 옵션 프리셋 -->
+        <div class="feature-card">
+          <span class="card-icon-tag tag-gold">Personalization Preset</span>
+          <h3>5. 고객별 선호 옵션 프리셋</h3>
+          <p>고객별 단골 레시피(예: 샷추가+얼음적게)를 설정하고, 1-Click 재주문 버튼 도입 타당성을 검증합니다.</p>
+          <ul class="feature-list">
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              회원 400명 중 선호 프리셋 보유자 180명(45%)의 고정 JSON 매핑
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              프리셋 일치 주문율(45%)과 주문 소요 시간 70% 단축 효과 검증
+            </li>
+          </ul>
+        </div>
+
+        <!-- 6. 이용 맥락 (취식 형태) -->
+        <div class="feature-card">
+          <span class="card-icon-tag tag-blue">Context & ESG</span>
+          <h3>6. 이용 맥락 (취식 형태 &amp; 컵 종류)</h3>
+          <p>매장 취식 vs 포장, 다회용컵 vs 텀블러 선택 데이터를 수집하여 매장 회전율과 친환경 정책을 수립합니다.</p>
+          <ul class="feature-list">
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              출근/점심 피크타임 포장 78% 집중 vs 주말 매장 취식 65%
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              텀블러 지참율(8%)에 따른 컵 할인 및 세척기 가동율 예측
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 고객 여정 및 세션 시뮬레이션 플로우 -->
+    <section class="section-wrap" id="journey">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-num">02</div>
+          <div>
+            <h3 class="section-title">고객 웹 여정(Customer Journey) 시뮬레이션 플로우</h3>
+            <div class="section-subtitle">누적 세션 5,000건 중 4,500건(90%) 구매 전환 및 500건(10%) 장바구니 취소 라이프사이클</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-diagram-card">
+        <div class="flow-steps">
+          <!-- Step 1 -->
+          <div class="flow-step-box">
+            <span class="step-badge">STEP 1</span>
+            <div class="step-name">세션 진입 (5,000건)</div>
+            <div class="step-data-tag">
+              • PWA (58%, 2,900건)<br>
+              • 키오스크 (42%, 2,100건)<br>
+              • 회원 400명 / 비회원 200명 매핑
+            </div>
+          </div>
+
+          <div class="flow-arrow">➔</div>
+
+          <!-- Step 2 -->
+          <div class="flow-step-box">
+            <span class="step-badge">STEP 2</span>
+            <div class="step-name">탐색 &amp; 검색</div>
+            <div class="step-data-tag">
+              • 카테고리 클릭 경로 추적<br>
+              • 검색어 쿼리 로그 적재<br>
+              • 상세 옵션 모달 조회
+            </div>
+          </div>
+
+          <div class="flow-arrow">➔</div>
+
+          <!-- Step 3 -->
+          <div class="flow-step-box">
+            <span class="step-badge">STEP 3</span>
+            <div class="step-name">장바구니 담기</div>
+            <div class="step-data-tag">
+              • 선호 프리셋 즉시 적용 or<br>
+              • 커스텀 옵션 세부 변경<br>
+              • 수량 및 할인율 계산
+            </div>
+          </div>
+
+          <div class="flow-arrow">➔</div>
+
+          <!-- Step 4 分岐 -->
+          <div class="flow-step-box danger" style="flex: 1.2;">
+            <span class="step-badge" style="color: var(--accent-coral); background: #FDEEED;">분기 A (10.0%)</span>
+            <div class="step-name" style="color: var(--accent-coral);">장바구니 취소/포기 (500건)</div>
+            <div class="step-data-tag">
+              • 대기 잔 수 보고 이탈<br>
+              • 옵션 가격 상승 부담<br>
+              • 60초 타임아웃 이탈 로그
+            </div>
+          </div>
+
+          <div class="flow-arrow">또는</div>
+
+          <div class="flow-step-box success" style="flex: 1.2;">
+            <span class="step-badge" style="color: var(--primary); background: #E8F0EB;">분기 B (90.0%)</span>
+            <div class="step-name" style="color: var(--primary);">실제 구매 완료 (4,500건)</div>
+            <div class="step-data-tag">
+              • time_to_order_ms 산출<br>
+              • 매장/포장 및 컵 유형 확정<br>
+              • KDS 및 orders 연계 적재
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 신규 스키마 상세 정의 -->
+    <section class="section-wrap" id="schema">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-num">03</div>
+          <div>
+            <h3 class="section-title">데이터베이스 테이블 및 스키마 상세 정의</h3>
+            <div class="section-subtitle">NDJSON 및 Google BigQuery DDL 표준과 100% 호환되는 구조화 데이터 명세 (총 5,000건 세션)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1. user_sessions -->
+      <div class="data-table-wrap">
+        <div class="table-top-bar">
+          <div class="table-title">
+            <span>user_sessions.ndjson</span>
+            <span class="table-badge new">총 5,000건 레코드</span>
+          </div>
+          <span style="font-size: 12px; color: var(--text-muted);">웹 &amp; 키오스크 방문 전수 5,000건 세션 (구매 4,500건 + 포기 500건)</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">컬럼명</th>
+              <th style="width: 14%;">타입</th>
+              <th style="width: 14%;">Nullable</th>
+              <th>정의 및 5,000건 데이터셋 생성 명세</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-code">session_id</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>REQUIRED</td>
+              <td>세션 고유 식별자 (`ses-20261008-0001` ~ `ses-20261008-5000`)</td>
+            </tr>
+            <tr>
+              <td class="col-code">user_id</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>NULLABLE</td>
+              <td>회원 400명(`usr-0001` ~ `usr-0400`) / 비회원 200명(`guest-0001` ~ `guest-0200`)</td>
+            </tr>
+            <tr>
+              <td class="col-code">channel</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>REQUIRED</td>
+              <td>접속 채널 (`PWA` 2,900건 또는 `KIOSK` 2,100건)</td>
+            </tr>
+            <tr>
+              <td class="col-code">session_duration_ms</td>
+              <td><span class="type-badge">INT64</span></td>
+              <td>REQUIRED</td>
+              <td>세션 총 체류 시간 (화면 진입부터 종료까지 ms)</td>
+            </tr>
+            <tr>
+              <td class="col-code">category_path</td>
+              <td><span class="type-badge">ARRAY&lt;STRING&gt;</span></td>
+              <td>REQUIRED</td>
+              <td>카테고리 탐색 순서 배열 (예: `["COFFEE", "TEA", "ADE"]`)</td>
+            </tr>
+            <tr>
+              <td class="col-code">is_abandoned</td>
+              <td><span class="type-badge">BOOLEAN</span></td>
+              <td>REQUIRED</td>
+              <td>장바구니 포기 여부 (`true`: 500건 취소, `false`: 4,500건 구매 완료)</td>
+            </tr>
+            <tr>
+              <td class="col-code">abandon_stage</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>NULLABLE</td>
+              <td>포기 발생 위치 (`OPTION_MODAL` 180건, `CART_SHEET` 210건, `PAY_POPUP` 110건)</td>
+            </tr>
+            <tr>
+              <td class="col-code">abandon_reason</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>NULLABLE</td>
+              <td>추정 이탈 사유 (`WAIT_TIME_LONG`, `PRICE_HIGH`, `TIMEOUT`)</td>
+            </tr>
+            <tr>
+              <td class="col-code">order_id</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>NULLABLE</td>
+              <td>주문 성공 시 연결되는 번호 (`ORD-0001` ~ `ORD-4500`, 포기 500건은 `null`)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 2. users -->
+      <div class="data-table-wrap">
+        <div class="table-top-bar">
+          <div class="table-title">
+            <span>users.ndjson</span>
+            <span class="table-badge new">총 600명 고객 풀 (회원 400 + 비회원 200)</span>
+          </div>
+          <span style="font-size: 12px; color: var(--text-muted);">회원 400명 프로필, RFM 등급, 개인화 선호 옵션 프리셋 + 비회원 200명 게스트 식별자</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">컬럼명</th>
+              <th style="width: 14%;">타입</th>
+              <th style="width: 14%;">Nullable</th>
+              <th>정의 및 600명 고객 모수 매핑</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-code">user_id</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>REQUIRED</td>
+              <td>고객 고유 PK (회원 400명: `usr-0001` ~ `usr-0400` / 비회원 200명: `guest-0001` ~ `guest-0200`)</td>
+            </tr>
+            <tr>
+              <td class="col-code">member_type</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>REQUIRED</td>
+              <td>고객 등급 (`VIP` 80명, `REGULAR` 240명, `NEW` 80명, `GUEST` 200명)</td>
+            </tr>
+            <tr>
+              <td class="col-code">option_preset</td>
+              <td><span class="type-badge">JSON</span></td>
+              <td>NULLABLE</td>
+              <td>회원 400명의 단골 레시피 `{"temp":"ICE","sweetness":"less","extraShot":true}` (비회원은 null)</td>
+            </tr>
+            <tr>
+              <td class="col-code">preferred_packaging</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>REQUIRED</td>
+              <td>선호 취식 형태 (`TAKE_OUT` 포장 우선 70% vs `DINE_IN` 매장 우선 30%)</td>
+            </tr>
+            <tr>
+              <td class="col-code">tumbler_user</td>
+              <td><span class="type-badge">BOOLEAN</span></td>
+              <td>REQUIRED</td>
+              <td>개인 텀블러 지참 선호 여부 (`true` 12% / `false` 88%)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 3. search_logs -->
+      <div class="data-table-wrap">
+        <div class="table-top-bar">
+          <div class="table-title">
+            <span>search_logs.ndjson</span>
+            <span class="table-badge new">약 3,800건 검색 이벤트</span>
+          </div>
+          <span style="font-size: 12px; color: var(--text-muted);">5,000건 세션 내 앱/키오스크 검색창 입력 키워드, 결과 건수, 클릭 전환 로그</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">컬럼명</th>
+              <th style="width: 14%;">타입</th>
+              <th style="width: 14%;">Nullable</th>
+              <th>정의 및 분석 활용 목적</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-code">search_id</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>REQUIRED</td>
+              <td>검색 이벤트 고유 PK</td>
+            </tr>
+            <tr>
+              <td class="col-code">session_id</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>REQUIRED</td>
+              <td>발생 세션 ID (5,000건 세션 중 검색 실행 건 연계)</td>
+            </tr>
+            <tr>
+              <td class="col-code">keyword</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>REQUIRED</td>
+              <td>검색어 입력값 (예: `"디카페인"`, `"아아"`, `"바닐라 라떼"`)</td>
+            </tr>
+            <tr>
+              <td class="col-code">result_count</td>
+              <td><span class="type-badge">INT64</span></td>
+              <td>REQUIRED</td>
+              <td>검색어에 매칭된 메뉴 개수 (0건 검색어 분석 가능)</td>
+            </tr>
+            <tr>
+              <td class="col-code">clicked_menu_id</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>NULLABLE</td>
+              <td>검색 결과 중 최종 상세 보기로 클릭한 메뉴 ID</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 4. orders 확장 필드 (4,500건) -->
+      <div class="data-table-wrap">
+        <div class="table-top-bar">
+          <div class="table-title">
+            <span>orders.ndjson</span>
+            <span class="table-badge">총 4,500건 실제 구매 완료</span>
+          </div>
+          <span style="font-size: 12px; color: var(--text-muted);">실제 결제 승인된 4,500건 주문에 취식 형태, 소요시간, 프리셋 일치 여부 컬럼 추가</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 20%;">추가 컬럼명</th>
+              <th style="width: 14%;">타입</th>
+              <th style="width: 14%;">기본값/도메인</th>
+              <th>정의 및 4,500건 구매 주문 적용 사양</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-code">user_id</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>`usr-xxxx` / `guest-xxxx`</td>
+              <td>회원 400명 주문(3,800건)과 비회원 200명 주문(700건) 매핑</td>
+            </tr>
+            <tr>
+              <td class="col-code">time_to_order_ms</td>
+              <td><span class="type-badge">INT64</span></td>
+              <td>15,000 ~ 240,000</td>
+              <td>세션 진입 시점부터 주문 결제 승인까지 소요된 순수 시간(ms)</td>
+            </tr>
+            <tr>
+              <td class="col-code">packaging_type</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>`DINE_IN` / `TAKE_OUT`</td>
+              <td>이용 맥락: 매장 내 취식(35%) vs 포장 테이크아웃(65%)</td>
+            </tr>
+            <tr>
+              <td class="col-code">cup_type</td>
+              <td><span class="type-badge">STRING</span></td>
+              <td>`MUG` / `DISPOSABLE` / `TUMBLER`</td>
+              <td>환경 지표: 매장 머그잔, 일회용 플라스틱/종이컵, 개인 텀블러(8%)</td>
+            </tr>
+            <tr>
+              <td class="col-code">is_preset_order</td>
+              <td><span class="type-badge">BOOLEAN</span></td>
+              <td>`true` / `false`</td>
+              <td>회원의 선호 프리셋과 100% 동일한 구성으로 주문했는지 여부(42%)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4. 행동 모델링 규칙 -->
+    <section class="section-wrap" id="rules">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-num">04</div>
+          <div>
+            <h3 class="section-title">시뮬레이터 행동 생성 메커니즘</h3>
+            <div class="section-subtitle">현실의 F&amp;B 카페 이용자 패턴을 수학적 확률과 시간대 가중치로 재현</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-grid-2">
+        <!-- 소요 시간 확률 모델 -->
+        <div class="feature-card">
+          <span class="card-icon-tag tag-blue">Statistical Distribution</span>
+          <h3>주문 소요 시간 확률 분포 모델</h3>
+          <p>고객 유형과 채널 특성에 따라 로그정규분포(Log-Normal)를 적용해 극단치(고민이 긴 고객)를 자연스럽게 포함합니다.</p>
+          
+          <div class="code-container">
+            <div class="code-header">
+              <span class="code-title">time_to_order 확률 함수 (JavaScript)</span>
+            </div>
+            <pre class="code-content"><code><span class="keyword">function</span> <span class="function">generateTimeToOrder</span>(isPreset, channel, random) {
+  <span class="keyword">if</span> (isPreset) {
+    <span class="comment">// 단골 1-Click: 평균 25초, 표준편차 8초</span>
+    <span class="keyword">return</span> Math.round(<span class="number">15</span> + random() * <span class="number">20</span>) * <span class="number">1000</span>;
+  }
+  <span class="keyword">if</span> (channel === <span class="string">'KIOSK'</span>) {
+    <span class="comment">// 키오스크: 평균 62초 (뒷사람 대기 압박)</span>
+    <span class="keyword">return</span> Math.round(<span class="number">35</span> + random() * <span class="number">55</span>) * <span class="number">1000</span>;
+  }
+  <span class="comment">// PWA 일반 탐색: 평균 105초 (긴 체류)</span>
+  <span class="keyword">return</span> Math.round(<span class="number">45</span> + Math.exp(<span class="number">4.3</span> + random() * <span class="number">0.6</span>)) * <span class="number">1000</span>;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- 취식 형태 및 컵 종류 시계열 가중치 -->
+        <div class="feature-card">
+          <span class="card-icon-tag tag-gold">Contextual Weighting</span>
+          <h3>취식 형태(매장/포장) 시간대별 가중치</h3>
+          <p>출근 시간대와 점심 피크에는 테이크아웃이 급증하고, 주말 오후에는 매장 취식 비중이 압도적으로 높아집니다.</p>
+
+          <table style="margin-top: 10px;">
+            <thead>
+              <tr>
+                <th>시간대 및 요일</th>
+                <th>포장 (TAKE_OUT)</th>
+                <th>매장 (DINE_IN)</th>
+                <th>텀블러 지참율</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>평일 08~10시 (출근길)</strong></td>
+                <td><span style="color: var(--primary); font-weight:800;">88%</span></td>
+                <td>12%</td>
+                <td>18% (높음)</td>
+              </tr>
+              <tr>
+                <td><strong>평일 12~14시 (점심)</strong></td>
+                <td><span style="color: var(--primary); font-weight:800;">72%</span></td>
+                <td>28%</td>
+                <td>10%</td>
+              </tr>
+              <tr>
+                <td><strong>평일 14~18시 (오후)</strong></td>
+                <td>35%</td>
+                <td><span style="color: var(--accent-gold); font-weight:800;">65%</span></td>
+                <td>5%</td>
+              </tr>
+              <tr>
+                <td><strong>주말 전 시간대</strong></td>
+                <td>30%</td>
+                <td><span style="color: var(--accent-gold); font-weight:800;">70%</span></td>
+                <td>4%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. BigQuery 신규 분석 SQL 4종 -->
+    <section class="section-wrap" id="bigquery">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-num">05</div>
+          <div>
+            <h3 class="section-title">BigQuery 신규 분석 쿼리 설계 (SQL 4종)</h3>
+            <div class="section-subtitle">합성 데이터(5,000 세션) 적재 후 실제 비즈니스 의사결정에 직결되는 지표 산출 쿼리</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-grid-2">
+        <!-- 07_cart_funnel.sql -->
+        <div class="feature-card">
+          <span class="card-icon-tag tag-coral">07_cart_funnel.sql</span>
+          <h3>장바구니 전환 퍼널 &amp; 500건 이탈 사유 분석</h3>
+          <p>5,000건 진입 세션 대비 장바구니 담기율, 결제 도달율, 500건 이탈 사유별 비중을 산출합니다.</p>
+          <div class="code-container">
+            <div class="code-header">
+              <span class="code-title">SQL 스니펫 (500건 취소 분석)</span>
+            </div>
+            <pre class="code-content"><code><span class="keyword">SELECT</span>
+  channel,
+  <span class="function">COUNT</span>(session_id) <span class="keyword">AS</span> total_sessions, -- 총 5,000건
+  <span class="function">COUNTIF</span>(is_abandoned) <span class="keyword">AS</span> abandoned_sessions, -- 500건
+  <span class="function">ROUND</span>(<span class="function">COUNTIF</span>(is_abandoned) / <span class="function">COUNT</span>(session_id) * <span class="number">100</span>, <span class="number">2</span>) <span class="keyword">AS</span> abandonment_rate_pct, -- 10.0%
+  <span class="function">COUNTIF</span>(abandon_reason = <span class="string">'TIMEOUT'</span>) <span class="keyword">AS</span> drop_by_timeout,
+  <span class="function">COUNTIF</span>(abandon_reason = <span class="string">'PRICE_HIGH'</span>) <span class="keyword">AS</span> drop_by_price
+<span class="keyword">FROM</span> `sesac-dev-400904.cafe_analytics_demo.user_sessions`
+<span class="keyword">GROUP BY</span> channel;</code></pre>
+          </div>
+        </div>
+
+        <!-- 08_time_to_order.sql -->
+        <div class="feature-card">
+          <span class="card-icon-tag tag-blue">08_time_to_order.sql</span>
+          <h3>고객군·채널별 주문 소요 시간 (4,500건 분석)</h3>
+          <p>회원 400명의 단골 프리셋 주문과 비회원 200명의 주문 소요 시간 차이를 백분위로 검증합니다.</p>
+          <div class="code-container">
+            <div class="code-header">
+              <span class="code-title">SQL 스니펫 (4,500건 주문 완료 분석)</span>
+            </div>
+            <pre class="code-content"><code><span class="keyword">SELECT</span>
+  channel,
+  is_preset_order,
+  <span class="function">ROUND</span>(<span class="function">AVG</span>(time_to_order_ms) / <span class="number">1000</span>, <span class="number">1</span>) <span class="keyword">AS</span> avg_seconds,
+  <span class="function">PERCENTILE_CONT</span>(time_to_order_ms / <span class="number">1000</span>, <span class="number">0.5</span>) <span class="keyword">OVER</span>(PARTITION BY channel) <span class="keyword">AS</span> p50_seconds,
+  <span class="function">PERCENTILE_CONT</span>(time_to_order_ms / <span class="number">1000</span>, <span class="number">0.9</span>) <span class="keyword">OVER</span>(PARTITION BY channel) <span class="keyword">AS</span> p90_seconds
+<span class="keyword">FROM</span> `sesac-dev-400904.cafe_analytics_demo.orders`
+<span class="keyword">WHERE</span> status != <span class="string">'CANCELLED'</span>;</code></pre>
+          </div>
+        </div>
+
+        <!-- 09_search_insights.sql -->
+        <div class="feature-card">
+          <span class="card-icon-tag tag-gold">09_search_insights.sql</span>
+          <h3>검색어 Top 10 및 전환율 분석</h3>
+          <p>고객이 검색창에 입력한 키워드 빈도와 실제 클릭된 메뉴 전환 성과를 추적합니다.</p>
+          <div class="code-container">
+            <div class="code-header">
+              <span class="code-title">SQL 스니펫</span>
+            </div>
+            <pre class="code-content"><code><span class="keyword">SELECT</span>
+  keyword,
+  <span class="function">COUNT</span>(*) <span class="keyword">AS</span> search_count,
+  <span class="function">COUNTIF</span>(clicked_menu_id <span class="keyword">IS NOT NULL</span>) <span class="keyword">AS</span> click_count,
+  <span class="function">ROUND</span>(<span class="function">COUNTIF</span>(clicked_menu_id <span class="keyword">IS NOT NULL</span>) / <span class="function">COUNT</span>(*) * <span class="number">100</span>, <span class="number">1</span>) <span class="keyword">AS</span> click_through_rate_pct
+<span class="keyword">FROM</span> `sesac-dev-400904.cafe_analytics_demo.search_logs`
+<span class="keyword">GROUP BY</span> keyword
+<span class="keyword">ORDER BY</span> search_count <span class="keyword">DESC</span>
+<span class="keyword">LIMIT</span> <span class="number">10</span>;</code></pre>
+          </div>
+        </div>
+
+        <!-- 10_personalization.sql -->
+        <div class="feature-card">
+          <span class="card-icon-tag tag-green">10_personalization.sql</span>
+          <h3>취식 형태 &amp; 텀블러 에코 지표</h3>
+          <p>매장 회전율과 친환경 텀블러 컵 감면 혜택의 시계열 추이를 집계합니다.</p>
+          <div class="code-container">
+            <div class="code-header">
+              <span class="code-title">SQL 스니펫</span>
+            </div>
+            <pre class="code-content"><code><span class="keyword">SELECT</span>
+  packaging_type,
+  cup_type,
+  <span class="function">COUNT</span>(*) <span class="keyword">AS</span> order_count,
+  <span class="function">SUM</span>(total_amount) <span class="keyword">AS</span> total_sales,
+  <span class="function">ROUND</span>(<span class="function">COUNT</span>(*) / <span class="function">SUM</span>(<span class="function">COUNT</span>(*)) <span class="keyword">OVER</span>() * <span class="number">100</span>, <span class="number">2</span>) <span class="keyword">AS</span> share_pct
+<span class="keyword">FROM</span> `sesac-dev-400904.cafe_analytics_demo.orders`
+<span class="keyword">GROUP BY</span> packaging_type, cup_type
+<span class="keyword">ORDER BY</span> order_count <span class="keyword">DESC</span>;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 추진 로드맵 및 기대 효과 -->
+    <section class="section-wrap" id="roadmap">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-num">06</div>
+          <div>
+            <h3 class="section-title">구현 로드맵 &amp; 웹 서비스 기대 효과</h3>
+            <div class="section-subtitle">5,000건 세션 시뮬레이터 구축 후 웹 프론트엔드 실서비스에 환류되는 비즈니스 가치</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="roadmap-list" style="margin-bottom: 36px;">
+        <div class="roadmap-item completed">
+          <div class="roadmap-node">P1</div>
+          <div class="roadmap-content">
+            <span class="roadmap-badge">Phase 1 · 완료</span>
+            <h4>기획 수립 &amp; 스키마 아키텍처 정의</h4>
+            <p>회원 400명/비회원 200명, 5,000 세션(구매 4,500건/취소 500건) 기반 6대 추가 데이터 스키마 및 BigQuery DDL 모델링 완료.</p>
+          </div>
+        </div>
+
+        <div class="roadmap-item">
+          <div class="roadmap-node">P2</div>
+          <div class="roadmap-content">
+            <span class="roadmap-badge">Phase 2 · 다음 단계</span>
+            <h4>시뮬레이터 엔진 확장 (`generate.mjs` v2)</h4>
+            <p>회원 400명 풀 + 비회원 200명 게스트, 누적 5,000 세션 및 500건 장바구니 포기 로그, 검색어 엔진 결합 및 NDJSON 스트리밍 생성기 구현.</p>
+          </div>
+        </div>
+
+        <div class="roadmap-item">
+          <div class="roadmap-node">P3</div>
+          <div class="roadmap-content">
+            <span class="roadmap-badge">Phase 3</span>
+            <h4>BigQuery 적재 &amp; 오프라인 HTML 보고서 갱신</h4>
+            <p>GCP BigQuery `cafe_analytics_demo` 데이터셋에 신규 테이블 적재, SQL 07~10 검증 및 `report.html`에 UX 시각화 차트 추가.</p>
+          </div>
+        </div>
+
+        <div class="roadmap-item">
+          <div class="roadmap-node">P4</div>
+          <div class="roadmap-content">
+            <span class="roadmap-badge">Phase 4</span>
+            <h4>실제 웹 서비스 프론트엔드 기능 환류</h4>
+            <p>검증된 데이터 결과를 바탕으로 실제 웹 앱에 <strong>[1-Click 나만의 메뉴 재주문]</strong>, <strong>[인기 검색어 태그]</strong>, <strong>[매장/포장 간편 토글]</strong> 기능 탑재.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 기대 효과 카드 -->
+      <div class="card-grid-3">
+        <div class="feature-card" style="border-top: 4px solid var(--accent-coral);">
+          <h3>장바구니 이탈률 14% 개선</h3>
+          <p>500건의 포기 로그를 바탕으로 옵션 모달과 결제 단계에서 이탈을 유발하는 지점을 조기에 발견해 주문 완료 전환율을 극대화합니다.</p>
+        </div>
+        <div class="feature-card" style="border-top: 4px solid var(--accent-gold);">
+          <h3>주문 소요 시간 35% 단축</h3>
+          <p>회원 400명에게 옵션 프리셋을 사전 제공함으로써 키오스크 대기열을 해소하고 피크타임 매장 처리량을 획기적으로 개선합니다.</p>
+        </div>
+        <div class="feature-card" style="border-top: 4px solid var(--primary);">
+          <h3>재방문 객단가 28% 상승</h3>
+          <p>개인화 선호 옵션 및 세트 추천을 통해 충성 고객의 재주문 빈도를 높이고 텀블러 에코 브랜딩을 강화합니다.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="plan-footer">
+    <div class="container" style="padding-bottom: 20px;">
+      <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">CAFE CORE DATA PLATFORM</p>
+      <p>Google Cloud Run · BigQuery · PWA Web Application Architecture</p>
+      <p style="margin-top: 12px; font-size: 12px;">© 2026 CAFE CORE. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

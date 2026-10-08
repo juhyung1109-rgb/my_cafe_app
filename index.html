@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0; url=./beta/index.html">
+  <title>CAFE CORE - 베타 플랫폼으로 이동 중</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif;
+      background: #F4F7F5;
+      color: #1A3026;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .redirect-card {
+      background: #ffffff;
+      border: 1.5px solid #CCDED2;
+      border-radius: 20px;
+      padding: 48px 36px;
+      max-width: 460px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(26, 48, 38, 0.08);
+    }
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid #EAF1EC;
+      border-top-color: #1B4D3E;
+      border-radius: 50%;
+      margin: 0 auto 24px;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #1B4D3E;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 14px;
+      color: #557062;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .direct-link {
+      display: inline-block;
+      background: #1B4D3E;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+    }
+    .direct-link:hover {
+      background: #143B2F;
+      transform: translateY(-2px);
+    }
+  </style>
+  <script>
+    // 즉시 beta/index.html로 자동 이동
+    window.location.replace('./beta/index.html');
+  </script>
+</head>
+<body>
+  <div class="redirect-card">
+    <div class="spinner"></div>
+    <h1>CAFE CORE 베타 플랫폼</h1>
+    <p>웹앱 구동 디렉토리(<code>./beta</code>)로 자동 이동 중입니다.<br>잠시만 기다려 주세요.</p>
+    <a href="./beta/index.html" class="direct-link">베타 플랫폼 바로 접속하기 →</a>
+  </div>
+</body>
+</html>

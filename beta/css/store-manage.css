@@ -1,0 +1,180 @@
+/* ==========================================================================
+   CAFE CORE - Store Management & Member Management Styling (store-manage.css)
+   관리자 전용 매장 설정 및 오늘 신규 가입 회원 목록 페이지
+   ========================================================================== */
+
+.manage-container {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 24px 32px 50px;
+}
+
+.manage-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.manage-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-text-main);
+  letter-spacing: -0.8px;
+}
+
+.manage-desc {
+  font-size: 14px;
+  color: var(--color-text-sub);
+  margin-top: 6px;
+}
+
+/* 관리자 권한 없는 사용자 차단 오버레이 */
+.admin-guard-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(247, 246, 240, 0.98);
+  backdrop-filter: blur(8px);
+  z-index: 5000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.guard-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 480px;
+  box-shadow: var(--shadow-lg);
+  border: 1.5px solid var(--color-border);
+}
+
+/* 회원 관리 섹션 카드 */
+.manage-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-card);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.manage-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.manage-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge-today-count {
+  background-color: #FEF3C7;
+  color: #B45309;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+/* 신규 가입 회원 테이블 */
+.member-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.member-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+}
+
+.member-table th {
+  background-color: #FAF9F5;
+  color: var(--color-text-sub);
+  font-weight: 700;
+  padding: 12px 16px;
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+.member-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-border-card);
+  color: var(--color-text-main);
+  vertical-align: middle;
+}
+
+.member-table tr:hover {
+  background-color: #FCFBF8;
+}
+
+.badge-auto-verified {
+  background-color: #DCFCE7;
+  color: #15803D;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-role-user {
+  background-color: #EFECE6;
+  color: var(--color-text-sub);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* 매장 설정 그리드 */
+.store-settings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .store-settings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.setting-item-box {
+  background-color: #FAF9F5;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+}
+
+.setting-item-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-sub);
+  margin-bottom: 8px;
+}
+
+.setting-item-val {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-text-main);
+}

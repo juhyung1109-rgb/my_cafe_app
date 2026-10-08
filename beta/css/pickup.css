@@ -1,0 +1,266 @@
+/* ==========================================================================
+   CAFE CORE - Pick-up Display Board (pickup.css)
+   매장 DID 대형 16:9 모니터 전용 음료 주문 상황판 (레퍼런스 이미지 4 완벽 재현)
+   ========================================================================== */
+
+.did-screen-wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 24px 40px 30px;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 상황판 헤더 */
+.did-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.did-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.did-brand-logo {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  padding: 8px;
+  object-fit: contain;
+}
+
+.did-brand-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.1;
+  letter-spacing: -0.3px;
+}
+
+.did-brand-sub {
+  font-size: 13px;
+  color: var(--color-text-sub);
+}
+
+.did-clock {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--color-text-main);
+  letter-spacing: -1px;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.did-clock-divider {
+  width: 2px;
+  height: 32px;
+  background-color: #D5D3CA;
+}
+
+/* 중앙 안내 문구 */
+.did-title-center {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.did-main-heading {
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--color-primary);
+  letter-spacing: -1.2px;
+}
+
+.did-sub-heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-sub);
+  margin-top: 8px;
+}
+
+/* 2분할 듀얼 뷰 (좌측: 제조 중 vs 우측: 픽업 가능) */
+.did-split-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 900px) {
+  .did-split-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 좌측: [제조 중] 패널 */
+.panel-cooking {
+  background-color: #EFECE6;
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header-cooking {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin-bottom: 24px;
+}
+
+.panel-header-cooking svg {
+  color: var(--color-text-main);
+}
+
+.grid-cooking-numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-content: start;
+}
+
+.num-tile-cooking {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 24px 10px;
+  text-align: center;
+  font-size: 46px;
+  font-weight: 900;
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -1px;
+  transition: all 0.3s ease;
+}
+
+/* 우측: [픽업 가능] 패널 (딥그린 테마) */
+.panel-ready {
+  background-color: var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg);
+}
+
+.panel-header-ready {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+
+.grid-ready-numbers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-content: start;
+}
+
+/* 일반 픽업 가능 번호 카드 */
+.card-ready-num {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 68px;
+  font-weight: 900;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -2px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* [방금 완료] 하이라이트 카드 (레퍼런스 이미지 102번 스타일 완벽 구현) */
+.card-ready-num.recent-highlight {
+  border: 3px solid #D6E4DB;
+  background-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+  animation: glowPulse 2s infinite;
+}
+
+.badge-recent-ready {
+  position: absolute;
+  bottom: 14px;
+  background-color: #EFECE6;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 800;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  letter-spacing: -0.3px;
+}
+
+/* 반짝이는 장식 표시기 */
+.sparkle-icon {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  color: #FFFFFF;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* 하단 픽업 안내 바 */
+.did-bottom-guide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.did-guide-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.did-guide-right {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* 음성/사운드 토글 버튼 */
+.btn-sound-toggle {
+  background: white;
+  border: 1px solid var(--color-border);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-sub);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@keyframes glowPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}

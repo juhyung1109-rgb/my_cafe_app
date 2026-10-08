@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAFE CORE - 스마트 카페 통합 운영 플랫폼</title>
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .portal-hero {
+      text-align: center;
+      padding: 50px 24px 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .portal-hero-logo {
+      width: 80px;
+      height: 80px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      padding: 14px;
+      margin: 0 auto 18px;
+      box-shadow: var(--shadow-md);
+      object-fit: contain;
+    }
+    .portal-hero h1 {
+      font-size: 38px;
+      font-weight: 900;
+      color: var(--color-primary);
+      letter-spacing: -1px;
+    }
+    .portal-hero p {
+      font-size: 17px;
+      color: var(--color-text-sub);
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    /* 안내 배너 */
+    .portal-notice-bar {
+      max-width: 1200px;
+      margin: 0 auto 30px;
+      padding: 18px 26px;
+      background: #EAF1EC;
+      border: 1.5px solid #CCDED2;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .notice-text h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--color-primary);
+    }
+
+    .notice-text p {
+      font-size: 13px;
+      color: var(--color-text-sub);
+      margin-top: 3px;
+    }
+
+    /* 6대 독립 화면 카드 그리드 */
+    .screens-grid {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    /* 클릭 시 다른 탭에서 열리는 링크 카드 */
+    .screen-entry-card {
+      background: var(--color-bg-card);
+      border: 1.5px solid var(--color-border-card);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.25s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .screen-entry-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-primary);
+    }
+
+    .card-icon-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: #EAF1EC;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .screen-tag {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: var(--color-bg-sub);
+      color: var(--color-text-sub);
+    }
+
+    .screen-tag.admin-only {
+      background: #FEF3C7;
+      color: #B45309;
+    }
+
+    .card-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--color-text-main);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: var(--color-text-sub);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .card-action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--color-primary);
+    }
+
+    /* 관리자 전용 매장 관리 카드 (기본 숨김) */
+    .admin-card-entry {
+      display: none;
+      border-color: #FCD34D;
+    }
+
+    /* 관리자 전용 오늘 회원 현황 요약 박스 */
+    .admin-today-box {
+      max-width: 1200px;
+      margin: 0 auto 30px;
+      padding: 20px 26px;
+      background: #FFFDF5;
+      border: 1.5px solid #FDE68A;
+      border-radius: var(--radius-md);
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 공통 글로벌 헤더 -->
+  <header class="global-header" aria-label="메인 화면 내비게이션">
+    <a href="./index.html" class="brand-area">
+      <img src="./assets/images/logo_icon.png" alt="CAFE CORE" class="brand-logo-img">
+      <div class="brand-title-wrap">
+        <span class="brand-title">CAFE CORE</span>
+        <span class="brand-subtitle">카페 코어</span>
+      </div>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li class="nav-link-item"><a href="./pwa-order.html" target="_blank">주문하기 ↗</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./kitchen.html" target="_blank">주방 ↗</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./pickup-board.html" target="_blank">주문 현황판 ↗</a></li>
+        <!-- 오직 관리자(admin@gmail.com)만 보이는 매장 관리 탭 -->
+        <li class="nav-link-item nav-link-store-manage nav-admin-only"><a href="./store-manage.html" target="_blank">매장 관리 ↗</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./sales-dashboard.html" target="_blank">매출 ↗</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./kiosk.html" target="_blank">키오스크 ↗</a></li>
+      </ul>
+    </nav>
+    <div class="header-right-meta">
+      <span class="store-badge"><span class="dot"></span>송파점</span>
+      <span class="role-badge">방문자</span>
+    </div>
+  </header>
+
+  <!-- 메인 히어로 소개 -->
+  <section class="portal-hero">
+    <img src="./assets/images/logo_icon.png" alt="CAFE CORE" class="portal-hero-logo">
+    <h1>CAFE CORE 스마트 카페 운영 플랫폼</h1>
+    <p>
+      원하시는 화면을 클릭하시면 <strong>새 탭에서 해당 페이지가 바로 열립니다.</strong><br>
+      스마트폰 주문부터 키오스크, 주방 디스플레이, 고객 현황판, 관리자 대시보드까지 원활하게 연동됩니다.
+    </p>
+  </section>
+
+  <!-- 관리자 로그인 시 보이는 오늘 신규 회원 요약 바 -->
+  <div class="admin-today-box" id="adminTodaySummaryBox">
+    <div>
+      <div style="font-size: 13px; font-weight: 700; color: #92400E;">👑 관리자 현황 알림</div>
+      <div style="font-size: 18px; font-weight: 800; color: var(--color-primary); margin-top: 2px;">
+        오늘 신규 가입 회원: <span id="adminTodayUsersVal" style="color: #B45309;">0명</span> (자동 인증 완료)
+      </div>
+    </div>
+    <a href="./store-manage.html" target="_blank" class="btn-auth-submit" style="width: auto; padding: 10px 20px; text-decoration: none;">
+      신규 회원 명단 관리 페이지 열기 ↗
+    </a>
+  </div>
+
+  <!-- 안내 및 퀵 테스트 바 -->
+  <div class="portal-notice-bar">
+    <div class="notice-text">
+      <h3>💡 다른 탭에서 화면 열기 안내</h3>
+      <p>
+        각 카드를 클릭하면 브라우저의 <strong>다른 탭에서 독립된 페이지로 새롭게 열립니다.</strong><br>
+        관리자 계정(<code>admin@gmail.com</code> / <code>password1234</code>)으로 로그인하시면 <strong>매장 관리 페이지</strong>가 활성화됩니다.
+      </p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <button type="button" class="btn-header-action" onclick="createQuickDemoOrder()">
+        ⚡ 테스트 주문 넣기
+      </button>
+      <button type="button" class="btn-header-action" onclick="resetAllData()">
+        🔄 데이터 초기화
+      </button>
+    </div>
+  </div>
+
+  <!-- 6대 화면 카드 그리드 (클릭 시 target="_blank" 로 다른 탭에서 열림) -->
+  <main class="screens-grid">
+
+    <!-- 화면 1: 스마트폰 주문 (PWA) -->
+    <a href="./pwa-order.html" target="_blank" class="screen-entry-card">
+      <span class="screen-tag">고객용 / PWA</span>
+      <div class="card-icon-badge">📱</div>
+      <h2 class="card-title">
+        1. 스마트폰 주문 (PWA)
+        <span style="font-size: 18px;">↗</span>
+      </h2>
+      <p class="card-desc">
+        앱 설치 없이 모바일 웹 브라우저에서 바로 주문하며, '홈 화면에 추가' 시 네이티브 앱과 동일한 전체화면 경험을 제공합니다. 실시간 '내 주문' 상태 추적 기능을 지원합니다.
+      </p>
+      <div style="display: flex; gap: 10px; margin-top: auto; flex-wrap: wrap;">
+        <span class="card-action-link">새 탭에서 열기 ↗</span>
+        <button type="button" onclick="event.preventDefault(); openPwaQrModal();" style="padding: 6px 14px; border-radius: var(--radius-full); background: #EAF1EC; color: var(--color-primary); border: 1px solid #CCDED2; font-size: 13px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+          📷 스마트폰 QR 스캔
+        </button>
+      </div>
+    </a>
+
+    <!-- 화면 2: 매장 키오스크 주문 -->
+    <a href="./kiosk.html" target="_blank" class="screen-entry-card">
+      <span class="screen-tag">매장 비치형 / 터치</span>
+      <div class="card-icon-badge">🖥️</div>
+      <h2 class="card-title">
+        2. 매장 키오스크 주문
+        <span style="font-size: 18px;">↗</span>
+      </h2>
+      <p class="card-desc">
+        매장 내 대형 터치 모니터에 최적화된 세로형 키오스크 화면입니다. 직원 호출, ICE/HOT 온도 선택, 장바구니 수량 제어 및 원터치 결제와 영수증 모달을 제공합니다.
+      </p>
+      <div class="card-action-link">
+        새 탭에서 키오스크 열기 ↗
+      </div>
+    </a>
+
+    <!-- 화면 3: 주방 디스플레이 (KDS) -->
+    <a href="./kitchen.html" target="_blank" class="screen-entry-card">
+      <span class="screen-tag">바리스타 / 주방</span>
+      <div class="card-icon-badge">👨‍🍳</div>
+      <h2 class="card-title">
+        3. 주방 디스플레이 (KDS)
+        <span style="font-size: 18px;">↗</span>
+      </h2>
+      <p class="card-desc">
+        PWA 및 키오스크에서 들어온 주문을 실시간으로 수신합니다. 접수 후 경과 시간 카운트, 메뉴별 제조 완료 체크, [제조 시작] 및 [픽업 준비 완료] 원터치 처리를 지원합니다.
+      </p>
+      <div class="card-action-link">
+        새 탭에서 주방 KDS 열기 ↗
+      </div>
+    </a>
+
+    <!-- 화면 4: 음료 주문 상황판 (DID) -->
+    <a href="./pickup-board.html" target="_blank" class="screen-entry-card">
+      <span class="screen-tag">매장 모니터 / DID</span>
+      <div class="card-icon-badge">📢</div>
+      <h2 class="card-title">
+        4. 음료 주문 상황판 (DID)
+        <span style="font-size: 18px;">↗</span>
+      </h2>
+      <p class="card-desc">
+        픽업대 대형 TV/모니터 전용 16:9 와이드 현황판입니다. [제조 중] 번호 타일과 [픽업 가능] 대형 번호가 분할 표시되며, 신규 완료 시 '방금 완료' 하이라이트와 딩동 차임벨이 울립니다.
+      </p>
+      <div class="card-action-link">
+        새 탭에서 상황판 열기 ↗
+      </div>
+    </a>
+
+    <!-- 화면 5: 판매 및 매출 대시보드 -->
+    <a href="./sales-dashboard.html" target="_blank" class="screen-entry-card">
+      <span class="screen-tag">점주·관리자 / 분석</span>
+      <div class="card-icon-badge">📊</div>
+      <h2 class="card-title">
+        5. 판매 & 매출 대시보드
+        <span style="font-size: 18px;">↗</span>
+      </h2>
+      <p class="card-desc">
+        당일 결제 금액, 순매출, 환불액, 총 주문/잔수 4대 KPI와 음료별 순매출 수평 바 차트, 시간대별 결제 추이 막대 차트, 채널별 비중(PWA vs 키오스크) 및 CSV 내보내기를 지원합니다.
+      </p>
+      <div class="card-action-link">
+        새 탭에서 대시보드 열기 ↗
+      </div>
+    </a>
+
+    <!-- 화면 6: 매장 관리 & 신규 회원 관리 (오직 관리자 admin@gmail.com 로그인 시에만 노출!) -->
+    <a href="./store-manage.html" target="_blank" class="screen-entry-card admin-card-entry" id="adminPortalCard">
+      <span class="screen-tag admin-only">관리자 전용</span>
+      <div class="card-icon-badge" style="background: #FEF3C7; color: #B45309;">⚙️</div>
+      <h2 class="card-title">
+        6. 매장 & 신규회원 관리
+        <span style="font-size: 18px;">↗</span>
+      </h2>
+      <p class="card-desc">
+        오늘 자동 인증으로 신규 가입한 회원 목록을 확인하고, 매장 기본 운영 상태를 제어할 수 있는 관리자 전용 콘솔 페이지입니다.
+      </p>
+      <div class="card-action-link" style="color: #B45309;">
+        새 탭에서 매장 관리 열기 ↗
+      </div>
+    </a>
+
+    <!-- 신규: 행동 로그 & 합성 데이터셋 시뮬레이터 기획안 (v1) -->
+    <a href="./dataset-simulator-plan.html" target="_blank" class="screen-entry-card" style="border: 1.5px solid #CCDED2; background: #FAF9F5;">
+      <span class="screen-tag" style="background: #EAF1EC; color: #1E3F30; font-weight: 800;">기획안 v1 / 아키텍처</span>
+      <div class="card-icon-badge" style="background: #EAF1EC; color: #1E3F30;">🧠</div>
+      <h2 class="card-title">
+        7. 행동 로그 시뮬레이터 기획안
+        <span style="font-size: 18px;">↗</span>
+      </h2>
+      <p class="card-desc">
+        장바구니 포기(500건), 주문 소요시간, 탐색/검색 시퀀스, 회원 매핑(400/200명), 선호 프리셋, 취식 형태(5,000건) 데이터셋 생성 시뮬레이터 설계서입니다.
+      </p>
+      <div class="card-action-link">
+        새 탭에서 기획안 열기 ↗
+      </div>
+    </a>
+
+    <!-- 신규: 파이썬 주피터 노트북 데이터 분석 기획안 (v2) -->
+    <a href="./dataset-analysis-plan-v2.html" target="_blank" class="screen-entry-card" style="border: 1.5px solid #F37626; background: #FFFDF9;">
+      <span class="screen-tag" style="background: #FFF3EB; color: #F37626; font-weight: 800;">분석 기획 v2 / Python & Jupyter</span>
+      <div class="card-icon-badge" style="background: #FFF3EB; color: #F37626;">🐍</div>
+      <h2 class="card-title">
+        8. 주피터 데이터 분석 기획안 (v2)
+        <span style="font-size: 18px;">↗</span>
+      </h2>
+      <p class="card-desc">
+        시뮬레이터 5,000건 데이터를 Python(Pandas, Seaborn, Scikit-Learn) 주피터 노트북으로 분석하여 이탈 예측 머신러닝 및 개인화 추천을 도출하는 분석 실행서입니다.
+      </p>
+      <div class="card-action-link" style="color: #F37626;">
+        새 탭에서 v2 분석서 열기 ↗
+      </div>
+    </a>
+
+  </main>
+
+  <footer class="site-footer">
+    CAFE CORE · 좋은 하루의 한 잔 · 카페코어 스마트 웹 플랫폼
+  </footer>
+
+  <!-- 스마트폰 PWA 접속용 QR코드 모달 -->
+  <div class="modal-overlay" id="pwaQrModal">
+    <div class="modal-content" style="text-align: center; max-width: 420px; padding: 32px 24px;">
+      <button type="button" class="modal-close-btn" onclick="closePwaQrModal()">✕</button>
+      <div style="font-size: 36px; margin-bottom: 8px;">📱</div>
+      <h3 style="font-size: 20px; font-weight: 800; color: var(--color-primary); margin-bottom: 6px;">
+        스마트폰 모바일 주문 (PWA)
+      </h3>
+      <p style="font-size: 13px; color: var(--color-text-sub); margin-bottom: 20px; line-height: 1.5;">
+        스마트폰 기본 카메라로 아래 <strong>QR 코드를 비추시면</strong><br>설치 없이 브라우저에서 바로 주문하실 수 있습니다.
+      </p>
+
+      <!-- 모드 선택 (Cloud Run vs 로컬 Wi-Fi) -->
+      <div style="display: flex; gap: 6px; justify-content: center; margin-bottom: 12px;">
+        <button type="button" id="btnModeCloud" onclick="toggleQrMode('cloud')" style="padding: 6px 14px; border-radius: var(--radius-full); font-size: 12px; font-weight: 700; border: 1.5px solid var(--color-primary); background: var(--color-primary); color: #fff; cursor: pointer;">
+          ☁️ Cloud Run (LTE/5G 가능)
+        </button>
+        <button type="button" id="btnModeLocal" onclick="toggleQrMode('local')" style="padding: 6px 14px; border-radius: var(--radius-full); font-size: 12px; font-weight: 700; border: 1.5px solid var(--color-border); background: #fff; color: var(--color-text-sub); cursor: pointer;">
+          📶 로컬 Wi-Fi
+        </button>
+      </div>
+
+      <!-- 동적 생성 QR 코드 이미지 -->
+      <div style="background: #FFFFFF; padding: 16px; border-radius: 16px; display: inline-block; box-shadow: var(--shadow-sm); border: 1.5px solid var(--color-border); margin-bottom: 12px;">
+        <img id="qrCodeImg" src="" alt="PWA 접속 QR코드" style="width: 200px; height: 200px; display: block;">
+      </div>
+
+      <!-- 접속 URL 노출 -->
+      <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: 8px; padding: 8px 12px; font-size: 12px; margin-bottom: 14px; word-break: break-all;">
+        <span style="color: var(--color-text-sub); display: block; font-size: 11px; margin-bottom: 2px;">연결 대상 URL:</span>
+        <strong id="qrTargetUrlText" style="color: var(--color-primary);"></strong>
+      </div>
+
+      <div style="background: var(--color-bg-sub); padding: 12px 14px; border-radius: 10px; font-size: 12px; color: var(--color-text-sub); text-align: left; line-height: 1.6; margin-bottom: 16px;">
+        <div style="color: var(--color-primary); font-weight: 700; margin-bottom: 4px;">💡 스마트폰 카메라 스캔 안내</div>
+        • <strong>Cloud Run</strong>: 데이터(LTE/5G) 상태에서도 전 세계 누구나 접속 가능<br>
+        • <strong>Android</strong>: 상단 배너 [추가] 터치로 홈 화면에 앱 설치<br>
+        • <strong>iOS Safari</strong>: 하단 [공유(⎋)] ➔ [홈 화면에 추가 ➕]
+      </div>
+
+      <div style="display: flex; gap: 8px;">
+        <button type="button" class="btn-auth-submit" onclick="copyPwaUrl()" style="flex: 1; justify-content: center; font-size: 13px; padding: 10px;">
+          🔗 접속 링크 복사
+        </button>
+        <button type="button" class="btn-header-action" onclick="closePwaQrModal()" style="padding: 10px 18px;">
+          닫기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase SDK v10 (Compat) CDN -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="./js/firebase-config.js"></script>
+  <script src="./js/store.js"></script>
+  <script src="./js/firebase-auth.js"></script>
+  <script src="./js/auth-ui.js"></script>
+  <script>
+    // QR 코드 모달 제어 (라이브 Cloud Run HTTPS 주소를 기본 제공하여 LTE/5G 어디서나 즉시 접속 가능)
+    const CLOUD_RUN_PWA_URL = 'https://cafecore-app-94943462326.asia-northeast3.run.app/beta/pwa-order.html';
+    const LOCAL_WIFI_PWA_URL = 'http://192.168.14.188:8080/beta/pwa-order.html';
+    let currentQrMode = 'cloud'; // 'cloud' | 'local'
+
+    function getPwaFullUrl() {
+      if (currentQrMode === 'cloud') {
+        return CLOUD_RUN_PWA_URL;
+      }
+      return LOCAL_WIFI_PWA_URL;
+    }
+
+    function toggleQrMode(mode) {
+      currentQrMode = mode;
+      const btnCloud = document.getElementById('btnModeCloud');
+      const btnLocal = document.getElementById('btnModeLocal');
+      if (btnCloud && btnLocal) {
+        if (mode === 'cloud') {
+          btnCloud.style.background = 'var(--color-primary)';
+          btnCloud.style.color = '#fff';
+          btnCloud.style.borderColor = 'var(--color-primary)';
+          btnLocal.style.background = '#fff';
+          btnLocal.style.color = 'var(--color-text-sub)';
+          btnLocal.style.borderColor = 'var(--color-border)';
+        } else {
+          btnLocal.style.background = 'var(--color-primary)';
+          btnLocal.style.color = '#fff';
+          btnLocal.style.borderColor = 'var(--color-primary)';
+          btnCloud.style.background = '#fff';
+          btnCloud.style.color = 'var(--color-text-sub)';
+          btnCloud.style.borderColor = 'var(--color-border)';
+        }
+      }
+      renderQrCode();
+    }
+
+    function renderQrCode() {
+      const targetUrl = getPwaFullUrl();
+      const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(targetUrl)}`;
+      const qrImg = document.getElementById('qrCodeImg');
+      if (qrImg) qrImg.src = qrApiUrl;
+      const targetText = document.getElementById('qrTargetUrlText');
+      if (targetText) targetText.textContent = targetUrl;
+    }
+
+    function openPwaQrModal() {
+      renderQrCode();
+      const modal = document.getElementById('pwaQrModal');
+      if (modal) modal.classList.add('open');
+    }
+
+    function closePwaQrModal() {
+      const modal = document.getElementById('pwaQrModal');
+      if (modal) modal.classList.remove('open');
+    }
+
+    function copyPwaUrl() {
+      const url = getPwaFullUrl();
+      navigator.clipboard.writeText(url).then(() => {
+        alert(`스마트폰 접속 링크가 복사되었습니다!\n${url}`);
+      }).catch(() => {
+        prompt('아래 URL을 복사하여 스마트폰 브라우저에 입력해 주세요:', url);
+      });
+    }
+
+    // 관리자 로그인 시 포털 내 관리자 전용 카드 및 요약 바 표시
+    window.cafeAuth.onAuthStateChanged(async (user) => {
+      const isAdmin = user && user.role === 'admin';
+      const adminCard = document.getElementById('adminPortalCard');
+      const adminBox = document.getElementById('adminTodaySummaryBox');
+      const todayUsersVal = document.getElementById('adminTodayUsersVal');
+
+      if (adminCard) adminCard.style.display = isAdmin ? 'flex' : 'none';
+      if (adminBox) adminBox.style.display = isAdmin ? 'flex' : 'none';
+
+      if (isAdmin && todayUsersVal) {
+        try {
+          const todayUsers = await window.cafeAuth.getTodayNewUsers();
+          todayUsersVal.textContent = `${todayUsers.length}명`;
+        } catch (e) {
+          console.warn(e);
+        }
+      }
+    });
+
+    function createQuickDemoOrder() {
+      const items = [
+        {
+          menuId: 'americano',
+          name: '아메리카노',
+          price: 3500,
+          quantity: 1,
+          image: './assets/images/americano.png',
+          options: { temperature: 'ICE' }
+        },
+        {
+          menuId: 'lemon_ade',
+          name: '레몬 에이드',
+          price: 5500,
+          quantity: 1,
+          image: './assets/images/lemon_ade.png',
+          options: { temperature: 'ICE' }
+        }
+      ];
+      const newOrder = window.cafeStore.createOrder({
+        channel: 'pwa',
+        items
+      });
+      alert(`[테스트 주문 생성] 주문번호 #${newOrder.orderNumber}이(가) 접수되었습니다!\n새 탭으로 열어둔 주방(KDS)이나 주문 상황판을 확인해보세요.`);
+    }
+
+    function resetAllData() {
+      if (confirm('주문 및 매출 데이터를 0건으로 완전 초기화하시겠습니까?')) {
+        window.cafeStore.clearAllOrders();
+        alert('주문 및 매출 데이터가 0건으로 초기화되었습니다.');
+      }
+    }
+  </script>
+</body>
+</html>

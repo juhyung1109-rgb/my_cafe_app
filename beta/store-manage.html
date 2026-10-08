@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAFE CORE - 매장 관리 & 회원 관리 (관리자 전용)</title>
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/store-manage.css">
+</head>
+<body>
+
+  <!-- 상단 공통 글로벌 내비게이션 바 -->
+  <header class="global-header" aria-label="메인 화면 내비게이션">
+    <a href="./index.html" class="brand-area">
+      <img src="./assets/images/logo_icon.png" alt="CAFE CORE" class="brand-logo-img">
+      <div class="brand-title-wrap">
+        <span class="brand-title">CAFE CORE</span>
+        <span class="brand-subtitle">카페 코어</span>
+      </div>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li class="nav-link-item"><a href="./pwa-order.html" target="_blank">주문하기 ↗</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./kitchen.html" target="_blank">주방 ↗</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./pickup-board.html" target="_blank">주문 현황판 ↗</a></li>
+        <li class="nav-link-item nav-link-store-manage active nav-admin-only"><a href="./store-manage.html">매장 관리</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./sales-dashboard.html" target="_blank">매출 ↗</a></li>
+        <li class="nav-link-item nav-admin-only"><a href="./kiosk.html" target="_blank">키오스크 ↗</a></li>
+      </ul>
+    </nav>
+    <div class="header-right-meta">
+      <span class="store-badge"><span class="dot"></span>송파점</span>
+      <span class="role-badge">관리자 (admin)</span>
+      <a href="./index.html" class="btn-header-action">홈 포털</a>
+    </div>
+  </header>
+
+  <!-- 비관리자 접근 차단 가드 오버레이 -->
+  <div id="adminGuardOverlay" class="admin-guard-overlay" style="display: none;">
+    <div class="guard-card">
+      <div style="font-size: 48px; margin-bottom: 12px;">🔒</div>
+      <h2 style="font-size: 22px; font-weight: 800; color: var(--color-primary); margin-bottom: 8px;">
+        관리자 전용 페이지입니다
+      </h2>
+      <p style="font-size: 14px; color: var(--color-text-sub); margin-bottom: 24px; line-height: 1.6;">
+        이 페이지는 관리자(<code>admin@gmail.com</code>) 계정으로<br>로그인하신 경우에만 접근하실 수 있습니다.
+      </p>
+      <div style="display: flex; gap: 10px; justify-content: center;">
+        <button type="button" class="btn-auth-submit" onclick="openAuthModal()" style="width: auto; padding: 10px 24px;">
+          관리자 로그인하기
+        </button>
+        <a href="./index.html" class="btn-header-action" style="padding: 10px 20px; text-decoration: none;">
+          홈으로 돌아가기
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 매장 관리 메인 컨텐츠 -->
+  <main class="manage-container">
+
+    <section class="manage-header">
+      <div>
+        <div style="font-size: 13px; font-weight: 800; letter-spacing: 1.5px; color: var(--color-primary); text-transform: uppercase; margin-bottom: 4px;">
+          STORE & MEMBER MANAGEMENT
+        </div>
+        <h1 class="manage-title">매장 및 회원 관리</h1>
+        <p class="manage-desc">
+          오늘 가입한 신규 회원 목록(자동 인증 완료) 및 매장 운영 상태를 통합 관리합니다.
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 10px;">
+        <button type="button" class="btn-header-action" onclick="simulateNewUserRegistration()">
+          + 신규 가입 시뮬레이션
+        </button>
+        <button type="button" class="btn-header-action" onclick="renderMembersDashboard()">
+          🔄 목록 새로고침
+        </button>
+      </div>
+    </section>
+
+    <!-- 1. 오늘 신규 가입 회원 목록 관리 섹션 -->
+    <section class="manage-card">
+      <div class="manage-card-header">
+        <h2 class="manage-card-title">
+          <span>👥 오늘 신규 가입 회원 목록</span>
+          <span class="badge-today-count" id="badgeTodayUsers">오늘 가입 0명</span>
+        </h2>
+        <div style="font-size: 13px; color: var(--color-text-sub);">
+          누적 일반 회원: <strong id="totalUserCount" style="color: var(--color-primary);">0명</strong>
+        </div>
+      </div>
+
+      <div class="member-table-wrap">
+        <table class="member-table">
+          <thead>
+            <tr>
+              <th style="width: 60px;">No</th>
+              <th>이름 (UID)</th>
+              <th>이메일 계정</th>
+              <th>연락처</th>
+              <th>가입 시각</th>
+              <th>인증 상태</th>
+            </tr>
+          </thead>
+          <tbody id="todayMembersTableBody">
+            <!-- js/store-manage.js 동적 렌더링 -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 2. 매장 운영 및 Firebase 연동 설정 섹션 -->
+    <section class="manage-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h2 class="manage-card-title">
+          ⚙️ 매장 운영 및 Firebase 클라우드 연동 상태
+        </h2>
+        <button type="button" class="btn-fast-fill" onclick="openFirebaseConfigModal()" style="padding: 8px 14px; background: var(--color-primary); color: white; border: none;">
+          🔥 Firebase 프로젝트 연결 설정
+        </button>
+      </div>
+
+      <div class="store-settings-grid">
+        <div class="setting-item-box">
+          <div class="setting-item-title">운영 지점</div>
+          <div class="setting-item-val">CAFE CORE 송파점</div>
+          <div style="font-size: 12px; color: var(--color-text-muted); margin-top: 4px;">서울시 송파구 올림픽로 123</div>
+        </div>
+
+        <div class="setting-item-box">
+          <div class="setting-item-title">Firebase DB 연결 상태</div>
+          <div class="setting-item-val" id="firebaseStatusVal" style="color: #D97706; font-size: 16px;">
+            ⚠️ 미설정 (로컬 스토리지 모드)
+          </div>
+          <div id="firebaseStatusDesc" style="font-size: 12px; color: var(--color-text-muted); margin-top: 4px;">
+            키를 등록하시면 실제 Firestore에 회원이 저장됩니다.
+          </div>
+        </div>
+
+        <div class="setting-item-box">
+          <div class="setting-item-title">관리자 마스터 계정</div>
+          <div class="setting-item-val" style="font-size: 15px; color: var(--color-primary);">admin@gmail.com</div>
+          <div style="font-size: 12px; color: var(--color-text-muted); margin-top: 4px;">비밀번호: password1234 (자동 인증)</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Firebase 프로젝트 연동 설정 모달 -->
+  <div class="modal-overlay" id="firebaseConfigModal">
+    <div class="modal-content" style="max-width: 560px; max-height: 90vh; overflow-y: auto;">
+      <button type="button" class="modal-close-btn" onclick="closeFirebaseConfigModal()">✕</button>
+      <div style="font-size: 32px; margin-bottom: 6px;">🔥</div>
+      <h3 style="font-size: 20px; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">
+        Firebase 프로젝트 연결 설정
+      </h3>
+      <p style="font-size: 13px; color: var(--color-text-sub); margin-bottom: 16px; line-height: 1.5;">
+        Firebase 콘솔(<a href="https://console.firebase.google.com/" target="_blank" style="color:var(--color-primary); font-weight:700; text-decoration:underline;">console.firebase.google.com</a>)의 프로젝트 설정에서 웹 앱 <code>firebaseConfig</code>를 입력하시면 실제 <strong>Firebase Authentication</strong> 및 <strong>Cloud Firestore</strong>에 회원 데이터가 영구 보관됩니다.
+      </p>
+
+      <form id="formFirebaseConfig" style="display: flex; flex-direction: column; gap: 14px;">
+        <!-- 방법 1: 코드 스니펫 통째로 붙여넣기 (가장 편리) -->
+        <div style="background: #FDFBF7; border: 1.5px dashed var(--color-primary); border-radius: 8px; padding: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <label style="font-size: 13px; font-weight: 800; color: var(--color-primary);">
+              ✨ 추천: Firebase 콘솔 코드 통째로 붙여넣기
+            </label>
+            <button type="button" class="btn-fast-fill" onclick="pasteSampleSnippetHelp()" style="font-size: 11px;">
+              예시 보기
+            </button>
+          </div>
+          <textarea id="cfgCodeSnippet" rows="5" class="auth-input" style="font-family: monospace; font-size: 12px; resize: vertical;" placeholder="Firebase 콘솔에서 복사한 코드 전체를 여기에 그대로 붙여넣으세요:&#10;&#10;const firebaseConfig = {&#10;  apiKey: &quot;AIzaSy...&quot;,&#10;  projectId: &quot;my-cafe&quot;,&#10;  ...&#10;};"></textarea>
+          <div style="font-size: 11px; color: var(--color-text-muted); margin-top: 4px;">
+            * 여기에 붙여넣으시면 아래 세부 항목이 자동으로 채워집니다.
+          </div>
+        </div>
+
+        <!-- 방법 2: 세부 항목 직접 입력 -->
+        <div style="border-top: 1px solid var(--color-border); padding-top: 12px;">
+          <div style="font-size: 12px; font-weight: 700; color: var(--color-text-sub); margin-bottom: 8px;">또는 세부 항목 직접 확인/입력:</div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div>
+              <label style="font-size: 12px; font-weight: 700;">apiKey <span style="color:#DC2626;">*</span></label>
+              <input type="text" id="cfgApiKey" class="auth-input" placeholder="AIzaSy..." style="padding: 8px 12px; font-size: 13px;">
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <div>
+                <label style="font-size: 12px; font-weight: 700;">projectId <span style="color:#DC2626;">*</span></label>
+                <input type="text" id="cfgProjectId" class="auth-input" placeholder="my-cafe-project" style="padding: 8px 12px; font-size: 13px;">
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700;">authDomain</label>
+                <input type="text" id="cfgAuthDomain" class="auth-input" placeholder="my-cafe.firebaseapp.com" style="padding: 8px 12px; font-size: 13px;">
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <div>
+                <label style="font-size: 12px; font-weight: 700;">storageBucket</label>
+                <input type="text" id="cfgStorageBucket" class="auth-input" placeholder="my-cafe.appspot.com" style="padding: 8px 12px; font-size: 13px;">
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700;">appId</label>
+                <input type="text" id="cfgAppId" class="auth-input" placeholder="1:123456789:web:abcdef" style="padding: 8px 12px; font-size: 13px;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 8px; margin-top: 10px;">
+          <button type="submit" class="btn-auth-submit" style="flex: 2;">
+            💾 Firebase 설정 저장 및 연결
+          </button>
+          <button type="button" class="btn-header-action" onclick="resetToLocalMode()" style="flex: 1; color: #DC2626; border-color: #FECACA;">
+            연결 해제 (로컬 모드)
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    CAFE CORE · 관리자 콘솔 · 좋은 하루의 한 잔
+  </footer>
+
+  <!-- Firebase SDK v10 (Compat) CDN -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="./js/firebase-config.js"></script>
+  <script src="./js/firebase-auth.js"></script>
+  <script src="./js/auth-ui.js"></script>
+  <script src="./js/store-manage.js"></script>
+</body>
+</html>

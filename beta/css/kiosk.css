@@ -1,0 +1,508 @@
+/* ==========================================================================
+   CAFE CORE - Kiosk Display Styling (kiosk.css)
+   세로형 대형 터치 키오스크 전용 레이아웃 (레퍼런스 이미지 2 완벽 재현)
+   ========================================================================== */
+
+.kiosk-screen-container {
+  max-width: 720px;
+  margin: 20px auto 40px;
+  background-color: var(--color-bg-body);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* 키오스크 헤더 */
+.kiosk-header {
+  padding: 24px 30px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-bg-body);
+}
+
+.kiosk-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.kiosk-logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  padding: 7px;
+  object-fit: contain;
+}
+
+.kiosk-brand-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.1;
+  letter-spacing: -0.3px;
+}
+
+.kiosk-brand-sub {
+  font-size: 13px;
+  color: var(--color-text-sub);
+  margin-top: 2px;
+}
+
+.btn-call-staff {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--color-border);
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.btn-call-staff:active {
+  background-color: var(--color-bg-sub);
+  transform: scale(0.96);
+}
+
+/* 메인 프롬프트 타이틀 */
+.kiosk-prompt-wrap {
+  padding: 10px 30px 20px;
+}
+
+.kiosk-prompt-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-text-main);
+  letter-spacing: -0.8px;
+}
+
+.kiosk-prompt-sub {
+  font-size: 16px;
+  color: var(--color-text-sub);
+  margin-top: 6px;
+}
+
+/* 카테고리 탭 (대형 터치 탭) */
+.kiosk-cat-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 30px 20px;
+}
+
+.kiosk-cat-btn {
+  flex: 1 1 calc(25% - 10px);
+  min-width: 120px;
+  padding: 13px 8px;
+  background-color: #EAE8DF;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-sub);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.kiosk-cat-btn:hover {
+  background-color: #DFDCD0;
+  color: var(--color-text-main);
+}
+
+.kiosk-cat-btn:active {
+  transform: scale(0.97);
+}
+
+.kiosk-cat-btn.active {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.25);
+}
+
+/* 2열 와이드 메뉴 카드 그리드 */
+.kiosk-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 0 30px 28px;
+}
+
+.kiosk-menu-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-card);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.kiosk-menu-card:active {
+  transform: scale(0.98);
+}
+
+.kiosk-drink-img-wrap {
+  width: 90px;
+  height: 105px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kiosk-drink-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.06));
+}
+
+.kiosk-card-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.kiosk-card-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-text-main);
+  line-height: 1.2;
+}
+
+.kiosk-card-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-top: 4px;
+}
+
+.btn-kiosk-add {
+  margin-top: 10px;
+  background-color: #E2ECE5;
+  color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: fit-content;
+  transition: background-color 0.2s ease;
+}
+
+.btn-kiosk-add:hover {
+  background-color: #D2E4D7;
+}
+
+/* ==========================================================================
+   하단 주문 장바구니 & 결제 패널 (레퍼런스 이미지 2 하단 영역)
+   ========================================================================== */
+.kiosk-cart-panel {
+  background-color: #EDEAE1;
+  border-top: 1.5px solid var(--color-border);
+  padding: 20px 30px 26px;
+}
+
+.kiosk-cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.kiosk-cart-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+.btn-kiosk-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-sub);
+  cursor: pointer;
+}
+
+/* 장바구니 아이템 리스트 */
+.kiosk-cart-items-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.kiosk-cart-item-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+}
+
+.cart-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-item-thumb {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.cart-item-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.badge-temp {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.badge-temp.ice {
+  background-color: var(--color-badge-ice-bg);
+  color: var(--color-badge-ice-text);
+}
+
+.badge-temp.hot {
+  background-color: var(--color-badge-hot-bg);
+  color: var(--color-badge-hot-text);
+}
+
+.cart-item-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 수량 스텝 버튼 [-] 2 [+] */
+.stepper-wrap {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: #FAFAFA;
+}
+
+.btn-stepper {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-sub);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepper-val {
+  min-width: 24px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.cart-item-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-text-main);
+  min-width: 75px;
+  text-align: right;
+}
+
+.btn-cart-remove {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* 최종 결제 바 */
+.kiosk-checkout-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.kiosk-total-count {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+.kiosk-total-price {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--color-text-main);
+  margin-left: auto;
+  margin-right: 24px;
+}
+
+.btn-kiosk-pay {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  padding: 16px 36px;
+  border-radius: var(--radius-md);
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(30, 63, 48, 0.25);
+}
+
+.btn-kiosk-pay:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-kiosk-pay:active {
+  transform: scale(0.97);
+}
+
+/* 옵션 선택 모달 */
+.option-group-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-sub);
+  margin-bottom: 8px;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.option-required-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #DC2626;
+  color: #FFFFFF;
+  margin-left: 6px;
+}
+
+.option-badge-coffee {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #EAF1EC;
+  color: var(--color-primary);
+  margin-left: 6px;
+}
+
+.option-btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.option-btn-grid.option-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.option-btn-grid.option-grid-4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.btn-option-choice {
+  padding: 12px 8px;
+  border: 1.5px solid var(--color-border);
+  background: #FFFFFF;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-option-choice:hover:not(.disabled) {
+  border-color: #94A3B8;
+  background: #F8FAFC;
+}
+
+.btn-option-choice.selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.btn-option-choice.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: #F1F5F9;
+}
+
+.opt-choice-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: inherit;
+}
+
+.opt-choice-sub {
+  font-size: 11px;
+  color: var(--color-text-sub);
+  margin-top: 2px;
+}
+
+.btn-option-choice.selected .opt-choice-sub {
+  color: var(--color-primary);
+}
+
+.cart-item-option-desc {
+  font-size: 12px;
+  color: var(--color-text-sub);
+  margin-top: 3px;
+  display: block;
+}
+

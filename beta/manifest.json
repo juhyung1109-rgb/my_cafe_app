@@ -1,0 +1,28 @@
+{
+  "name": "CAFE CORE - 스마트 카페 오더",
+  "short_name": "카페코어",
+  "id": "/pwa-order.html",
+  "start_url": "./pwa-order.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F4F7F5",
+  "theme_color": "#1B4D3E",
+  "description": "줄 서지 않고 자리에서 주문하는 카페코어 스마트 모바일 오더",
+  "orientation": "portrait-primary",
+  "lang": "ko-KR",
+  "categories": ["food", "shopping", "lifestyle"],
+  "icons": [
+    {
+      "src": "./assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

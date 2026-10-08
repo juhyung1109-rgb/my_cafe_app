@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>CAFE CORE - 모바일 스마트 오더 (PWA)</title>
+  
+  <!-- PWA Settings (Android & iOS Web App A2HS) -->
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#1B4D3E">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="CAFE CORE">
+  <link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="./assets/icons/icon-512.png">
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/common.css?v=20261008_v2">
+  <link rel="stylesheet" href="./css/pwa.css?v=20261008_v2">
+</head>
+<body>
+
+  <!-- 스마트폰 전용 뷰포트 컨테이너 (모바일 앱 최적화) -->
+  <div class="mobile-viewport-wrapper">
+
+    <!-- 스마트폰 상단 헤더 (메가오더 스타일: 매장 캡슐 + 로고 + 스탬프/쿠폰 + 카트 + 전체메뉴) -->
+    <header class="mobile-app-header">
+      <div class="mobile-brand">
+        <span class="header-capsule-badge" onclick="alert('현재 매장: 송파본점 (픽업 전용)')">송파점</span>
+        <div class="mobile-brand-text">
+          <h1>CAFE CORE</h1>
+        </div>
+      </div>
+      <div class="mobile-header-actions">
+        <!-- 스탬프 & 쿠폰북 버튼 -->
+        <button type="button" class="btn-header-icon" id="btnOpenStampModal" title="스탬프 & 쿠폰북" aria-label="스탬프 및 쿠폰북" onclick="openCouponBookModal()">
+          🎫 <span class="header-stamp-count" id="headerStampCountBadge" style="display:none;">0</span>
+        </button>
+        <!-- 장바구니 버튼 -->
+        <button type="button" class="cart-icon-btn" id="headerCartBtn" aria-label="장바구니 확인">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-badge" id="headerCartBadge" style="display: none;">0</span>
+        </button>
+        <!-- 전체메뉴 (사진과 동일한 더보기 화면) -->
+        <button type="button" class="btn-header-icon" id="btnOpenAllMenu" title="전체메뉴" aria-label="전체메뉴" onclick="openAllMenuModal()">
+          ☰
+        </button>
+        <a href="./index.html" class="btn-mobile-home" title="메인 포털" aria-label="메인 포털">🏠</a>
+      </div>
+    </header>
+
+    <!-- iOS Safari 홈 화면 추가 안내 배너 (iOS 기기 접속 시 노출) -->
+    <div class="ios-install-banner" id="iosInstallBanner">
+      <button type="button" class="ios-install-close" id="btnCloseIosBanner" aria-label="닫기">✕</button>
+      <div>📱 <strong>아이폰 홈 화면에 바로가기 앱 추가</strong></div>
+      <div style="margin-top: 4px; color: #EAF1EC;">
+        사파리 하단 <strong>공유(⎋)</strong> 버튼을 누르고 <strong>[홈 화면에 추가 ➕]</strong>를 선택하시면 스마트폰 앱처럼 이용하실 수 있습니다!
+      </div>
+    </div>
+
+    <!-- PWA 홈 화면 추가 유도 배너 -->
+    <section class="pwa-banner" id="pwaBanner">
+      <div class="pwa-banner-left">
+        <div class="pwa-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+        </div>
+        <div class="pwa-info">
+          <h4>홈 화면에 앱 추가</h4>
+          <p>원터치로 스마트폰 앱처럼 실행하세요.</p>
+        </div>
+      </div>
+      <div class="pwa-banner-actions">
+        <button type="button" class="btn-pwa-install" id="btnPwaInstall">추가</button>
+        <button type="button" class="btn-pwa-close" id="btnPwaClose" aria-label="배너 닫기">✕</button>
+      </div>
+    </section>
+
+    <!-- 프로모션 히어로 배너 (레퍼런스 이미지 배너) -->
+    <section class="hero-promo-card">
+      <img src="./assets/images/hero_banner.png" alt="오늘의 한 잔, 기다림은 가볍게. 좋은 커피가 좋은 하루를 만듭니다." class="hero-promo-img">
+    </section>
+
+    <!-- 1차 대분류 카테고리 탭 (메가오더 언더라인 탭: 신메뉴 / 추천메뉴 / 커피 / 디카페인 / 음료 / 전체) -->
+    <nav class="mega-main-tab-bar" aria-label="메인 카테고리">
+      <button type="button" class="mega-main-tab" data-main="new" onclick="selectMainCategory('new')">신메뉴</button>
+      <button type="button" class="mega-main-tab" data-main="recommend" onclick="selectMainCategory('recommend')">추천메뉴</button>
+      <button type="button" class="mega-main-tab active" data-main="coffee" onclick="selectMainCategory('coffee')">커피</button>
+      <button type="button" class="mega-main-tab" data-main="decaf" onclick="selectMainCategory('decaf')">디카페인</button>
+      <button type="button" class="mega-main-tab" data-main="beverage" onclick="selectMainCategory('beverage')">음료</button>
+      <button type="button" class="mega-main-tab" data-main="all" onclick="selectMainCategory('all')">전체</button>
+    </nav>
+
+    <!-- 2차 소분류 서브 필터 탭 (검정/회색 캡슐 알약: 에스프레소, 라떼, 콜드브루 등) -->
+    <div class="mega-sub-tab-bar" id="megaSubTabBar" aria-label="상세 카테고리">
+      <!-- js/pwa.js 에서 동적 렌더링 -->
+    </div>
+
+    <!-- 메뉴 리스트 메타 헤더 (총 건수 및 리스트/그리드 보기 전환) -->
+    <div class="mega-list-header">
+      <div class="mega-count-text">총 <strong id="menuItemCount">0</strong>건</div>
+      <div class="view-mode-toggle">
+        <button type="button" id="btnViewRow" class="btn-view-toggle active" title="리스트형 보기" aria-label="리스트형 보기">☰</button>
+        <button type="button" id="btnViewGrid" class="btn-view-toggle" title="카드형 보기" aria-label="카드형 보기">⊞</button>
+      </div>
+    </div>
+
+    <!-- 메뉴 리스트 컨테이너 (메가오더 가로형 리스트 / 2열 그리드 겸용) -->
+    <main class="mega-menu-list view-row" id="menuGridMobile">
+      <!-- js/pwa.js 에서 동적 렌더링 -->
+    </main>
+
+    <!-- 매장 위치 안내 스트립 (메가오더 스타일) -->
+    <div class="store-location-strip">
+      <span class="location-icon">📍</span>
+      <span class="location-name">송파점 (포장 전용)</span>
+      <span class="location-arrow">›</span>
+    </div>
+
+    <!-- 하단 고정 주문 바 -->
+    <footer class="sticky-bottom-bar">
+      <div class="cart-summary-left" id="bottomCartSummaryArea" style="cursor: pointer;" title="장바구니 확인 및 수량 조절">
+        <div class="cart-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-sub-badge" id="bottomCartBadge" style="display: none;">0</span>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <span class="cart-total-text" id="bottomCartTotal" style="color: var(--color-text-muted);">0잔 · 0원</span>
+          <span style="font-size: 11px; color: var(--color-text-sub); margin-top: -2px;">터치하여 장바구니 열기</span>
+        </div>
+      </div>
+
+      <div class="cart-actions-right">
+        <button type="button" class="btn-my-orders-link" id="btnMyOrders">
+          내 주문
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+        <button type="button" class="btn-submit-order" id="btnSubmitOrder">
+          주문하기
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- PWA 음료 상세 옵션 바텀시트 모달 -->
+  <div class="modal-overlay" id="pwaOptionModal">
+    <div class="modal-content pwa-option-sheet">
+      <button type="button" class="modal-close-btn" id="btnClosePwaOption">✕</button>
+      
+      <!-- 상단 메뉴 정보 -->
+      <div style="display: flex; align-items: center; gap: 14px; padding-bottom: 14px; border-bottom: 1.5px solid var(--color-border);">
+        <img id="pwaOptThumb" src="" alt="" style="width: 60px; height: 60px; object-fit: contain; border-radius: 12px; background: var(--color-bg-sub); padding: 4px;">
+        <div style="flex: 1;">
+          <h3 id="pwaOptName" style="font-size: 18px; font-weight: 800; color: var(--color-primary);">메뉴명</h3>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 3px;">
+            <span id="pwaOptPrice" style="font-size: 19px; font-weight: 900; color: var(--color-text-main);">0원</span>
+            <span id="pwaOptBasePrice" style="font-size: 12px; color: var(--color-text-sub);">(기본 0원)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1. 온도 선택 -->
+      <div class="pwa-opt-group-title">
+        <span>온도 선택</span>
+        <span style="font-size: 10px; color: #DC2626; margin-left: 4px; font-weight: 700;">(필수)</span>
+      </div>
+      <div class="pwa-opt-grid" id="pwaOptTempGrid">
+        <button type="button" class="btn-pwa-opt btn-pwa-temp selected" data-temp="ICE" onclick="pwaSelectTemp('ICE')">
+          <div class="pwa-opt-title">❄️ ICE (시원하게)</div>
+          <div class="pwa-opt-sub">기본 제공</div>
+        </button>
+        <button type="button" class="btn-pwa-opt btn-pwa-temp" data-temp="HOT" id="btnPwaTempHot" onclick="pwaSelectTemp('HOT')">
+          <div class="pwa-opt-title">♨️ HOT (따뜻하게)</div>
+          <div class="pwa-opt-sub">따뜻한 음료</div>
+        </button>
+      </div>
+      <div id="pwaTempNotice" style="display: none; font-size: 11px; color: #0284C7; margin-top: 4px; font-weight: 600;">
+        ℹ️ 이 음료는 시원한 ICE 전용 음료입니다.
+      </div>
+
+      <!-- 2. 사이즈 선택 -->
+      <div class="pwa-opt-group-title">
+        <span>사이즈 선택</span>
+        <span style="font-size: 10px; color: #DC2626; margin-left: 4px; font-weight: 700;">(필수)</span>
+      </div>
+      <div class="pwa-opt-grid grid-3">
+        <button type="button" class="btn-pwa-opt btn-pwa-size selected" data-size="Regular" data-add="0" onclick="pwaSelectSize('Regular', 0)">
+          <div class="pwa-opt-title">Regular (M)</div>
+          <div class="pwa-opt-sub">기본 (+0원)</div>
+        </button>
+        <button type="button" class="btn-pwa-opt btn-pwa-size" data-size="Large" data-add="500" onclick="pwaSelectSize('Large', 500)">
+          <div class="pwa-opt-title">Large (L)</div>
+          <div class="pwa-opt-sub">+500원</div>
+        </button>
+        <button type="button" class="btn-pwa-opt btn-pwa-size" data-size="Venti" data-add="1000" onclick="pwaSelectSize('Venti', 1000)">
+          <div class="pwa-opt-title">Venti (XL)</div>
+          <div class="pwa-opt-sub">+1,000원</div>
+        </button>
+      </div>
+
+      <!-- 3. 에스프레소 샷 (커피 전용) -->
+      <div id="pwaShotSection">
+        <div class="pwa-opt-group-title">
+          <span>에스프레소 샷 선택</span>
+          <span style="font-size: 11px; padding: 1px 6px; border-radius: 4px; background: #EAF1EC; color: #1B4D3E; font-weight: 700; margin-left: 6px;">☕ 커피 전용</span>
+        </div>
+        <div class="pwa-opt-grid">
+          <button type="button" class="btn-pwa-opt btn-pwa-shot selected" data-shot="기본" data-add="0" onclick="pwaSelectShot('기본', 0)">
+            <div class="pwa-opt-title">기본 (2샷)</div>
+            <div class="pwa-opt-sub">+0원</div>
+          </button>
+          <button type="button" class="btn-pwa-opt btn-pwa-shot" data-shot="연하게" data-add="0" onclick="pwaSelectShot('연하게', 0)">
+            <div class="pwa-opt-title">연하게 (1샷)</div>
+            <div class="pwa-opt-sub">+0원</div>
+          </button>
+          <button type="button" class="btn-pwa-opt btn-pwa-shot" data-shot="+1샷" data-add="500" onclick="pwaSelectShot('+1샷', 500)">
+            <div class="pwa-opt-title">+1샷 추가</div>
+            <div class="pwa-opt-sub">+500원</div>
+          </button>
+          <button type="button" class="btn-pwa-opt btn-pwa-shot" data-shot="+2샷" data-add="1000" onclick="pwaSelectShot('+2샷', 1000)">
+            <div class="pwa-opt-title">+2샷 추가</div>
+            <div class="pwa-opt-sub">+1,000원</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- 4. 시럽 & 당도 -->
+      <div class="pwa-opt-group-title">
+        <span>시럽 & 당도 선택</span>
+      </div>
+      <div class="pwa-opt-grid">
+        <button type="button" class="btn-pwa-opt btn-pwa-syrup selected" data-syrup="기본" data-add="0" onclick="pwaSelectSyrup('기본', 0)">
+          <div class="pwa-opt-title">기본 정량</div>
+          <div class="pwa-opt-sub">+0원</div>
+        </button>
+        <button type="button" class="btn-pwa-opt btn-pwa-syrup" data-syrup="덜 달게" data-add="0" onclick="pwaSelectSyrup('덜 달게', 0)">
+          <div class="pwa-opt-title">덜 달게 (라이트)</div>
+          <div class="pwa-opt-sub">+0원</div>
+        </button>
+        <button type="button" class="btn-pwa-opt btn-pwa-syrup" data-syrup="바닐라 시럽" data-add="500" onclick="pwaSelectSyrup('바닐라 시럽', 500)">
+          <div class="pwa-opt-title">바닐라 시럽 추가</div>
+          <div class="pwa-opt-sub">+500원</div>
+        </button>
+        <button type="button" class="btn-pwa-opt btn-pwa-syrup" data-syrup="헤이즐넛 시럽" data-add="500" onclick="pwaSelectSyrup('헤이즐넛 시럽', 500)">
+          <div class="pwa-opt-title">헤이즐넛 시럽 추가</div>
+          <div class="pwa-opt-sub">+500원</div>
+        </button>
+      </div>
+
+      <!-- 5. 얼음량 (ICE 전용) -->
+      <div id="pwaIceSection">
+        <div class="pwa-opt-group-title">
+          <span>얼음량 선택 (ICE 전용)</span>
+        </div>
+        <div class="pwa-opt-grid grid-3">
+          <button type="button" class="btn-pwa-opt btn-pwa-ice selected" data-ice="보통" onclick="pwaSelectIce('보통')">
+            <div class="pwa-opt-title">얼음 보통</div>
+            <div class="pwa-opt-sub">기본량</div>
+          </button>
+          <button type="button" class="btn-pwa-opt btn-pwa-ice" data-ice="적게" onclick="pwaSelectIce('적게')">
+            <div class="pwa-opt-title">얼음 적게</div>
+            <div class="pwa-opt-sub">음료 위주</div>
+          </button>
+          <button type="button" class="btn-pwa-opt btn-pwa-ice" data-ice="많이" onclick="pwaSelectIce('많이')">
+            <div class="pwa-opt-title">얼음 많이</div>
+            <div class="pwa-opt-sub">더 시원하게</div>
+          </button>
+        </div>
+      </div>
+
+      <button type="button" class="btn-submit-order" id="btnPwaConfirmOption" onclick="confirmPwaOption()" style="width: 100%; justify-content: center; margin-top: 22px; font-size: 16px; padding: 14px; cursor: pointer;">
+        장바구니 담기
+      </button>
+    </div>
+  </div>
+
+  <!-- 장바구니 상세 확인 및 수량 가감 모달 -->
+  <div class="modal-overlay" id="cartSheetModal">
+    <div class="modal-content" style="max-height: 85vh; display: flex; flex-direction: column;">
+      <button type="button" class="modal-close-btn" id="btnCloseCartSheet" aria-label="닫기">✕</button>
+      
+      <div style="display: flex; align-items: center; justify-content: space-between; padding-right: 24px; margin-bottom: 6px;">
+        <h3 style="font-size: 19px; font-weight: 800; color: var(--color-primary);">🛒 장바구니 내역</h3>
+        <button type="button" id="btnClearAllCart" style="background: none; border: none; font-size: 13px; font-weight: 700; color: #DC2626; cursor: pointer;">
+          전체 비우기
+        </button>
+      </div>
+      <p style="font-size: 12px; color: var(--color-text-sub); margin-bottom: 8px;">
+        주문하기 전에 수량을 더하거나 빼고, 메뉴를 삭제할 수 있습니다.
+      </p>
+
+      <!-- 담긴 메뉴 목록 리스트 -->
+      <div class="cart-sheet-list" id="cartSheetItemList">
+        <!-- js/pwa.js에서 렌더링 -->
+      </div>
+
+      <!-- 보유 쿠폰 선택 및 적용 바 -->
+      <div class="cart-coupon-select-bar" id="cartCouponSelectBar" style="background:#FAF8F3; border:1px solid #E5E0D5; border-radius:10px; padding:10px 14px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span style="font-size:12px; font-weight:800; color:var(--color-primary);">🎟️ 쿠폰 할인:</span>
+          <span id="cartAppliedCouponTitle" style="font-size:12px; color:var(--color-text-sub); margin-left:4px;">적용 안 됨</span>
+        </div>
+        <button type="button" class="btn-coupon-toggle" onclick="openCouponPickerForCart()" style="background:var(--color-primary); color:white; border:none; padding:5px 10px; border-radius:6px; font-size:11px; font-weight:700; cursor:pointer;">
+          쿠폰 선택
+        </button>
+      </div>
+
+      <!-- 할인 내역 행 -->
+      <div id="cartDiscountRow" style="display:none; justify-content:space-between; font-size:13px; color:#DC2626; font-weight:700; margin-bottom:6px;">
+        <span>쿠폰 할인</span>
+        <span id="cartDiscountAmount">-0원</span>
+      </div>
+
+      <!-- 총 금액 및 주문 실행 바 -->
+      <div style="border-top: 1.5px solid var(--color-border); padding-top: 14px; margin-top: auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <span style="font-size: 16px; font-weight: 800; color: var(--color-text-main);" id="cartSheetTotalCount">총 0잔</span>
+          <span style="font-size: 22px; font-weight: 900; color: var(--color-primary);" id="cartSheetTotalPrice">0원</span>
+        </div>
+        <button type="button" class="btn-submit-order" id="btnSheetSubmitOrder" style="width: 100%; justify-content: center; font-size: 16px; padding: 14px;">
+          주문하기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 스탬프 & 쿠폰북 모달 (10잔 아메리카노 무료, 20잔 전체음료 무료) -->
+  <div class="modal-overlay" id="couponBookModal">
+    <div class="modal-content coupon-book-sheet" style="max-height: 88vh; display: flex; flex-direction: column; padding: 22px 18px 24px;">
+      <button type="button" class="modal-close-btn" onclick="closeCouponBookModal()" aria-label="닫기">✕</button>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; padding-right: 24px;">
+        <h3 style="font-size: 20px; font-weight: 800; color: var(--color-primary);">🎫 스탬프 & 쿠폰북</h3>
+      </div>
+      <p style="font-size: 12px; color: var(--color-text-sub); margin-bottom: 14px;">
+        10잔 구매 시 <strong style="color:var(--color-primary);">아메리카노 무료</strong>, 20잔 구매 시 <strong style="color:var(--color-primary);">모든 음료 무료!</strong>
+      </p>
+
+      <!-- 탭 스위처: [스탬프 적립판] vs [보유 쿠폰] -->
+      <div class="coupon-tab-switcher">
+        <button type="button" id="tabStampCard" class="coupon-tab-btn active" onclick="switchCouponTab('stamp')">
+          ☕ 스탬프 적립판
+        </button>
+        <button type="button" id="tabMyCoupons" class="coupon-tab-btn" onclick="switchCouponTab('coupon')">
+          🎟️ 보유 쿠폰 (<span id="couponCountText">0</span>장)
+        </button>
+      </div>
+
+      <!-- 내용 1: 스탬프 적립 카드 -->
+      <div id="stampCardPane" class="coupon-pane active">
+        <!-- 상단 회원 스탬프 요약 배너 -->
+        <div class="stamp-summary-banner">
+          <div>
+            <div style="font-size: 11px; opacity: 0.85;">나의 누적 구매 잔수</div>
+            <div style="font-size: 22px; font-weight: 900;" id="userTotalCupsText">0잔</div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 11px; opacity: 0.85;">다음 무료 쿠폰까지</div>
+            <div style="font-size: 18px; font-weight: 900; color: #FCD34D;" id="userCupsUntilNextCoupon">10잔 남음</div>
+          </div>
+        </div>
+
+        <!-- 20구 스탬프 보드 -->
+        <div class="stamp-board-wrap">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 12px; font-weight: 800; color: var(--color-primary);">1~10잔: 아메리카노 1잔 무료 ☕</span>
+            <span style="font-size: 11px; color: var(--color-text-muted);">10잔 달성 시 자동 지급</span>
+          </div>
+          <div class="stamp-grid" id="stampGrid10">
+            <!-- js/pwa.js에서 1~10번 스탬프 렌더링 -->
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; margin-bottom: 8px;">
+            <span style="font-size: 12px; font-weight: 800; color: #B45309;">11~20잔: 모든 제조음료 1잔 무료 🍹</span>
+            <span style="font-size: 11px; color: var(--color-text-muted);">20잔 달성 시 VIP 쿠폰 지급</span>
+          </div>
+          <div class="stamp-grid" id="stampGrid20">
+            <!-- js/pwa.js에서 11~20번 스탬프 렌더링 -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 내용 2: 보유 쿠폰 목록 -->
+      <div id="couponListPane" class="coupon-pane" style="display:none;">
+        <div class="coupon-items-container" id="couponItemsContainer">
+          <!-- js/pwa.js에서 렌더링 -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 메가오더 실물 화면 완벽 재현: [전체메뉴] 더보기 서랍 모달 -->
+  <div class="modal-overlay" id="allMenuModal">
+    <div class="modal-content all-menu-sheet" style="max-height: 92vh; overflow-y: auto; padding: 20px 18px 30px;">
+      
+      <!-- 상단 헤더: [✕] 전체메뉴 [⚙️] [🔔] -->
+      <div class="all-menu-topbar">
+        <button type="button" class="btn-all-menu-close" onclick="closeAllMenuModal()" aria-label="닫기">✕</button>
+        <h2 style="font-size: 18px; font-weight: 800; color: #111;">전체메뉴</h2>
+        <div style="display: flex; gap: 14px; font-size: 18px;">
+          <span style="cursor: pointer;" onclick="alert('환경설정: CAFE CORE 스마트오더 v2.5 정상 동작 중')">⚙️</span>
+          <span style="cursor: pointer;" onclick="alert('알림: 새로운 스탬프 혜택 알림이 있습니다.')">🔔</span>
+        </div>
+      </div>
+
+      <!-- 상단 유저 스탬프 현황 퀵 카드 -->
+      <div class="all-menu-profile-card" onclick="openCouponBookModal(); closeAllMenuModal();">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 20px;">☕</div>
+          <div>
+            <div style="font-size: 15px; font-weight: 800; color: #111;" id="allMenuUserName">회원 로그인 필요</div>
+            <div style="font-size: 12px; color: var(--color-text-sub);" id="allMenuUserSub">터치하여 스탬프 & 쿠폰북 확인 ›</div>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 11px; color: var(--color-text-sub);">보유 쿠폰</div>
+          <div style="font-size: 16px; font-weight: 900; color: var(--color-primary);" id="allMenuCouponCount">0장</div>
+        </div>
+      </div>
+
+      <!-- 1. 주문 섹션 -->
+      <div class="all-menu-group">
+        <div class="all-menu-group-title">주문</div>
+        <div class="all-menu-grid">
+          <div class="all-menu-item" onclick="closeAllMenuModal();">
+            <span class="menu-item-text">스마트오더</span>
+          </div>
+          <div class="all-menu-item" onclick="closeAllMenuModal(); openMyOrderModal();">
+            <span class="menu-item-text">주문내역</span>
+          </div>
+          <div class="all-menu-item" onclick="alert('선물하기: 모바일 금액권 선물하기 기능이 준비 중입니다.');">
+            <span class="menu-item-text">선물하기</span>
+          </div>
+          <div class="all-menu-item" onclick="closeAllMenuModal(); openCouponBookModal();">
+            <span class="menu-item-text">나의 오더 관리</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. 결제 섹션 -->
+      <div class="all-menu-group">
+        <div class="all-menu-group-title">결제</div>
+        <div class="all-menu-grid">
+          <div class="all-menu-item" onclick="closeAllMenuModal(); openCouponBookModal();">
+            <span class="menu-item-text" style="color:var(--color-primary); font-weight:800;">쿠폰 (쿠폰북)</span>
+          </div>
+          <div class="all-menu-item" onclick="alert('선불카드: 모바일 충전식 카드 기능 준비 중');">
+            <span class="menu-item-text">카페선불카드</span>
+          </div>
+          <div class="all-menu-item" onclick="alert('퀵결제 관리: 등록된 간편결제 카드 0건');">
+            <span class="menu-item-text">퀵결제 관리</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. 혜택 섹션 -->
+      <div class="all-menu-group">
+        <div class="all-menu-group-title">혜택</div>
+        <div class="all-menu-grid">
+          <div class="all-menu-item" onclick="closeAllMenuModal(); openCouponBookModal();">
+            <span class="menu-item-text" style="color:var(--color-primary); font-weight:800;">스탬프 적립함</span>
+          </div>
+          <div class="all-menu-item" onclick="alert('이벤트: [10잔 스탬프 아메리카노 증정] 상시 이벤트 진행 중!');">
+            <span class="menu-item-text">이벤트</span>
+          </div>
+          <div class="all-menu-item" onclick="alert('멤버십: 현재 정회원 멤버십이 적용되어 있습니다.');">
+            <span class="menu-item-text">제휴 멤버십 관리</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 고객지원 섹션 -->
+      <div class="all-menu-group">
+        <div class="all-menu-group-title">고객지원</div>
+        <div class="all-menu-grid">
+          <div class="all-menu-item" onclick="alert('공지사항: CAFE CORE 스마트 오더 2.0이 정식 오픈되었습니다!');">
+            <span class="menu-item-text">공지사항</span>
+          </div>
+          <div class="all-menu-item" onclick="alert('이용안내: 원하시는 음료를 선택 후 주문하시면 번호표가 발행되며 주방에서 신속히 제조됩니다.');">
+            <span class="menu-item-text">이용안내</span>
+          </div>
+          <div class="all-menu-item" onclick="alert('자주 묻는 질문: Q. 쿠폰은 어떻게 받나요?\nA. 동일 계정으로 10잔 구매 시 아메리카노, 20잔 구매 시 모든 음료 무료 쿠폰이 자동 지급됩니다.');">
+            <span class="menu-item-text">자주묻는질문</span>
+          </div>
+          <div class="all-menu-item" onclick="alert('문의하기: 고객센터 1588-0000 (평일 09:00 ~ 18:00)');">
+            <span class="menu-item-text">문의하기</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 토스트 컨테이너 -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- 주문 완료 팝업 모달 -->
+  <div class="modal-overlay" id="orderSuccessModal">
+    <div class="modal-content" style="text-align: center;">
+      <div style="font-size: 40px; margin-bottom: 8px;">☕</div>
+      <h3 style="font-size: 20px; font-weight: 800; color: var(--color-primary); margin-bottom: 6px;">주문이 완료되었습니다!</h3>
+      <p style="font-size: 13px; color: var(--color-text-sub); margin-bottom: 18px;">주방으로 주문 내역이 즉시 전달되었습니다.</p>
+      
+      <div style="background: var(--color-bg-sub); border-radius: var(--radius-md); padding: 18px; margin-bottom: 18px;">
+        <span style="font-size: 13px; color: var(--color-text-sub); display: block; margin-bottom: 4px;">고객님의 주문번호</span>
+        <span id="successOrderNumber" style="font-size: 38px; font-weight: 900; color: var(--color-primary); letter-spacing: -1px;">#109</span>
+        <div id="successOrderSummary" style="font-size: 13px; color: var(--color-text-main); margin-top: 8px; font-weight: 600;"></div>
+      </div>
+
+      <p style="font-size: 12px; color: var(--color-text-muted); margin-bottom: 20px;">
+        매장 내 음료 상황판 및 [내 주문] 메뉴에서 실시간 조리 상태를 확인하실 수 있습니다.
+      </p>
+
+      <button type="button" class="btn-submit-order" id="btnCloseSuccessModal" style="width: 100%; justify-content: center;">
+        확인
+      </button>
+    </div>
+  </div>
+
+  <!-- 내 주문 실시간 조회 모달 -->
+  <div class="modal-overlay" id="myOrderModal">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" id="btnCloseMyOrderModal" aria-label="닫기">✕</button>
+      <h3 style="font-size: 18px; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">내 실시간 주문 현황</h3>
+      <p style="font-size: 12px; color: var(--color-text-sub);">주문 접수부터 음료 제조 및 픽업 완료까지 실시간 확인</p>
+      
+      <div id="myOrderTrackingBody">
+        <!-- js/pwa.js에서 렌더링 -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Firebase SDK v10 (Compat) CDN -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="./js/firebase-config.js?v=20261008_v1"></script>
+  <!-- 스토어 및 페이지 스크립트 -->
+  <script src="./js/store.js?v=20261008_v1"></script>
+  <script src="./js/firebase-auth.js?v=20261008_v1"></script>
+  <script src="./js/auth-ui.js?v=20261008_v1"></script>
+  <script src="./js/pwa.js?v=20261008_v1"></script>
+</body>
+</html>
