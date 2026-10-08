@@ -1,0 +1,600 @@
+{"user_id": "usr-0001", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0002", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "usr-0003", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0004", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0005", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0006", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0007", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0008", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "usr-0009", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0010", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0011", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0012", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "usr-0013", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0014", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0015", "member_type": "NEW", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0016", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0017", "member_type": "VIP", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0018", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0019", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0020", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0021", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0022", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0023", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0024", "member_type": "VIP", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0025", "member_type": "VIP", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0026", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0027", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0028", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0029", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0030", "member_type": "NEW", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0031", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0032", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0033", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0034", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0035", "member_type": "VIP", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0036", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0037", "member_type": "NEW", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0038", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0039", "member_type": "VIP", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0040", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0041", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0042", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0043", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0044", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0045", "member_type": "VIP", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0046", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0047", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0048", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0049", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0050", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0051", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0052", "member_type": "VIP", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0053", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0054", "member_type": "VIP", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0055", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0056", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0057", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0058", "member_type": "VIP", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0059", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0060", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0061", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0062", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0063", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0064", "member_type": "VIP", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0065", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0066", "member_type": "VIP", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0067", "member_type": "NEW", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0068", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0069", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0070", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0071", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0072", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0073", "member_type": "VIP", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "usr-0074", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0075", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0076", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0077", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0078", "member_type": "VIP", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0079", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0080", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0081", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0082", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0083", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0084", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0085", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0086", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0087", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0088", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0089", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0090", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0091", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0092", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0093", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "usr-0094", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0095", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0096", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0097", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0098", "member_type": "NEW", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0099", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0100", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0101", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0102", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0103", "member_type": "NEW", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0104", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0105", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0106", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0107", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0108", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0109", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0110", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0111", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0112", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0113", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0114", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0115", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0116", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0117", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0118", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0119", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0120", "member_type": "VIP", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0121", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0122", "member_type": "VIP", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0123", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0124", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0125", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0126", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0127", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0128", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0129", "member_type": "VIP", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0130", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0131", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0132", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0133", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0134", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0135", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0136", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0137", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0138", "member_type": "NEW", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0139", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0140", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0141", "member_type": "NEW", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0142", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0143", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0144", "member_type": "VIP", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0145", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0146", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0147", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0148", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0149", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0150", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0151", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0152", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0153", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0154", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0155", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0156", "member_type": "VIP", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0157", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0158", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0159", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0160", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0161", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0162", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0163", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0164", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0165", "member_type": "VIP", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0166", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0167", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0168", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0169", "member_type": "VIP", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0170", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0171", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0172", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0173", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0174", "member_type": "VIP", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0175", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0176", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0177", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0178", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0179", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0180", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0181", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0182", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0183", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0184", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0185", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "usr-0186", "member_type": "VIP", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0187", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0188", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0189", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0190", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0191", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0192", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0193", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0194", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0195", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0196", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0197", "member_type": "NEW", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0198", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0199", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0200", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0201", "member_type": "VIP", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0202", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0203", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0204", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0205", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0206", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0207", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0208", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0209", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0210", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "usr-0211", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0212", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0213", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0214", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0215", "member_type": "VIP", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0216", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0217", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0218", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0219", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0220", "member_type": "VIP", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0221", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0222", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0223", "member_type": "VIP", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0224", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0225", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0226", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0227", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0228", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0229", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0230", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0231", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0232", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0233", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0234", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0235", "member_type": "VIP", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0236", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0237", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0238", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0239", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0240", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0241", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0242", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0243", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0244", "member_type": "VIP", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0245", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0246", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0247", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0248", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0249", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0250", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0251", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0252", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0253", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0254", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0255", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "usr-0256", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0257", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0258", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0259", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0260", "member_type": "NEW", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0261", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0262", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0263", "member_type": "NEW", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0264", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0265", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0266", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0267", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0268", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0269", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0270", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0271", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0272", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0273", "member_type": "VIP", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0274", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0275", "member_type": "NEW", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0276", "member_type": "VIP", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0277", "member_type": "VIP", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0278", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0279", "member_type": "VIP", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0280", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0281", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0282", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "usr-0283", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0284", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0285", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0286", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0287", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0288", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0289", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0290", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0291", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0292", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0293", "member_type": "VIP", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0294", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0295", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0296", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0297", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0298", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0299", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0300", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0301", "member_type": "VIP", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "usr-0302", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0303", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0304", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0305", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0306", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0307", "member_type": "VIP", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0308", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0309", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0310", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0311", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0312", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0313", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0314", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0315", "member_type": "NEW", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0316", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0317", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0318", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0319", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0320", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0321", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0322", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0323", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0324", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0325", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0326", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0327", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0328", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0329", "member_type": "VIP", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0330", "member_type": "NEW", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0331", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0332", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0333", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0334", "member_type": "VIP", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0335", "member_type": "VIP", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0336", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0337", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0338", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0339", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0340", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0341", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0342", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0343", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "usr-0344", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0345", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0346", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0347", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0348", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0349", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0350", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "usr-0351", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0352", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0353", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0354", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0355", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0356", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0357", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0358", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0359", "member_type": "VIP", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0360", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0361", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0362", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0363", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0364", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0365", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0366", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0367", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0368", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0369", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0370", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0371", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0372", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0373", "member_type": "NEW", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0374", "member_type": "NEW", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0375", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0376", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0377", "member_type": "VIP", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0378", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0379", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0380", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0381", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0382", "member_type": "VIP", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0383", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0384", "member_type": "VIP", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0385", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0386", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0387", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "usr-0388", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "복숭아 아이스티 +얼음많이", "temp": "ICE", "size": "large", "shots": 0, "syrup": "default", "ice": "more"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0389", "member_type": "NEW", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0390", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0391", "member_type": "VIP", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0392", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0393", "member_type": "VIP", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0394", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "ICE 아메리카노 +1샷", "temp": "ICE", "size": "large", "shots": 1, "syrup": "default", "ice": "normal"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0395", "member_type": "REGULAR", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0396", "member_type": "REGULAR", "is_member": true, "option_preset": {"name": "디카페인 아메리카노", "temp": "ICE", "size": "venti", "shots": 0, "syrup": "default", "ice": "normal"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "usr-0397", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0398", "member_type": "VIP", "is_member": true, "option_preset": {"name": "HOT 카페라떼 연하게", "temp": "HOT", "size": "regular", "shots": 0, "syrup": "default", "ice": "none"}, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "usr-0399", "member_type": "VIP", "is_member": true, "option_preset": {"name": "ICE 바닐라라떼 덜달게", "temp": "ICE", "size": "large", "shots": 0, "syrup": "less", "ice": "less"}, "preferred_packaging": "TAKE_OUT", "tumbler_user": true}
+{"user_id": "usr-0400", "member_type": "NEW", "is_member": true, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0001", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0002", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0003", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0004", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0005", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0006", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0007", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0008", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0009", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0010", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0011", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0012", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0013", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0014", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0015", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0016", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0017", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0018", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0019", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0020", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0021", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0022", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0023", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0024", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0025", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0026", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0027", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0028", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0029", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0030", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0031", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0032", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0033", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0034", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0035", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0036", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0037", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0038", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0039", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0040", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0041", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0042", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0043", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0044", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0045", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0046", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0047", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0048", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0049", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0050", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0051", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0052", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0053", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0054", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0055", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0056", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0057", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0058", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0059", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0060", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0061", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0062", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0063", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0064", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0065", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0066", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0067", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0068", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0069", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0070", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0071", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0072", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0073", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0074", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0075", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "guest-0076", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0077", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0078", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0079", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0080", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0081", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0082", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0083", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0084", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0085", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0086", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0087", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "guest-0088", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0089", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0090", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0091", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0092", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0093", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0094", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0095", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0096", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0097", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0098", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0099", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0100", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0101", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0102", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0103", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0104", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0105", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0106", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0107", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0108", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0109", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0110", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0111", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0112", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0113", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0114", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0115", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0116", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0117", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0118", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0119", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0120", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0121", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0122", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0123", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0124", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0125", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0126", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0127", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0128", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0129", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0130", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0131", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0132", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0133", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0134", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0135", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0136", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0137", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0138", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0139", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0140", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0141", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0142", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0143", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0144", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0145", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0146", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0147", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0148", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0149", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0150", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0151", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0152", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0153", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0154", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0155", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0156", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0157", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0158", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0159", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0160", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0161", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0162", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0163", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0164", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0165", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0166", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0167", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0168", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0169", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0170", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0171", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0172", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0173", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0174", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0175", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0176", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0177", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0178", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0179", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0180", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0181", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": true}
+{"user_id": "guest-0182", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0183", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0184", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0185", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0186", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0187", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0188", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0189", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0190", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0191", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0192", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0193", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0194", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0195", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0196", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0197", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0198", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}
+{"user_id": "guest-0199", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "DINE_IN", "tumbler_user": false}
+{"user_id": "guest-0200", "member_type": "GUEST", "is_member": false, "option_preset": null, "preferred_packaging": "TAKE_OUT", "tumbler_user": false}

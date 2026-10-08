@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cafecore-cache-v1';
+const CACHE_NAME = 'cafecore-cache-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -10,6 +10,7 @@ const ASSETS_TO_CACHE = [
   './store-manage.html',
   './dataset-simulator-plan.html',
   './dataset-analysis-plan-v2.html',
+  './data-simulator.html',
   './manifest.json',
   './css/common.css',
   './css/pwa.css',

@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAFE CORE - 행동 로그 데이터 시뮬레이터 & 데이터 생성기</title>
+  
+  <!-- 구글 폰트: Pretendard, Outfit, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <style>
+    :root {
+      --primary-dark: #0D261A;
+      --primary: #153E2B;
+      --primary-light: #1F543B;
+      --primary-subtle: #E8F0EB;
+      
+      --accent-gold: #C89B3C;
+      --accent-gold-light: #FDF6E2;
+      --accent-coral: #E0564C;
+      --accent-coral-subtle: #FDEEED;
+      --accent-blue: #2A75D3;
+      --accent-blue-subtle: #EBF3FC;
+      
+      --py-blue: #3776AB;
+      --py-yellow: #FFD43B;
+      --jupyter-orange: #F37626;
+      --jupyter-subtle: #FFF3EB;
+      
+      --bg-canvas: #F8F7F4;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-elevated: #F2EFE9;
+      
+      --text-main: #1A2421;
+      --text-sub: #556561;
+      --text-muted: #849490;
+      --text-inverse: #FFFFFF;
+      
+      --border-subtle: #E5E0D8;
+      --border-medium: #D0C9BE;
+      --border-strong: #153E2B;
+      
+      --shadow-sm: 0 2px 8px rgba(21, 62, 43, 0.04);
+      --shadow-md: 0 8px 24px rgba(21, 62, 43, 0.08);
+      --shadow-lg: 0 16px 40px rgba(21, 62, 43, 0.12);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 상단 네비게이션 헤더 */
+    .sim-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 12px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--primary), #1F543B);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFF;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .brand-title h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-title span {
+      font-size: 11px;
+      color: var(--jupyter-orange);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-btn {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-sub);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover {
+      background: var(--primary-subtle);
+      color: var(--primary);
+    }
+
+    .btn-action-primary {
+      background: var(--primary);
+      color: #FFF;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-action-primary:hover {
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-action-jupyter {
+      background: var(--jupyter-orange);
+      color: #FFF;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-action-jupyter:hover {
+      background: #D95C0E;
+    }
+
+    /* 메인 컨테이너 */
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 30px 24px 80px;
+    }
+
+    /* 히어로 배너 */
+    .hero-banner {
+      background: linear-gradient(145deg, #0A1C14 0%, #123324 55%, #184732 100%);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -60px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(243, 118, 38, 0.3) 0%, rgba(55, 118, 171, 0.15) 50%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(90deg, #FFB87A 0%, #F37626 50%, #FFD43B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 820px;
+      line-height: 1.6;
+    }
+
+    /* 2열 레이아웃: 파라미터 컨트롤러 + 빠른 통계 */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 1024px) {
+      .dashboard-grid { grid-template-columns: 1fr; }
+    }
+
+    /* 파라미터 패널 */
+    .panel-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .panel-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    .form-val-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .form-slider {
+      width: 100%;
+      height: 6px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .form-hint {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .sim-btn-group {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .btn-run-sim {
+      background: linear-gradient(135deg, var(--primary), #1F543B);
+      color: #FFF;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 12px 18px;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(21, 62, 43, 0.2);
+      transition: all 0.2s;
+    }
+
+    .btn-run-sim:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(21, 62, 43, 0.25);
+    }
+
+    .btn-reset {
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-medium);
+      color: var(--text-sub);
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-reset:hover {
+      background: #E5E0D8;
+    }
+
+    /* KPI 카드 그리드 */
+    .kpi-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .kpi-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--primary);
+    }
+
+    .kpi-card.orange::before { background: var(--jupyter-orange); }
+    .kpi-card.coral::before { background: var(--accent-coral); }
+    .kpi-card.blue::before { background: var(--accent-blue); }
+    .kpi-card.gold::before { background: var(--accent-gold); }
+
+    .kpi-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .kpi-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--text-main);
+    }
+
+    .kpi-sub {
+      font-size: 11px;
+      color: var(--text-sub);
+      margin-top: 4px;
+    }
+
+    /* 미니 차트 & 시각화 영역 */
+    .viz-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+    }
+
+    .viz-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px;
+    }
+
+    .viz-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+
+    .bar-label {
+      width: 100px;
+      font-size: 12px;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 14px;
+      background: var(--bg-canvas);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      display: flex;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: var(--radius-full);
+      transition: width 0.4s ease;
+    }
+
+    .bar-fill.primary { background: var(--primary); }
+    .bar-fill.orange { background: var(--jupyter-orange); }
+    .bar-fill.coral { background: var(--accent-coral); }
+    .bar-fill.blue { background: var(--accent-blue); }
+
+    .bar-val {
+      width: 65px;
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    /* 데이터셋 뷰어 & 다운로드 영역 */
+    .dataset-explorer {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 30px;
+    }
+
+    .explorer-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .tab-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-sub);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #FFF;
+      border-color: var(--primary);
+    }
+
+    .tab-count {
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: var(--radius-full);
+      background: rgba(0,0,0,0.08);
+    }
+    .tab-btn.active .tab-count {
+      background: rgba(255,255,255,0.25);
+    }
+
+    .export-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-download {
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid var(--border-medium);
+      background: var(--bg-surface);
+      color: var(--text-main);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-download:hover {
+      background: var(--primary-subtle);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-download.jupyter {
+      background: var(--jupyter-subtle);
+      border-color: rgba(243, 118, 38, 0.4);
+      color: var(--jupyter-orange);
+    }
+    .btn-download.jupyter:hover {
+      background: var(--jupyter-orange);
+      color: #FFF;
+    }
+
+    /* 테이블 영역 */
+    .table-container {
+      overflow-x: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      max-height: 480px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    thead {
+      background: var(--bg-canvas);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    th {
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 700;
+      color: var(--primary);
+      border-bottom: 2px solid var(--border-medium);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-main);
+    }
+
+    tbody tr:hover {
+      background: #FDFCF9;
+    }
+
+    .tag-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .tag-completed { background: #E8F5E9; color: #2E7D32; }
+    .tag-abandoned { background: #FFEBEE; color: #C62828; }
+    .tag-pwa { background: #E3F2FD; color: #1565C0; }
+    .tag-kiosk { background: #EDE7F6; color: #512DA8; }
+    .tag-member { background: #FFF8E1; color: #F57F17; }
+    .tag-guest { background: #ECEFF1; color: #455A64; }
+
+    /* 파이썬 & 주피터 안내 섹션 */
+    .jupyter-bridge-box {
+      background: linear-gradient(135deg, #FFFDF8 0%, #FFF5EC 100%);
+      border: 1.5px solid rgba(243, 118, 38, 0.35);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-top: 30px;
+    }
+
+    .bridge-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .bridge-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--jupyter-orange);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .code-box {
+      background: #1A2421;
+      color: #E8F0EB;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      position: relative;
+      margin-bottom: 14px;
+      overflow-x: auto;
+    }
+
+    .btn-copy-code {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      background: rgba(255,255,255,0.15);
+      color: #FFF;
+      border: none;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-copy-code:hover { background: rgba(255,255,255,0.3); }
+
+    /* 모달 알림 */
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--primary);
+      color: #FFF;
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+    .toast-msg.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 네비게이션 -->
+  <header class="sim-header">
+    <a href="./index.html" class="brand-wrap">
+      <div class="brand-icon">⚡</div>
+      <div class="brand-title">
+        <h1>CAFE CORE SIMULATOR</h1>
+        <span>Synthetic Behavior Data Generator</span>
+      </div>
+    </a>
+    <div class="header-links">
+      <a href="./index.html" class="nav-btn">🏠 메인 포털</a>
+      <a href="./dataset-simulator-plan.html" class="nav-btn">기획안 v1</a>
+      <a href="./dataset-analysis-plan-v2.html" class="btn-action-jupyter">🐍 분석 기획 v2 ↗</a>
+      <a href="#jupyter-guide" class="btn-action-primary">📓 주피터 실행 안내</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- 히어로 배너 -->
+    <section class="hero-banner">
+      <div class="hero-tag">⚡ VER 2.0 INTERACTIVE ENGINE</div>
+      <h2 class="hero-title">카페 행동 로그 <span>합성 데이터 시뮬레이터</span></h2>
+      <p class="hero-desc">
+        스마트폰 PWA 및 매장 키오스크의 5,000건 사용자 세션, 500건 장바구니 포기 로그, 600명 회원/비회원 매핑, 4,500건 주문 데이터를 브라우저에서 대화형으로 생성하고 NDJSON 및 CSV로 즉시 다운로드하거나 파이썬 주피터 노트북과 연동할 수 있습니다.
+      </p>
+    </section>
+
+    <!-- 대시보드 2열 그리드: 파라미터 조절 & 실시간 KPI -->
+    <div class="dashboard-grid">
+      
+      <!-- 좌측: 파라미터 조절 패널 -->
+      <section class="panel-card">
+        <div class="panel-header">
+          <div class="panel-title">⚙️ 시뮬레이터 파라미터 제어</div>
+          <span style="font-size: 11px; color: var(--text-muted);">Seed: 42</span>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">
+            <span>총 세션 수 (Total Sessions)</span>
+            <span class="form-val-badge" id="lblSessions">5,000</span>
+          </div>
+          <input type="range" class="form-slider" id="rngSessions" min="500" max="10000" step="100" value="5000">
+          <div class="form-hint">기본 권장값: 5,000건 (PWA 58% / Kiosk 42%)</div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">
+            <span>등록 회원 수 (Members)</span>
+            <span class="form-val-badge" id="lblMembers">400명</span>
+          </div>
+          <input type="range" class="form-slider" id="rngMembers" min="50" max="1000" step="50" value="400">
+          <div class="form-hint">usr-0001 ~ usr-0400 (기본 프리셋 보유)</div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">
+            <span>비회원 식별자 수 (Guests)</span>
+            <span class="form-val-badge" id="lblGuests">200명</span>
+          </div>
+          <input type="range" class="form-slider" id="rngGuests" min="50" max="500" step="25" value="200">
+          <div class="form-hint">guest-0001 ~ guest-0200 (일회성 쿠키/장치)</div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">
+            <span>장바구니 포기율 (Abandon Rate)</span>
+            <span class="form-val-badge" id="lblAbandonRate">10.0%</span>
+          </div>
+          <input type="range" class="form-slider" id="rngAbandonRate" min="2" max="30" step="0.5" value="10">
+          <div class="form-hint">500건 포기 (가격 부담 44%, 대기 지연 28%, 타임아웃 28%)</div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">
+            <span>채널 비중 (PWA 비율)</span>
+            <span class="form-val-badge" id="lblPwaRatio">58%</span>
+          </div>
+          <input type="range" class="form-slider" id="rngPwaRatio" min="20" max="80" step="1" value="58">
+          <div class="form-hint">PWA 58% (모바일) / Kiosk 42% (매장 키오스크)</div>
+        </div>
+
+        <div class="sim-btn-group">
+          <button type="button" class="btn-run-sim" id="btnRunSim">
+            <span>⚡ 시뮬레이션 데이터 생성</span>
+          </button>
+          <button type="button" class="btn-reset" id="btnReset">초기화</button>
+        </div>
+      </section>
+
+      <!-- 우측: 실시간 KPI 카드 & 미니 차트 -->
+      <section>
+        <div class="kpi-cards-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">생성 세션 수</div>
+            <div class="kpi-val" id="kpiSessions">5,000</div>
+            <div class="kpi-sub" id="kpiChannelSplit">PWA 2,900 / Kiosk 2,100</div>
+          </div>
+          <div class="kpi-card gold">
+            <div class="kpi-label">주문 전환 완료</div>
+            <div class="kpi-val" id="kpiOrders">4,500</div>
+            <div class="kpi-sub" id="kpiCvr">전환율 90.0% 달성</div>
+          </div>
+          <div class="kpi-card coral">
+            <div class="kpi-label">장바구니 포기</div>
+            <div class="kpi-val" id="kpiAbandons">500</div>
+            <div class="kpi-sub" id="kpiAbandonRate">이탈률 10.0%</div>
+          </div>
+          <div class="kpi-card blue">
+            <div class="kpi-label">총 고객 풀</div>
+            <div class="kpi-val" id="kpiUsers">600</div>
+            <div class="kpi-sub" id="kpiUserSplit">회원 400 / 비회원 200</div>
+          </div>
+          <div class="kpi-card orange">
+            <div class="kpi-label">평균 소요 시간</div>
+            <div class="kpi-val" id="kpiDuration">66.1초</div>
+            <div class="kpi-sub" id="kpiDurationDiff">PWA 72.1s vs Kiosk 57.9s</div>
+          </div>
+        </div>
+
+        <!-- 미니 차트 시각화 -->
+        <div class="viz-grid">
+          <!-- 포기 사유 분포 -->
+          <div class="viz-card">
+            <div class="viz-title">
+              <span>📉 장바구니 포기 사유 분포</span>
+              <span style="font-size: 11px; color: var(--text-muted);">총 <span id="vizAbandonCount">500</span>건</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">가격 부담 (PRICE)</span>
+              <div class="bar-track"><div class="bar-fill coral" id="barPrice" style="width: 44%;"></div></div>
+              <span class="bar-val" id="valPrice">220 (44%)</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">대기 지연 (WAIT)</span>
+              <div class="bar-track"><div class="bar-fill orange" id="barWait" style="width: 28%;"></div></div>
+              <span class="bar-val" id="valWait">140 (28%)</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">시간 초과 (TIMEOUT)</span>
+              <div class="bar-track"><div class="bar-fill blue" id="barTimeout" style="width: 28%;"></div></div>
+              <span class="bar-val" id="valTimeout">140 (28%)</span>
+            </div>
+          </div>
+
+          <!-- 포기 발생 단계 분포 -->
+          <div class="viz-card">
+            <div class="viz-title">
+              <span>🛑 장바구니 포기 발생 단계</span>
+              <span style="font-size: 11px; color: var(--text-muted);">UX 깔때기 단계</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">옵션 모달 (OPTION)</span>
+              <div class="bar-track"><div class="bar-fill primary" id="barStageOption" style="width: 36%;"></div></div>
+              <span class="bar-val" id="valStageOption">180 (36%)</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">장바구니 시트 (CART)</span>
+              <div class="bar-track"><div class="bar-fill orange" id="barStageCart" style="width: 42%;"></div></div>
+              <span class="bar-val" id="valStageCart">210 (42%)</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">결제 팝업 (PAY)</span>
+              <div class="bar-track"><div class="bar-fill coral" id="barStagePay" style="width: 22%;"></div></div>
+              <span class="bar-val" id="valStagePay">110 (22%)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 데이터셋 탐색기 & 다운로드 -->
+    <section class="dataset-explorer">
+      <div class="explorer-toolbar">
+        <div class="tab-pills">
+          <button type="button" class="tab-btn active" data-tab="sessions">
+            <span>📱 user_sessions</span>
+            <span class="tab-count" id="badgeSessionsCount">5,000</span>
+          </button>
+          <button type="button" class="tab-btn" data-tab="orders">
+            <span>🧾 orders</span>
+            <span class="tab-count" id="badgeOrdersCount">4,500</span>
+          </button>
+          <button type="button" class="tab-btn" data-tab="users">
+            <span>👤 users</span>
+            <span class="tab-count" id="badgeUsersCount">600</span>
+          </button>
+          <button type="button" class="tab-btn" data-tab="search">
+            <span>🔍 search_logs</span>
+            <span class="tab-count" id="badgeSearchCount">2,234</span>
+          </button>
+        </div>
+
+        <div class="export-btns">
+          <button type="button" class="btn-download" id="btnDownloadCsv">
+            <span>📥 현재 탭 CSV 다운로드</span>
+          </button>
+          <button type="button" class="btn-download" id="btnDownloadNdjson">
+            <span>📥 현재 탭 NDJSON 다운로드</span>
+          </button>
+          <button type="button" class="btn-download jupyter" id="btnDownloadAll">
+            <span>📦 전체 데이터셋 일괄 다운로드</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 테이블 미리보기 컨테이너 -->
+      <div class="table-container">
+        <table id="dataTable">
+          <thead id="dataThead"></thead>
+          <tbody id="dataTbody"></tbody>
+        </table>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; font-size: 12px; color: var(--text-muted);">
+        <span>* 브라우저 성능을 위해 상위 100건을 렌더링 중입니다. [CSV/NDJSON 다운로드] 클릭 시 전체 데이터가 저장됩니다.</span>
+        <span id="lblTableTotal">총 5,000건 중 상위 100건 표시</span>
+      </div>
+    </section>
+
+    <!-- 파이썬 주피터 노트북 연동 브리지 -->
+    <section class="jupyter-bridge-box" id="jupyter-guide">
+      <div class="bridge-header">
+        <div class="bridge-title">
+          <span style="font-size: 24px;">🐍</span>
+          <span>파이썬 주피터 노트북 연동 및 실행 가이드</span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <a href="./dataset-analysis-plan-v2.html" target="_blank" class="btn-action-jupyter">
+            전체 분석 기획안 ver2 열기 ↗
+          </a>
+        </div>
+      </div>
+
+      <p style="font-size: 14px; color: var(--text-main); margin-bottom: 16px;">
+        본 시뮬레이터에서 생성된 4대 합성 데이터셋(<code>user_sessions</code>, <code>orders</code>, <code>users</code>, <code>search_logs</code>)은 이미 프로젝트 디렉터리(<code>data/</code>)에 적재되어 있습니다. 아래 명령어로 파이썬 시뮬레이터를 직접 구동하거나 주피터 노트북 분석을 즉시 시작할 수 있습니다.
+      </p>
+
+      <div class="form-label" style="margin-top: 10px;">1. 파이썬 CLI 시뮬레이터 재실행 (프로젝트 루트):</div>
+      <div class="code-box">
+        <button type="button" class="btn-copy-code" onclick="copySnippet('python simulator/generate_dataset.py')">복사</button>
+        <code>python simulator/generate_dataset.py</code>
+      </div>
+
+      <div class="form-label">2. 주피터 노트북 실행:</div>
+      <div class="code-box">
+        <button type="button" class="btn-copy-code" onclick="copySnippet('jupyter notebook notebooks/cafe_analytics_analysis.ipynb')">복사</button>
+        <code>jupyter notebook notebooks/cafe_analytics_analysis.ipynb</code>
+      </div>
+
+      <div style="background: rgba(243, 118, 38, 0.08); border-radius: var(--radius-md); padding: 18px; margin-top: 16px;">
+        <h4 style="font-size: 14px; font-weight: 800; color: var(--jupyter-orange); margin-bottom: 8px;">
+          📘 Jupyter Notebook 분석 10대 핵심 챕터 탑재 완료:
+        </h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; font-size: 12px; color: var(--text-sub);">
+          <div>✅ <strong>Ch 01-02:</strong> NDJSON/CSV 인제스천 및 무결성 진단</div>
+          <div>✅ <strong>Ch 03:</strong> CVR 90%, AOV, 소요시간 4대 KPI 시각화</div>
+          <div>✅ <strong>Ch 04:</strong> 500건 장바구니 포기 원인·단계 심층 분석</div>
+          <div>✅ <strong>Ch 05:</strong> PWA vs Kiosk 소요시간 독립표본 t-검정</div>
+          <div>✅ <strong>Ch 06:</strong> 탐색 순서 및 검색 키워드 클릭 순위 분석</div>
+          <div>✅ <strong>Ch 07:</strong> 회원 400명 vs 비회원 200명 프리셋 세그먼트</div>
+          <div>✅ <strong>Ch 08:</strong> DINE_IN vs TO_GO 취식 맥락별 행동 차이</div>
+          <div>✅ <strong>Ch 09:</strong> Scikit-learn 로지스틱/RF 이탈 예측 모델링</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="toast-msg" id="toastMsg">클립보드에 복사되었습니다!</div>
+
+  <script>
+    // ==========================================
+    // 클라이언트 사이드 시뮬레이터 엔진 (JavaScript)
+    // ==========================================
+    
+    // 시드 기반 의사 난수 생성기 (PRNG: Mulberry32)
+    function mulberry32(a) {
+      return function() {
+        let t = a += 0x6D2B79F5;
+        t = Math.imul(t ^ t >>> 15, t | 1);
+        t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+      }
+    }
+
+    let rng = mulberry32(42);
+
+    function randFloat(min, max) { return min + rng() * (max - min); }
+    function randInt(min, max) { return Math.floor(randFloat(min, max + 1)); }
+    function randChoice(arr) { return arr[Math.floor(rng() * arr.length)]; }
+
+    // 메뉴 카탈로그
+    const MENUS = [
+      { id: 'MENU-001', name: '아메리카노', category: 'COFFEE', price: 3500 },
+      { id: 'MENU-002', name: '카페 라떼', category: 'COFFEE', price: 4200 },
+      { id: 'MENU-003', name: '바닐라 라떼', category: 'COFFEE', price: 4800 },
+      { id: 'MENU-004', name: '카라멜 마키아또', category: 'COFFEE', price: 5000 },
+      { id: 'MENU-005', name: '콜드브루', category: 'COFFEE', price: 4500 },
+      { id: 'MENU-006', name: '딸기 라떼', category: 'NON_COFFEE', price: 5500 },
+      { id: 'MENU-007', name: '말차 라떼', category: 'NON_COFFEE', price: 5200 },
+      { id: 'MENU-008', name: '초콜릿 라떼', category: 'NON_COFFEE', price: 5000 },
+      { id: 'MENU-009', name: '자몽 허니 블랙티', category: 'TEA', price: 4800 },
+      { id: 'MENU-010', name: '캐모마일 티', category: 'TEA', price: 4000 },
+      { id: 'MENU-011', name: '플레인 베이글', category: 'BAKERY', price: 3200 },
+      { id: 'MENU-012', name: '치즈 케이크', category: 'DESSERT', price: 6000 }
+    ];
+
+    const SEARCH_KEYWORDS = ['디카페인', '오트밀크', '딸기', '베이글', '라떼', '텀블러', '선물세트', '콜드브루', '말차'];
+
+    // 현재 생성된 데이터셋 저장소
+    let currentData = {
+      users: [],
+      sessions: [],
+      orders: [],
+      search_logs: []
+    };
+
+    let activeTab = 'sessions';
+
+    // 파라미터 UI 요소
+    const rngSessions = document.getElementById('rngSessions');
+    const rngMembers = document.getElementById('rngMembers');
+    const rngGuests = document.getElementById('rngGuests');
+    const rngAbandonRate = document.getElementById('rngAbandonRate');
+    const rngPwaRatio = document.getElementById('rngPwaRatio');
+
+    const lblSessions = document.getElementById('lblSessions');
+    const lblMembers = document.getElementById('lblMembers');
+    const lblGuests = document.getElementById('lblGuests');
+    const lblAbandonRate = document.getElementById('lblAbandonRate');
+    const lblPwaRatio = document.getElementById('lblPwaRatio');
+
+    function updateParamLabels() {
+      lblSessions.textContent = Number(rngSessions.value).toLocaleString();
+      lblMembers.textContent = Number(rngMembers.value).toLocaleString() + '명';
+      lblGuests.textContent = Number(rngGuests.value).toLocaleString() + '명';
+      lblAbandonRate.textContent = Number(rngAbandonRate.value).toFixed(1) + '%';
+      lblPwaRatio.textContent = rngPwaRatio.value + '%';
+    }
+
+    [rngSessions, rngMembers, rngGuests, rngAbandonRate, rngPwaRatio].forEach(input => {
+      input.addEventListener('input', updateParamLabels);
+    });
+
+    // ==========================================
+    // 데이터 생성 로직
+    // ==========================================
+    function generateDataset() {
+      rng = mulberry32(42); // 재현성 보장
+
+      const totalSessions = parseInt(rngSessions.value, 10);
+      const memberCount = parseInt(rngMembers.value, 10);
+      const guestCount = parseInt(rngGuests.value, 10);
+      const abandonRate = parseFloat(rngAbandonRate.value) / 100.0;
+      const pwaRatio = parseFloat(rngPwaRatio.value) / 100.0;
+
+      const abandonCount = Math.round(totalSessions * abandonRate);
+      const completedCount = totalSessions - abandonCount;
+
+      // 1. 유저 생성 (users)
+      const users = [];
+      const userIds = [];
+
+      for (let i = 1; i <= memberCount; i++) {
+        const uid = `usr-${String(i).padStart(4, '0')}`;
+        userIds.push(uid);
+        const grade = i <= 60 ? 'VIP' : (i <= 180 ? 'GOLD' : 'SILVER');
+        const defaultPreset = {
+          ice: rng() < 0.65 ? 'ICE' : 'HOT',
+          size: rng() < 0.35 ? 'GRANDE' : 'REGULAR',
+          milk: rng() < 0.20 ? 'OAT' : 'NORMAL'
+        };
+        users.push({
+          user_id: uid,
+          member_type: 'MEMBER',
+          grade: grade,
+          age_group: randChoice(['20s', '30s', '40s', '50s']),
+          created_at: '2026-01-15T09:00:00Z',
+          default_preset: JSON.stringify(defaultPreset),
+          total_orders: randInt(5, 45)
+        });
+      }
+
+      for (let i = 1; i <= guestCount; i++) {
+        const gid = `guest-${String(i).padStart(4, '0')}`;
+        userIds.push(gid);
+        users.push({
+          user_id: gid,
+          member_type: 'GUEST',
+          grade: 'NONE',
+          age_group: 'UNKNOWN',
+          created_at: '2026-03-01T10:00:00Z',
+          default_preset: JSON.stringify({}),
+          total_orders: randInt(1, 3)
+        });
+      }
+
+      // 2. 세션 및 주문, 검색 로그 생성
+      const sessions = [];
+      const orders = [];
+      const searchLogs = [];
+
+      // 포기 인덱스 세트 (무작위 균일 추출)
+      const abandonIndices = new Set();
+      while (abandonIndices.size < abandonCount) {
+        abandonIndices.add(randInt(0, totalSessions - 1));
+      }
+
+      let orderSeq = 1;
+      let searchSeq = 1;
+
+      let pwaCount = 0;
+      let kioskCount = 0;
+      let pwaDurSum = 0;
+      let kioskDurSum = 0;
+
+      let priceCount = 0;
+      let waitCount = 0;
+      let timeoutCount = 0;
+      let stageOptCount = 0;
+      let stageCartCount = 0;
+      let stagePayCount = 0;
+
+      const baseTime = new Date('2026-04-01T08:00:00Z').getTime();
+
+      for (let s = 0; s < totalSessions; s++) {
+        const isAbandon = abandonIndices.has(s);
+        const channel = rng() < pwaRatio ? 'PWA' : 'KIOSK';
+        if (channel === 'PWA') pwaCount++; else kioskCount++;
+
+        // 유저 할당 (PWA는 회원 비율이 높고, Kiosk는 비회원 비율이 높음)
+        let uid = '';
+        if (channel === 'PWA') {
+          uid = rng() < 0.85 ? randChoice(userIds.slice(0, memberCount)) : randChoice(userIds.slice(memberCount));
+        } else {
+          uid = rng() < 0.45 ? randChoice(userIds.slice(0, memberCount)) : randChoice(userIds.slice(memberCount));
+        }
+
+        const sid = `ses-${String(s + 1).padStart(5, '0')}`;
+        const diningType = rng() < 0.55 ? 'DINE_IN' : 'TO_GO';
+
+        // 소요 시간 모델링
+        let duration = 0;
+        if (isAbandon) {
+          duration = randInt(25, 95);
+        } else {
+          duration = channel === 'PWA' ? randInt(45, 110) : randInt(35, 80);
+        }
+
+        if (channel === 'PWA') pwaDurSum += duration; else kioskDurSum += duration;
+
+        let abandonStage = 'NONE';
+        let abandonReason = 'NONE';
+
+        if (isAbandon) {
+          // 사유: 가격(44%), 대기지연(28%), 타임아웃(28%)
+          const r = rng();
+          if (r < 0.44) {
+            abandonReason = 'PRICE_HIGH';
+            priceCount++;
+          } else if (r < 0.72) {
+            abandonReason = 'WAIT_TIME_LONG';
+            waitCount++;
+          } else {
+            abandonReason = 'TIMEOUT_60S';
+            timeoutCount++;
+          }
+
+          // 단계: OPTION(36%), CART(42%), PAY(22%)
+          const sR = rng();
+          if (sR < 0.36) {
+            abandonStage = 'OPTION_MODAL';
+            stageOptCount++;
+          } else if (sR < 0.78) {
+            abandonStage = 'CART_SHEET';
+            stageCartCount++;
+          } else {
+            abandonStage = 'PAY_POPUP';
+            stagePayCount++;
+          }
+        }
+
+        // 카테고리 탐색 순서
+        const catSequence = randChoice([
+          'COFFEE>DESSERT', 'COFFEE', 'NON_COFFEE>BAKERY', 'TEA>COFFEE', 'COFFEE>TEA'
+        ]);
+
+        const sessionObj = {
+          session_id: sid,
+          user_id: uid,
+          channel: channel,
+          dining_type: diningType,
+          duration_sec: duration,
+          category_sequence: catSequence,
+          is_completed: !isAbandon,
+          abandon_stage: abandonStage,
+          abandon_reason: abandonReason,
+          created_at: new Date(baseTime + s * 45000).toISOString()
+        };
+        sessions.push(sessionObj);
+
+        // 검색 로그 (세션 중 약 45% 확률로 검색 수행)
+        if (rng() < 0.45) {
+          const kw = randChoice(SEARCH_KEYWORDS);
+          searchLogs.push({
+            search_id: `srch-${String(searchSeq++).padStart(5, '0')}`,
+            session_id: sid,
+            user_id: uid,
+            query: kw,
+            click_rank: randInt(1, 4),
+            has_result: true,
+            created_at: sessionObj.created_at
+          });
+        }
+
+        // 주문 생성 (완료된 건만)
+        if (!isAbandon) {
+          const orderMenu = randChoice(MENUS);
+          const itemCount = randInt(1, 2);
+          const totalAmount = orderMenu.price * itemCount;
+          const discount = uid.startsWith('usr-') ? 500 : 0;
+
+          orders.push({
+            order_id: `ord-${String(orderSeq++).padStart(5, '0')}`,
+            session_id: sid,
+            user_id: uid,
+            channel: channel,
+            dining_type: diningType,
+            total_amount: totalAmount,
+            discount_amount: discount,
+            payment_amount: totalAmount - discount,
+            menu_summary: `${orderMenu.name} ${itemCount}잔`,
+            payment_method: channel === 'PWA' ? randChoice(['EASY_PAY', 'CREDIT_CARD']) : 'KIOSK_CARD',
+            created_at: sessionObj.created_at
+          });
+        }
+      }
+
+      currentData = { users, sessions, orders, search_logs: searchLogs };
+
+      // 통계 렌더링
+      renderStats({
+        totalSessions,
+        completedCount,
+        abandonCount,
+        pwaCount,
+        kioskCount,
+        pwaMeanDur: (pwaDurSum / Math.max(1, pwaCount)).toFixed(1),
+        kioskMeanDur: (kioskDurSum / Math.max(1, kioskCount)).toFixed(1),
+        allMeanDur: ((pwaDurSum + kioskDurSum) / totalSessions).toFixed(1),
+        userCount: users.length,
+        memberCount,
+        guestCount,
+        priceCount,
+        waitCount,
+        timeoutCount,
+        stageOptCount,
+        stageCartCount,
+        stagePayCount
+      });
+
+      renderTable();
+    }
+
+    // ==========================================
+    // UI 렌더링
+    // ==========================================
+    function renderStats(s) {
+      document.getElementById('kpiSessions').textContent = s.totalSessions.toLocaleString();
+      document.getElementById('kpiChannelSplit').textContent = `PWA ${s.pwaCount.toLocaleString()} / Kiosk ${s.kioskCount.toLocaleString()}`;
+
+      document.getElementById('kpiOrders').textContent = s.completedCount.toLocaleString();
+      const cvr = ((s.completedCount / s.totalSessions) * 100).toFixed(1);
+      document.getElementById('kpiCvr').textContent = `전환율 ${cvr}% 달성`;
+
+      document.getElementById('kpiAbandons').textContent = s.abandonCount.toLocaleString();
+      const abRate = ((s.abandonCount / s.totalSessions) * 100).toFixed(1);
+      document.getElementById('kpiAbandonRate').textContent = `이탈률 ${abRate}%`;
+
+      document.getElementById('kpiUsers').textContent = s.userCount.toLocaleString();
+      document.getElementById('kpiUserSplit').textContent = `회원 ${s.memberCount} / 비회원 ${s.guestCount}`;
+
+      document.getElementById('kpiDuration').textContent = s.allMeanDur + '초';
+      document.getElementById('kpiDurationDiff').textContent = `PWA ${s.pwaMeanDur}s vs Kiosk ${s.kioskMeanDur}s`;
+
+      // 미니 차트 업데이트
+      document.getElementById('vizAbandonCount').textContent = s.abandonCount;
+      const abTot = Math.max(1, s.abandonCount);
+
+      const pPct = Math.round((s.priceCount / abTot) * 100);
+      const wPct = Math.round((s.waitCount / abTot) * 100);
+      const tPct = 100 - pPct - wPct;
+
+      document.getElementById('barPrice').style.width = pPct + '%';
+      document.getElementById('valPrice').textContent = `${s.priceCount} (${pPct}%)`;
+
+      document.getElementById('barWait').style.width = wPct + '%';
+      document.getElementById('valWait').textContent = `${s.waitCount} (${wPct}%)`;
+
+      document.getElementById('barTimeout').style.width = tPct + '%';
+      document.getElementById('valTimeout').textContent = `${s.timeoutCount} (${tPct}%)`;
+
+      const optPct = Math.round((s.stageOptCount / abTot) * 100);
+      const cartPct = Math.round((s.stageCartCount / abTot) * 100);
+      const payPct = 100 - optPct - cartPct;
+
+      document.getElementById('barStageOption').style.width = optPct + '%';
+      document.getElementById('valStageOption').textContent = `${s.stageOptCount} (${optPct}%)`;
+
+      document.getElementById('barStageCart').style.width = cartPct + '%';
+      document.getElementById('valStageCart').textContent = `${s.stageCartCount} (${cartPct}%)`;
+
+      document.getElementById('barStagePay').style.width = payPct + '%';
+      document.getElementById('valStagePay').textContent = `${s.stagePayCount} (${payPct}%)`;
+
+      // 탭 배지
+      document.getElementById('badgeSessionsCount').textContent = currentData.sessions.length.toLocaleString();
+      document.getElementById('badgeOrdersCount').textContent = currentData.orders.length.toLocaleString();
+      document.getElementById('badgeUsersCount').textContent = currentData.users.length.toLocaleString();
+      document.getElementById('badgeSearchCount').textContent = currentData.search_logs.length.toLocaleString();
+    }
+
+    function renderTable() {
+      const thead = document.getElementById('dataThead');
+      const tbody = document.getElementById('dataTbody');
+      thead.innerHTML = '';
+      tbody.innerHTML = '';
+
+      const items = currentData[activeTab] || [];
+      if (items.length === 0) return;
+
+      const cols = Object.keys(items[0]);
+      
+      // 헤더
+      const headerRow = document.createElement('tr');
+      cols.forEach(col => {
+        const th = document.createElement('th');
+        th.textContent = col;
+        headerRow.appendChild(th);
+      });
+      thead.appendChild(headerRow);
+
+      // 본문 (상위 100건만 렌더링)
+      const previewSlice = items.slice(0, 100);
+      previewSlice.forEach(row => {
+        const tr = document.createElement('tr');
+        cols.forEach(col => {
+          const td = document.createElement('td');
+          const val = row[col];
+          
+          if (col === 'is_completed') {
+            td.innerHTML = val 
+              ? '<span class="tag-badge tag-completed">COMPLETED</span>' 
+              : '<span class="tag-badge tag-abandoned">ABANDONED</span>';
+          } else if (col === 'channel') {
+            td.innerHTML = val === 'PWA' 
+              ? '<span class="tag-badge tag-pwa">PWA</span>' 
+              : '<span class="tag-badge tag-kiosk">KIOSK</span>';
+          } else if (col === 'member_type') {
+            td.innerHTML = val === 'MEMBER' 
+              ? '<span class="tag-badge tag-member">MEMBER</span>' 
+              : '<span class="tag-badge tag-guest">GUEST</span>';
+          } else if (col === 'abandon_reason' && val !== 'NONE') {
+            td.innerHTML = `<span class="tag-badge tag-abandoned">${val}</span>`;
+          } else {
+            td.textContent = String(val);
+          }
+
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById('lblTableTotal').textContent = 
+        `총 ${items.length.toLocaleString()}건 중 상위 ${previewSlice.length}건 표시 (전체는 다운로드 버튼 사용)`;
+    }
+
+    // ==========================================
+    // 다운로드 헬퍼
+    // ==========================================
+    function downloadBlob(content, filename, type) {
+      const blob = new Blob([content], { type: type });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function exportToCsv(data) {
+      if (!data || data.length === 0) return '';
+      const cols = Object.keys(data[0]);
+      let csv = cols.join(',') + '\n';
+      data.forEach(row => {
+        const line = cols.map(c => {
+          let v = row[c];
+          if (typeof v === 'string') {
+            v = v.replace(/"/g, '""');
+            if (v.includes(',') || v.includes('\n')) v = `"${v}"`;
+          }
+          return v;
+        }).join(',');
+        csv += line + '\n';
+      });
+      return csv;
+    }
+
+    function exportToNdjson(data) {
+      if (!data || data.length === 0) return '';
+      return data.map(row => JSON.stringify(row)).join('\n');
+    }
+
+    // ==========================================
+    // 이벤트 바인딩
+    // ==========================================
+    document.getElementById('btnRunSim').addEventListener('click', () => {
+      generateDataset();
+      showToast('⚡ 시뮬레이션 데이터셋이 성공적으로 생성되었습니다!');
+    });
+
+    document.getElementById('btnReset').addEventListener('click', () => {
+      rngSessions.value = 5000;
+      rngMembers.value = 400;
+      rngGuests.value = 200;
+      rngAbandonRate.value = 10;
+      rngPwaRatio.value = 58;
+      updateParamLabels();
+      generateDataset();
+      showToast('기본값으로 초기화되었습니다.');
+    });
+
+    // 탭 전환
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeTab = btn.getAttribute('data-tab');
+        renderTable();
+      });
+    });
+
+    // 다운로드 이벤트
+    document.getElementById('btnDownloadCsv').addEventListener('click', () => {
+      const items = currentData[activeTab];
+      const csvStr = exportToCsv(items);
+      downloadBlob(csvStr, `cafe_${activeTab}.csv`, 'text/csv;charset=utf-8;');
+      showToast(`📥 ${activeTab}.csv 다운로드를 시작합니다.`);
+    });
+
+    document.getElementById('btnDownloadNdjson').addEventListener('click', () => {
+      const items = currentData[activeTab];
+      const ndStr = exportToNdjson(items);
+      downloadBlob(ndStr, `cafe_${activeTab}.ndjson`, 'application/x-ndjson;charset=utf-8;');
+      showToast(`📥 ${activeTab}.ndjson 다운로드를 시작합니다.`);
+    });
+
+    document.getElementById('btnDownloadAll').addEventListener('click', () => {
+      // 4대 테이블을 순차적으로 CSV 다운로드
+      ['sessions', 'orders', 'users', 'search_logs'].forEach((key, idx) => {
+        setTimeout(() => {
+          const items = currentData[key];
+          const csvStr = exportToCsv(items);
+          downloadBlob(csvStr, `cafe_${key}.csv`, 'text/csv;charset=utf-8;');
+        }, idx * 300);
+      });
+      showToast('📦 4대 코어 데이터셋(CSV) 일괄 다운로드가 시작되었습니다!');
+    });
+
+    // 클립보드 복사
+    window.copySnippet = function(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(`복사 완료: ${text}`);
+      });
+    };
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastMsg');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2600);
+    }
+
+    // 초기 실행
+    updateParamLabels();
+    generateDataset();
+  </script>
+</body>
+</html>

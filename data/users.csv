@@ -1,0 +1,601 @@
+user_id,member_type,is_member,option_preset,preferred_packaging,tumbler_user
+usr-0001,REGULAR,True,,TAKE_OUT,False
+usr-0002,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,True
+usr-0003,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0004,REGULAR,True,,TAKE_OUT,False
+usr-0005,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0006,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0007,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0008,REGULAR,True,,DINE_IN,True
+usr-0009,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0010,REGULAR,True,,DINE_IN,False
+usr-0011,REGULAR,True,,DINE_IN,False
+usr-0012,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,True
+usr-0013,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",DINE_IN,False
+usr-0014,NEW,True,,DINE_IN,False
+usr-0015,NEW,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,True
+usr-0016,NEW,True,,TAKE_OUT,False
+usr-0017,VIP,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0018,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",DINE_IN,False
+usr-0019,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0020,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0021,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0022,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0023,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,True
+usr-0024,VIP,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",DINE_IN,False
+usr-0025,VIP,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,True
+usr-0026,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0027,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0028,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,True
+usr-0029,NEW,True,,TAKE_OUT,False
+usr-0030,NEW,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0031,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0032,REGULAR,True,,TAKE_OUT,False
+usr-0033,REGULAR,True,,TAKE_OUT,False
+usr-0034,REGULAR,True,,DINE_IN,False
+usr-0035,VIP,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0036,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,True
+usr-0037,NEW,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0038,REGULAR,True,,TAKE_OUT,False
+usr-0039,VIP,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0040,REGULAR,True,,TAKE_OUT,False
+usr-0041,NEW,True,,TAKE_OUT,False
+usr-0042,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0043,REGULAR,True,,TAKE_OUT,False
+usr-0044,NEW,True,,TAKE_OUT,False
+usr-0045,VIP,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0046,NEW,True,,DINE_IN,False
+usr-0047,REGULAR,True,,DINE_IN,False
+usr-0048,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0049,NEW,True,,TAKE_OUT,False
+usr-0050,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0051,REGULAR,True,,TAKE_OUT,False
+usr-0052,VIP,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,True
+usr-0053,NEW,True,,TAKE_OUT,False
+usr-0054,VIP,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0055,REGULAR,True,,TAKE_OUT,False
+usr-0056,REGULAR,True,,TAKE_OUT,False
+usr-0057,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0058,VIP,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",DINE_IN,False
+usr-0059,NEW,True,,TAKE_OUT,False
+usr-0060,NEW,True,,TAKE_OUT,False
+usr-0061,REGULAR,True,,DINE_IN,False
+usr-0062,NEW,True,,TAKE_OUT,False
+usr-0063,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0064,VIP,True,,TAKE_OUT,False
+usr-0065,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0066,VIP,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,True
+usr-0067,NEW,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0068,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0069,REGULAR,True,,DINE_IN,False
+usr-0070,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0071,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0072,NEW,True,,TAKE_OUT,False
+usr-0073,VIP,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,True
+usr-0074,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0075,NEW,True,,DINE_IN,False
+usr-0076,NEW,True,,DINE_IN,False
+usr-0077,REGULAR,True,,TAKE_OUT,False
+usr-0078,VIP,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",DINE_IN,False
+usr-0079,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0080,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0081,REGULAR,True,,TAKE_OUT,False
+usr-0082,REGULAR,True,,TAKE_OUT,False
+usr-0083,NEW,True,,TAKE_OUT,False
+usr-0084,REGULAR,True,,TAKE_OUT,False
+usr-0085,REGULAR,True,,TAKE_OUT,False
+usr-0086,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0087,REGULAR,True,,TAKE_OUT,False
+usr-0088,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0089,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0090,REGULAR,True,,TAKE_OUT,True
+usr-0091,REGULAR,True,,TAKE_OUT,False
+usr-0092,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0093,NEW,True,,DINE_IN,True
+usr-0094,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0095,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0096,REGULAR,True,,TAKE_OUT,False
+usr-0097,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0098,NEW,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",DINE_IN,False
+usr-0099,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0100,REGULAR,True,,TAKE_OUT,False
+usr-0101,REGULAR,True,,TAKE_OUT,False
+usr-0102,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,True
+usr-0103,NEW,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0104,REGULAR,True,,TAKE_OUT,False
+usr-0105,REGULAR,True,,TAKE_OUT,False
+usr-0106,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0107,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,True
+usr-0108,REGULAR,True,,TAKE_OUT,False
+usr-0109,REGULAR,True,,TAKE_OUT,False
+usr-0110,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0111,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0112,NEW,True,,TAKE_OUT,False
+usr-0113,REGULAR,True,,TAKE_OUT,False
+usr-0114,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0115,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,True
+usr-0116,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0117,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0118,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0119,NEW,True,,TAKE_OUT,False
+usr-0120,VIP,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,True
+usr-0121,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0122,VIP,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",DINE_IN,False
+usr-0123,NEW,True,,TAKE_OUT,False
+usr-0124,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,True
+usr-0125,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0126,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0127,REGULAR,True,,DINE_IN,False
+usr-0128,REGULAR,True,,TAKE_OUT,True
+usr-0129,VIP,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0130,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0131,REGULAR,True,,TAKE_OUT,False
+usr-0132,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0133,REGULAR,True,,TAKE_OUT,False
+usr-0134,REGULAR,True,,TAKE_OUT,False
+usr-0135,NEW,True,,TAKE_OUT,False
+usr-0136,NEW,True,,TAKE_OUT,False
+usr-0137,REGULAR,True,,TAKE_OUT,False
+usr-0138,NEW,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0139,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0140,NEW,True,,TAKE_OUT,False
+usr-0141,NEW,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",DINE_IN,False
+usr-0142,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,True
+usr-0143,REGULAR,True,,DINE_IN,False
+usr-0144,VIP,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0145,NEW,True,,TAKE_OUT,False
+usr-0146,NEW,True,,TAKE_OUT,False
+usr-0147,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0148,REGULAR,True,,TAKE_OUT,False
+usr-0149,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,True
+usr-0150,NEW,True,,DINE_IN,False
+usr-0151,REGULAR,True,,DINE_IN,False
+usr-0152,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0153,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",DINE_IN,False
+usr-0154,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0155,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0156,VIP,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,True
+usr-0157,REGULAR,True,,TAKE_OUT,False
+usr-0158,REGULAR,True,,TAKE_OUT,False
+usr-0159,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0160,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0161,REGULAR,True,,TAKE_OUT,True
+usr-0162,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0163,REGULAR,True,,DINE_IN,False
+usr-0164,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0165,VIP,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0166,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0167,REGULAR,True,,TAKE_OUT,False
+usr-0168,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0169,VIP,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,True
+usr-0170,NEW,True,,TAKE_OUT,False
+usr-0171,REGULAR,True,,TAKE_OUT,False
+usr-0172,NEW,True,,TAKE_OUT,True
+usr-0173,REGULAR,True,,DINE_IN,False
+usr-0174,VIP,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0175,NEW,True,,DINE_IN,False
+usr-0176,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0177,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0178,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0179,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0180,REGULAR,True,,TAKE_OUT,False
+usr-0181,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",DINE_IN,False
+usr-0182,REGULAR,True,,TAKE_OUT,False
+usr-0183,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0184,REGULAR,True,,TAKE_OUT,False
+usr-0185,NEW,True,,DINE_IN,True
+usr-0186,VIP,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,True
+usr-0187,REGULAR,True,,DINE_IN,False
+usr-0188,REGULAR,True,,DINE_IN,False
+usr-0189,NEW,True,,TAKE_OUT,False
+usr-0190,REGULAR,True,,TAKE_OUT,False
+usr-0191,REGULAR,True,,TAKE_OUT,False
+usr-0192,REGULAR,True,,DINE_IN,False
+usr-0193,REGULAR,True,,DINE_IN,False
+usr-0194,NEW,True,,TAKE_OUT,False
+usr-0195,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0196,NEW,True,,TAKE_OUT,False
+usr-0197,NEW,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0198,NEW,True,,TAKE_OUT,False
+usr-0199,NEW,True,,TAKE_OUT,False
+usr-0200,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0201,VIP,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0202,REGULAR,True,,DINE_IN,False
+usr-0203,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0204,REGULAR,True,,TAKE_OUT,False
+usr-0205,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0206,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0207,NEW,True,,DINE_IN,False
+usr-0208,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0209,REGULAR,True,,TAKE_OUT,False
+usr-0210,REGULAR,True,,DINE_IN,True
+usr-0211,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0212,REGULAR,True,,TAKE_OUT,False
+usr-0213,REGULAR,True,,TAKE_OUT,False
+usr-0214,REGULAR,True,,TAKE_OUT,False
+usr-0215,VIP,True,,DINE_IN,False
+usr-0216,REGULAR,True,,TAKE_OUT,False
+usr-0217,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",DINE_IN,False
+usr-0218,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0219,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0220,VIP,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0221,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0222,REGULAR,True,,TAKE_OUT,False
+usr-0223,VIP,True,,TAKE_OUT,False
+usr-0224,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0225,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0226,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0227,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0228,REGULAR,True,,TAKE_OUT,False
+usr-0229,REGULAR,True,,TAKE_OUT,False
+usr-0230,REGULAR,True,,TAKE_OUT,False
+usr-0231,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",DINE_IN,False
+usr-0232,REGULAR,True,,TAKE_OUT,False
+usr-0233,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0234,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,True
+usr-0235,VIP,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0236,NEW,True,,TAKE_OUT,False
+usr-0237,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0238,REGULAR,True,,TAKE_OUT,False
+usr-0239,REGULAR,True,,TAKE_OUT,False
+usr-0240,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0241,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0242,REGULAR,True,,DINE_IN,False
+usr-0243,REGULAR,True,,TAKE_OUT,True
+usr-0244,VIP,True,,DINE_IN,False
+usr-0245,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",DINE_IN,False
+usr-0246,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0247,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0248,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0249,REGULAR,True,,DINE_IN,False
+usr-0250,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0251,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0252,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0253,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0254,REGULAR,True,,TAKE_OUT,False
+usr-0255,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,True
+usr-0256,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0257,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0258,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0259,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0260,NEW,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,True
+usr-0261,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0262,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0263,NEW,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0264,NEW,True,,TAKE_OUT,False
+usr-0265,NEW,True,,TAKE_OUT,True
+usr-0266,REGULAR,True,,DINE_IN,False
+usr-0267,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,True
+usr-0268,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0269,REGULAR,True,,TAKE_OUT,False
+usr-0270,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0271,REGULAR,True,,TAKE_OUT,False
+usr-0272,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",DINE_IN,False
+usr-0273,VIP,True,,TAKE_OUT,False
+usr-0274,NEW,True,,DINE_IN,False
+usr-0275,NEW,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0276,VIP,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0277,VIP,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0278,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0279,VIP,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",DINE_IN,False
+usr-0280,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0281,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0282,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",DINE_IN,True
+usr-0283,NEW,True,,TAKE_OUT,False
+usr-0284,NEW,True,,TAKE_OUT,False
+usr-0285,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0286,REGULAR,True,,TAKE_OUT,False
+usr-0287,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0288,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",DINE_IN,False
+usr-0289,NEW,True,,TAKE_OUT,False
+usr-0290,REGULAR,True,,TAKE_OUT,False
+usr-0291,NEW,True,,DINE_IN,False
+usr-0292,NEW,True,,DINE_IN,False
+usr-0293,VIP,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0294,REGULAR,True,,TAKE_OUT,False
+usr-0295,REGULAR,True,,TAKE_OUT,False
+usr-0296,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0297,REGULAR,True,,TAKE_OUT,False
+usr-0298,REGULAR,True,,TAKE_OUT,False
+usr-0299,REGULAR,True,,TAKE_OUT,False
+usr-0300,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0301,VIP,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,True
+usr-0302,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0303,REGULAR,True,,DINE_IN,False
+usr-0304,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0305,NEW,True,,TAKE_OUT,False
+usr-0306,REGULAR,True,,DINE_IN,False
+usr-0307,VIP,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0308,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0309,NEW,True,,DINE_IN,False
+usr-0310,REGULAR,True,,TAKE_OUT,True
+usr-0311,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0312,NEW,True,,DINE_IN,False
+usr-0313,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",DINE_IN,False
+usr-0314,NEW,True,,TAKE_OUT,False
+usr-0315,NEW,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0316,REGULAR,True,,TAKE_OUT,False
+usr-0317,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",DINE_IN,False
+usr-0318,REGULAR,True,,DINE_IN,False
+usr-0319,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,True
+usr-0320,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0321,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0322,REGULAR,True,,TAKE_OUT,True
+usr-0323,REGULAR,True,,TAKE_OUT,False
+usr-0324,REGULAR,True,,TAKE_OUT,False
+usr-0325,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0326,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0327,NEW,True,,TAKE_OUT,False
+usr-0328,NEW,True,,TAKE_OUT,False
+usr-0329,VIP,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0330,NEW,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0331,NEW,True,,DINE_IN,False
+usr-0332,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0333,REGULAR,True,,DINE_IN,False
+usr-0334,VIP,True,,TAKE_OUT,True
+usr-0335,VIP,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,True
+usr-0336,REGULAR,True,,DINE_IN,False
+usr-0337,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0338,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0339,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0340,NEW,True,,TAKE_OUT,False
+usr-0341,REGULAR,True,,TAKE_OUT,False
+usr-0342,REGULAR,True,,TAKE_OUT,False
+usr-0343,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,True
+usr-0344,REGULAR,True,,DINE_IN,False
+usr-0345,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0346,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0347,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0348,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0349,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0350,REGULAR,True,,DINE_IN,True
+usr-0351,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0352,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0353,VIP,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0354,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0355,NEW,True,,TAKE_OUT,False
+usr-0356,NEW,True,,TAKE_OUT,False
+usr-0357,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0358,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,True
+usr-0359,VIP,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0360,NEW,True,,DINE_IN,False
+usr-0361,REGULAR,True,,TAKE_OUT,False
+usr-0362,NEW,True,,TAKE_OUT,False
+usr-0363,NEW,True,,TAKE_OUT,False
+usr-0364,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0365,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0366,REGULAR,True,,TAKE_OUT,False
+usr-0367,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0368,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0369,REGULAR,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0370,REGULAR,True,,TAKE_OUT,False
+usr-0371,NEW,True,,TAKE_OUT,False
+usr-0372,NEW,True,,TAKE_OUT,False
+usr-0373,NEW,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0374,NEW,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0375,REGULAR,True,,DINE_IN,False
+usr-0376,REGULAR,True,,TAKE_OUT,False
+usr-0377,VIP,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0378,REGULAR,True,,TAKE_OUT,False
+usr-0379,REGULAR,True,,DINE_IN,False
+usr-0380,REGULAR,True,,TAKE_OUT,False
+usr-0381,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0382,VIP,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0383,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,False
+usr-0384,VIP,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,True
+usr-0385,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0386,REGULAR,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",TAKE_OUT,False
+usr-0387,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",DINE_IN,True
+usr-0388,REGULAR,True,"{""name"": ""복숭아 아이스티 +얼음많이"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""more""}",TAKE_OUT,False
+usr-0389,NEW,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,True
+usr-0390,NEW,True,,TAKE_OUT,False
+usr-0391,VIP,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0392,NEW,True,,TAKE_OUT,False
+usr-0393,VIP,True,,TAKE_OUT,False
+usr-0394,REGULAR,True,"{""name"": ""ICE 아메리카노 +1샷"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 1, ""syrup"": ""default"", ""ice"": ""normal""}",DINE_IN,False
+usr-0395,REGULAR,True,,TAKE_OUT,False
+usr-0396,REGULAR,True,"{""name"": ""디카페인 아메리카노"", ""temp"": ""ICE"", ""size"": ""venti"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""normal""}",TAKE_OUT,False
+usr-0397,NEW,True,,TAKE_OUT,True
+usr-0398,VIP,True,"{""name"": ""HOT 카페라떼 연하게"", ""temp"": ""HOT"", ""size"": ""regular"", ""shots"": 0, ""syrup"": ""default"", ""ice"": ""none""}",DINE_IN,False
+usr-0399,VIP,True,"{""name"": ""ICE 바닐라라떼 덜달게"", ""temp"": ""ICE"", ""size"": ""large"", ""shots"": 0, ""syrup"": ""less"", ""ice"": ""less""}",TAKE_OUT,True
+usr-0400,NEW,True,,TAKE_OUT,False
+guest-0001,GUEST,False,,TAKE_OUT,False
+guest-0002,GUEST,False,,TAKE_OUT,False
+guest-0003,GUEST,False,,DINE_IN,False
+guest-0004,GUEST,False,,TAKE_OUT,False
+guest-0005,GUEST,False,,TAKE_OUT,False
+guest-0006,GUEST,False,,TAKE_OUT,False
+guest-0007,GUEST,False,,TAKE_OUT,False
+guest-0008,GUEST,False,,TAKE_OUT,False
+guest-0009,GUEST,False,,TAKE_OUT,False
+guest-0010,GUEST,False,,DINE_IN,False
+guest-0011,GUEST,False,,TAKE_OUT,False
+guest-0012,GUEST,False,,TAKE_OUT,False
+guest-0013,GUEST,False,,TAKE_OUT,False
+guest-0014,GUEST,False,,DINE_IN,False
+guest-0015,GUEST,False,,TAKE_OUT,False
+guest-0016,GUEST,False,,TAKE_OUT,False
+guest-0017,GUEST,False,,TAKE_OUT,False
+guest-0018,GUEST,False,,TAKE_OUT,False
+guest-0019,GUEST,False,,TAKE_OUT,False
+guest-0020,GUEST,False,,TAKE_OUT,False
+guest-0021,GUEST,False,,DINE_IN,False
+guest-0022,GUEST,False,,TAKE_OUT,False
+guest-0023,GUEST,False,,DINE_IN,False
+guest-0024,GUEST,False,,TAKE_OUT,False
+guest-0025,GUEST,False,,TAKE_OUT,False
+guest-0026,GUEST,False,,TAKE_OUT,False
+guest-0027,GUEST,False,,DINE_IN,False
+guest-0028,GUEST,False,,DINE_IN,False
+guest-0029,GUEST,False,,TAKE_OUT,False
+guest-0030,GUEST,False,,TAKE_OUT,False
+guest-0031,GUEST,False,,TAKE_OUT,False
+guest-0032,GUEST,False,,TAKE_OUT,False
+guest-0033,GUEST,False,,DINE_IN,False
+guest-0034,GUEST,False,,DINE_IN,False
+guest-0035,GUEST,False,,DINE_IN,False
+guest-0036,GUEST,False,,TAKE_OUT,False
+guest-0037,GUEST,False,,TAKE_OUT,False
+guest-0038,GUEST,False,,DINE_IN,False
+guest-0039,GUEST,False,,TAKE_OUT,False
+guest-0040,GUEST,False,,DINE_IN,False
+guest-0041,GUEST,False,,DINE_IN,False
+guest-0042,GUEST,False,,TAKE_OUT,False
+guest-0043,GUEST,False,,DINE_IN,False
+guest-0044,GUEST,False,,TAKE_OUT,False
+guest-0045,GUEST,False,,DINE_IN,False
+guest-0046,GUEST,False,,DINE_IN,False
+guest-0047,GUEST,False,,TAKE_OUT,False
+guest-0048,GUEST,False,,TAKE_OUT,False
+guest-0049,GUEST,False,,DINE_IN,False
+guest-0050,GUEST,False,,TAKE_OUT,False
+guest-0051,GUEST,False,,DINE_IN,False
+guest-0052,GUEST,False,,TAKE_OUT,False
+guest-0053,GUEST,False,,TAKE_OUT,False
+guest-0054,GUEST,False,,DINE_IN,False
+guest-0055,GUEST,False,,DINE_IN,False
+guest-0056,GUEST,False,,DINE_IN,False
+guest-0057,GUEST,False,,DINE_IN,False
+guest-0058,GUEST,False,,TAKE_OUT,False
+guest-0059,GUEST,False,,TAKE_OUT,False
+guest-0060,GUEST,False,,TAKE_OUT,False
+guest-0061,GUEST,False,,DINE_IN,False
+guest-0062,GUEST,False,,TAKE_OUT,False
+guest-0063,GUEST,False,,TAKE_OUT,False
+guest-0064,GUEST,False,,DINE_IN,False
+guest-0065,GUEST,False,,DINE_IN,False
+guest-0066,GUEST,False,,TAKE_OUT,False
+guest-0067,GUEST,False,,DINE_IN,False
+guest-0068,GUEST,False,,DINE_IN,False
+guest-0069,GUEST,False,,TAKE_OUT,False
+guest-0070,GUEST,False,,TAKE_OUT,False
+guest-0071,GUEST,False,,DINE_IN,False
+guest-0072,GUEST,False,,DINE_IN,False
+guest-0073,GUEST,False,,TAKE_OUT,False
+guest-0074,GUEST,False,,TAKE_OUT,False
+guest-0075,GUEST,False,,DINE_IN,True
+guest-0076,GUEST,False,,DINE_IN,False
+guest-0077,GUEST,False,,TAKE_OUT,False
+guest-0078,GUEST,False,,DINE_IN,False
+guest-0079,GUEST,False,,TAKE_OUT,False
+guest-0080,GUEST,False,,DINE_IN,False
+guest-0081,GUEST,False,,TAKE_OUT,False
+guest-0082,GUEST,False,,DINE_IN,False
+guest-0083,GUEST,False,,DINE_IN,False
+guest-0084,GUEST,False,,TAKE_OUT,False
+guest-0085,GUEST,False,,DINE_IN,False
+guest-0086,GUEST,False,,DINE_IN,False
+guest-0087,GUEST,False,,DINE_IN,True
+guest-0088,GUEST,False,,TAKE_OUT,False
+guest-0089,GUEST,False,,DINE_IN,False
+guest-0090,GUEST,False,,DINE_IN,False
+guest-0091,GUEST,False,,TAKE_OUT,False
+guest-0092,GUEST,False,,TAKE_OUT,False
+guest-0093,GUEST,False,,TAKE_OUT,False
+guest-0094,GUEST,False,,TAKE_OUT,False
+guest-0095,GUEST,False,,TAKE_OUT,False
+guest-0096,GUEST,False,,TAKE_OUT,False
+guest-0097,GUEST,False,,TAKE_OUT,False
+guest-0098,GUEST,False,,TAKE_OUT,False
+guest-0099,GUEST,False,,TAKE_OUT,False
+guest-0100,GUEST,False,,DINE_IN,False
+guest-0101,GUEST,False,,TAKE_OUT,False
+guest-0102,GUEST,False,,DINE_IN,False
+guest-0103,GUEST,False,,DINE_IN,False
+guest-0104,GUEST,False,,DINE_IN,False
+guest-0105,GUEST,False,,TAKE_OUT,False
+guest-0106,GUEST,False,,DINE_IN,False
+guest-0107,GUEST,False,,TAKE_OUT,False
+guest-0108,GUEST,False,,TAKE_OUT,False
+guest-0109,GUEST,False,,DINE_IN,False
+guest-0110,GUEST,False,,DINE_IN,False
+guest-0111,GUEST,False,,DINE_IN,False
+guest-0112,GUEST,False,,TAKE_OUT,False
+guest-0113,GUEST,False,,TAKE_OUT,False
+guest-0114,GUEST,False,,TAKE_OUT,False
+guest-0115,GUEST,False,,TAKE_OUT,False
+guest-0116,GUEST,False,,DINE_IN,False
+guest-0117,GUEST,False,,TAKE_OUT,False
+guest-0118,GUEST,False,,DINE_IN,False
+guest-0119,GUEST,False,,DINE_IN,False
+guest-0120,GUEST,False,,TAKE_OUT,False
+guest-0121,GUEST,False,,TAKE_OUT,False
+guest-0122,GUEST,False,,TAKE_OUT,False
+guest-0123,GUEST,False,,TAKE_OUT,False
+guest-0124,GUEST,False,,DINE_IN,False
+guest-0125,GUEST,False,,TAKE_OUT,False
+guest-0126,GUEST,False,,TAKE_OUT,False
+guest-0127,GUEST,False,,TAKE_OUT,False
+guest-0128,GUEST,False,,DINE_IN,False
+guest-0129,GUEST,False,,TAKE_OUT,False
+guest-0130,GUEST,False,,DINE_IN,False
+guest-0131,GUEST,False,,TAKE_OUT,False
+guest-0132,GUEST,False,,TAKE_OUT,False
+guest-0133,GUEST,False,,DINE_IN,False
+guest-0134,GUEST,False,,TAKE_OUT,False
+guest-0135,GUEST,False,,TAKE_OUT,False
+guest-0136,GUEST,False,,TAKE_OUT,False
+guest-0137,GUEST,False,,DINE_IN,False
+guest-0138,GUEST,False,,TAKE_OUT,False
+guest-0139,GUEST,False,,TAKE_OUT,False
+guest-0140,GUEST,False,,TAKE_OUT,False
+guest-0141,GUEST,False,,DINE_IN,False
+guest-0142,GUEST,False,,DINE_IN,False
+guest-0143,GUEST,False,,TAKE_OUT,False
+guest-0144,GUEST,False,,TAKE_OUT,False
+guest-0145,GUEST,False,,TAKE_OUT,False
+guest-0146,GUEST,False,,TAKE_OUT,False
+guest-0147,GUEST,False,,DINE_IN,False
+guest-0148,GUEST,False,,TAKE_OUT,False
+guest-0149,GUEST,False,,DINE_IN,False
+guest-0150,GUEST,False,,DINE_IN,False
+guest-0151,GUEST,False,,TAKE_OUT,False
+guest-0152,GUEST,False,,TAKE_OUT,False
+guest-0153,GUEST,False,,DINE_IN,False
+guest-0154,GUEST,False,,TAKE_OUT,False
+guest-0155,GUEST,False,,TAKE_OUT,False
+guest-0156,GUEST,False,,DINE_IN,False
+guest-0157,GUEST,False,,DINE_IN,False
+guest-0158,GUEST,False,,DINE_IN,False
+guest-0159,GUEST,False,,TAKE_OUT,False
+guest-0160,GUEST,False,,DINE_IN,False
+guest-0161,GUEST,False,,DINE_IN,False
+guest-0162,GUEST,False,,TAKE_OUT,False
+guest-0163,GUEST,False,,TAKE_OUT,False
+guest-0164,GUEST,False,,TAKE_OUT,False
+guest-0165,GUEST,False,,TAKE_OUT,False
+guest-0166,GUEST,False,,TAKE_OUT,False
+guest-0167,GUEST,False,,TAKE_OUT,False
+guest-0168,GUEST,False,,TAKE_OUT,False
+guest-0169,GUEST,False,,DINE_IN,False
+guest-0170,GUEST,False,,TAKE_OUT,False
+guest-0171,GUEST,False,,TAKE_OUT,False
+guest-0172,GUEST,False,,TAKE_OUT,False
+guest-0173,GUEST,False,,TAKE_OUT,False
+guest-0174,GUEST,False,,TAKE_OUT,False
+guest-0175,GUEST,False,,TAKE_OUT,False
+guest-0176,GUEST,False,,TAKE_OUT,False
+guest-0177,GUEST,False,,TAKE_OUT,False
+guest-0178,GUEST,False,,TAKE_OUT,False
+guest-0179,GUEST,False,,TAKE_OUT,False
+guest-0180,GUEST,False,,TAKE_OUT,False
+guest-0181,GUEST,False,,DINE_IN,True
+guest-0182,GUEST,False,,TAKE_OUT,False
+guest-0183,GUEST,False,,TAKE_OUT,False
+guest-0184,GUEST,False,,TAKE_OUT,False
+guest-0185,GUEST,False,,DINE_IN,False
+guest-0186,GUEST,False,,DINE_IN,False
+guest-0187,GUEST,False,,TAKE_OUT,False
+guest-0188,GUEST,False,,DINE_IN,False
+guest-0189,GUEST,False,,DINE_IN,False
+guest-0190,GUEST,False,,DINE_IN,False
+guest-0191,GUEST,False,,TAKE_OUT,False
+guest-0192,GUEST,False,,TAKE_OUT,False
+guest-0193,GUEST,False,,DINE_IN,False
+guest-0194,GUEST,False,,TAKE_OUT,False
+guest-0195,GUEST,False,,TAKE_OUT,False
+guest-0196,GUEST,False,,DINE_IN,False
+guest-0197,GUEST,False,,TAKE_OUT,False
+guest-0198,GUEST,False,,TAKE_OUT,False
+guest-0199,GUEST,False,,DINE_IN,False
+guest-0200,GUEST,False,,TAKE_OUT,False
